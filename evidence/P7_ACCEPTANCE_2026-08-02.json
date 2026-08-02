@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "evidenceKind": "p7-minimum-machine-acceptance",
+  "date": "2026-08-02",
+  "status": "MACHINE_VERIFIED_USER_APPROVED_2026-08-02",
+  "repository": "F:\\github\\AI tutor",
+  "scope": [
+    "versioned box-model learning events",
+    "current-device PostgreSQL authority",
+    "browser offline outbox and rescue",
+    "deterministic snapshots",
+    "interactive Learning Proof Replay"
+  ],
+  "database": {
+    "container": "ai-tutor-p7-postgres-019fbd7a",
+    "image": "postgres:16-alpine",
+    "bind": "127.0.0.1:55432",
+    "migrationRows": 2,
+    "teachingSessions": 12,
+    "sessionEvents": 51,
+    "sessionSnapshots": 12,
+    "activeSessions": 5,
+    "completedSessions": 7,
+    "maxEventSequence": 7,
+    "recordsAreTestFixtures": true,
+    "removedAfterEvidenceCapture": true,
+    "unrelatedContainersModified": false
+  },
+  "validation": {
+    "lint": "passed",
+    "typecheckProjects": 5,
+    "unitTestsPassed": 90,
+    "unitTestsConditionallySkipped": 2,
+    "postgresIntegrationTestsPassed": 2,
+    "build": "passed-next-16.2.11",
+    "e2eTotal": 23,
+    "e2ePassed": 12,
+    "accountDependentLiveSkipped": 11,
+    "ledgerRows": 100,
+    "ledgerUniqueIds": 100,
+    "ledgerVerified": 16,
+    "ledgerInProgress": 47,
+    "ledgerBlocked": 37,
+    "ledgerNotStarted": 0
+  },
+  "browserAcceptance": {
+    "session": "p7-manual-019fbd7a",
+    "freshNonPersistentChromium": true,
+    "physicalMicrophoneAccessed": false,
+    "chromeHistoryAccessed": false,
+    "consoleErrors": 0,
+    "knownWarnings": 3,
+    "screenshot": "output/playwright/p7-learning-proof-final-polished-2026-08-02.png",
+    "screenshotBytes": 221303
+  },
+  "claimBoundaries": [
+    "not user approval",
+    "not human usability or learning evidence",
+    "not cross-topic replay",
+    "not recoverable deletion",
+    "not multi-device sync",
+    "not production deployment or compliance",
+    "not P8 authorization"
+  ]
+}

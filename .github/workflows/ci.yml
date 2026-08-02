@@ -1,0 +1,161 @@
+name: competition-gates
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      AI_TUTOR_SKIP_VISUAL: "1"
+      DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/ai_tutor_test
+      AI_TUTOR_TEST_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/ai_tutor_test
+      AI_TUTOR_P7_DATABASE: "1"
+    services:
+      postgres:
+        image: postgres:17.10-alpine3.23@sha256:8189a1f6e40904781fc9e2612687877791d21679866db58b1de996b31fc312e4
+        env:
+          POSTGRES_DB: ai_tutor_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d ai_tutor_test"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: npm install --global corepack@0.34.0
+      - run: corepack enable
+      - run: corepack prepare pnpm@10.12.3 --activate
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium firefox webkit
+      - run: pnpm db:migrate
+      - run: pnpm compliance:check
+      - run: pnpm verify
+      - run: pnpm test:e2e:portable-matrix
+      - run: pnpm test:e2e:touch
+      - run: pnpm audit --prod --audit-level high
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report
+            test-results
+          if-no-files-found: ignore
+
+  windows-browser:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: npm install --global corepack@0.34.0
+      - run: corepack enable
+      - run: corepack prepare pnpm@10.12.3 --activate
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install chromium
+      - run: pnpm exec playwright test tests/e2e/p8-browser-matrix.spec.ts --project=chrome --project=edge
+      - run: pnpm test:e2e:visual
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-windows
+          path: |
+            playwright-report
+            test-results
+          if-no-files-found: ignore
+
+  container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      POSTGRES_PASSWORD: ci-local-only
+      AI_TUTOR_P7_DATABASE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: npm install --global corepack@0.34.0
+      - run: corepack enable
+      - run: corepack prepare pnpm@10.12.3 --activate
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: docker compose config --quiet
+      - name: Build without local secrets or database backups
+        shell: bash
+        run: |
+          trap 'rm -f .env.local ci-secret.dump' EXIT
+          printf 'AI_TUTOR_CI_SECRET_SENTINEL=must-not-enter-image\n' > .env.local
+          printf 'AI_TUTOR_CI_BACKUP_SENTINEL=must-not-enter-image\n' > ci-secret.dump
+          docker compose build
+          docker compose run --rm --no-deps --entrypoint /nodejs/bin/node migrate -e "const fs=require('node:fs');for(const p of ['/app/.env.local','/app/ci-secret.dump']){if(fs.existsSync(p))throw new Error('excluded file packaged: '+p)}"
+      - run: docker compose up --detach --wait
+      - run: curl --fail --show-error http://127.0.0.1:3000/api/health
+      - run: test "$(docker compose exec -T web id -u)" != "0"
+      - run: docker compose exec -T web /nodejs/bin/node -e "require('node:fs').accessSync('/app', require('node:fs').constants.R_OK)"
+      - run: docker compose exec -T web /nodejs/bin/node /app/scripts/container-health-check.mjs
+      - name: Verify writable cache and packaged compliance files
+        run: |
+          docker compose exec -T web /nodejs/bin/node -e "const fs=require('node:fs');const p='/app/apps/web/.next/cache/ci-write-smoke';fs.writeFileSync(p,'ok');fs.unlinkSync(p)"
+          test ! -e .env
+          docker compose exec -T web /nodejs/bin/node -e "const fs=require('node:fs');for(const p of ['/app/.env','/app/.env.local','/app/apps/web/.env','/app/apps/web/.env.local']){if(fs.existsSync(p))throw new Error('secret file packaged: '+p)}"
+          mkdir -p /tmp/ai-tutor-compliance/licenses /tmp/ai-tutor-compliance/evidence
+          docker compose cp web:/app/THIRD_PARTY_NOTICES.md /tmp/ai-tutor-compliance/THIRD_PARTY_NOTICES.md
+          docker compose cp web:/app/licenses/tldraw-v3.15.5-LICENSE.md /tmp/ai-tutor-compliance/licenses/tldraw-v3.15.5-LICENSE.md
+          docker compose cp web:/app/evidence/P8_LICENSE_INVENTORY_2026-08-02.json /tmp/ai-tutor-compliance/evidence/P8_LICENSE_INVENTORY_2026-08-02.json
+          docker compose cp web:/app/evidence/P8_SBOM_2026-08-02.cdx.json /tmp/ai-tutor-compliance/evidence/P8_SBOM_2026-08-02.cdx.json
+          cmp THIRD_PARTY_NOTICES.md /tmp/ai-tutor-compliance/THIRD_PARTY_NOTICES.md
+          cmp licenses/tldraw-v3.15.5-LICENSE.md /tmp/ai-tutor-compliance/licenses/tldraw-v3.15.5-LICENSE.md
+          cmp evidence/P8_LICENSE_INVENTORY_2026-08-02.json /tmp/ai-tutor-compliance/evidence/P8_LICENSE_INVENTORY_2026-08-02.json
+          cmp evidence/P8_SBOM_2026-08-02.cdx.json /tmp/ai-tutor-compliance/evidence/P8_SBOM_2026-08-02.cdx.json
+      - name: Exercise the standalone image through real Chromium
+        run: pnpm test:e2e:compose
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compose-playwright-report
+          path: |
+            playwright-report-compose
+            test-results
+          if-no-files-found: ignore
+      - if: always()
+        run: docker compose down --volumes
+
+  compliance-artifacts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: npm install --global corepack@0.34.0
+      - run: corepack enable
+      - run: corepack prepare pnpm@10.12.3 --activate
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm compliance:check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compliance-inventory-and-sbom
+          path: |
+            evidence/P8_LICENSE_INVENTORY_2026-08-02.json
+            evidence/P8_SBOM_2026-08-02.cdx.json
+            THIRD_PARTY_NOTICES.md

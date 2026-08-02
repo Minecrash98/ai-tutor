@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-02T17:33:08.022Z",
+  "runner": "Playwright Chromium performance project, one worker, fresh isolated context",
+  "scenario": {
+    "minimumRuntimes": 20,
+    "minimumTeachingBlocks": 50,
+    "observedRuntimes": 21,
+    "observedTeachingBlocks": 53
+  },
+  "budgets": {
+    "importP95Ms": 3000,
+    "totalSetupMs": 30000,
+    "reloadRecoveryMs": 20000,
+    "rafP95Ms": 18.5,
+    "rafMaxMs": 250,
+    "heapBytes": 314572800,
+    "domNodes": 20000,
+    "longestTaskMs": 750,
+    "serializedStorageBytes": 10485760,
+    "interactionPreviewP95Ms": 50,
+    "interactionPreviewMinimumSamples": 30,
+    "interactionPointerFrameP95Ms": 18.5,
+    "interactionLongTasksOver50Ms": 0,
+    "interactionWorkspacePuts": 1
+  },
+  "actual": {
+    "importP95Ms": 340,
+    "totalSetupMs": 5812,
+    "reloadRecoveryMs": 1004,
+    "rafP95Ms": 16.799999999999272,
+    "rafMaxMs": 16.80000000000109,
+    "heapBytes": 188000000,
+    "domNodes": 8754,
+    "longestTaskMs": 0,
+    "longTaskCount": 0,
+    "serializedStorageBytes": 96007,
+    "interactionPreviewSamples": 47,
+    "interactionPreviewP95Ms": 23.30000001192093,
+    "interactionPreviewMaxMs": 32.5,
+    "interactionPointerFrameSamples": 114,
+    "interactionPointerFrameP95Ms": 16.799999999999272,
+    "interactionLongTasksOver50Ms": 0,
+    "interactionWorkspacePuts": 1
+  },
+  "passed": true,
+  "scope": "Machine evidence on this host. It is not representative-hardware or human usability evidence."
+}

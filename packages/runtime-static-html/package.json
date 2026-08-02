@@ -1,0 +1,22 @@
+{
+  "name": "@ai-tutor/runtime-static-html",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --pool=threads --maxWorkers=1"
+  },
+  "dependencies": {
+    "@ai-tutor/contracts": "workspace:*",
+    "@ai-tutor/runtime-core": "workspace:*",
+    "@ai-tutor/teaching-model": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}

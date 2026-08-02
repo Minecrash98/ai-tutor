@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-08-02T14-14-21-218Z",
+  "generatedAt": "2026-08-02T14:14:22.061Z",
+  "source": {
+    "sha256": "5d07a02b7fbf436555ef7e7af8b14c226ced1b4bdf01202dbfeff0511e768b10",
+    "fileCount": 241,
+    "scope": "Release inputs only. Generated evidence, reports, planning/status ledgers, and operator documentation are excluded so evidence updates cannot change the runtime fingerprint.",
+    "git": {
+      "available": false,
+      "commit": null,
+      "clean": null,
+      "detail": "workspace has no Git provenance"
+    },
+    "lockfileSha256": "a81ae93224e8929812c363d913bbaac6e6340dd15bc11d61a06d559cc02b8390"
+  },
+  "toolchain": {
+    "node": "v25.9.0",
+    "packageManager": "pnpm@10.12.3",
+    "playwright": "1.62.0",
+    "dockerScout": "1.21.0"
+  },
+  "host": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "cpuModel": "12th Gen Intel(R) Core(TM) i9-12900KF",
+    "logicalCpuCount": 24,
+    "totalMemoryBytes": 68523712512,
+    "headlessBrowserEvidence": true
+  },
+  "composeServiceHashes": {
+    "db": "36f0c19c26e4ffcf5d9a8676b479caa675cd9f1e764ebd71f83e0d3ce539ec9e",
+    "migrate": "80d5c0458f99fcf4333a1d3fca6602f883aea6541d833a0a801fbac9dd1d84e6",
+    "web": "c66aa06be621b430b618e603573daede19d49636596c97db8c9cc22b83497c00"
+  },
+  "expectedContainers": {
+    "web": {
+      "service": "web",
+      "id": "817e593dfab718b1ac11bc15e789a5f20ada8a551635bade98ad2364677a6546",
+      "name": "aitutor-web-1"
+    },
+    "database": {
+      "service": "db",
+      "id": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+      "name": "aitutor-db-1"
+    }
+  },
+  "images": {
+    "database": {
+      "id": "sha256:8189a1f6e40904781fc9e2612687877791d21679866db58b1de996b31fc312e4",
+      "repository": "postgres",
+      "tag": null,
+      "platform": "linux/amd64",
+      "sizeBytes": 116671202,
+      "created": "2026-07-07T17:47:12.261288291Z",
+      "sbom": {
+        "path": "evidence/P8_DATABASE_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "fe42bd0fb7257abf62cdd42161407d0137b1791022f009523ef833a0adef1542",
+        "imageDigest": "sha256:8189a1f6e40904781fc9e2612687877791d21679866db58b1de996b31fc312e4",
+        "componentCount": 66,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    },
+    "migrate": {
+      "id": "sha256:51f595bcd778f601547f5a1ddc71d5d57d1d921aa39c157a28f5c633c9e3ad12",
+      "repository": "aitutor-migrate",
+      "tag": "latest",
+      "platform": "linux/amd64",
+      "sizeBytes": 54898311,
+      "created": "2026-08-02T14:11:24.841126134Z",
+      "sbom": {
+        "path": "evidence/P8_MIGRATION_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "d7bfe1b271f5dbe2f1acecd6ed63958b3a58f64b27d262d0e1a190e1ea8d335e",
+        "imageDigest": "sha256:51f595bcd778f601547f5a1ddc71d5d57d1d921aa39c157a28f5c633c9e3ad12",
+        "componentCount": 20,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    },
+    "web": {
+      "id": "sha256:4a4eb9621ec1166544fc2b6b3e71e70056cb7191c57ea8ca74c33e0492c3e721",
+      "repository": "aitutor-web",
+      "tag": "latest",
+      "platform": "linux/amd64",
+      "sizeBytes": 59346363,
+      "created": "2026-08-02T14:11:25.024730384Z",
+      "sbom": {
+        "path": "evidence/P8_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "d1b549467b7e57d17fb22ddcfbb1f62483f3093bc9ac70db588a921e04880358",
+        "imageDigest": "sha256:4a4eb9621ec1166544fc2b6b3e71e70056cb7191c57ea8ca74c33e0492c3e721",
+        "componentCount": 307,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    }
+  },
+  "scope": "This fingerprint binds one headless-browser soak on this host to the release-input snapshot, lockfile, Compose service hashes, and three image SBOMs. It excludes generated evidence and governance documentation, and does not prove representative competition hardware or human-visible GPU performance."
+}

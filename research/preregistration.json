@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "status": "DRAFT_NOT_EXTERNALLY_REGISTERED",
+  "externalRegistrationId": null,
+  "frozenAt": null,
+  "primaryPopulation": "第一次系统学习 CSS 盒模型、Flex 或定位的中文学习者",
+  "primaryTask": "在无说明员条件下完成预测、真实操作、因果解释和非同构迁移",
+  "design": {
+    "formativePilot": {
+      "targetEnrolled": 12,
+      "purpose": "可用性与方向性信号，不证明教育效果"
+    },
+    "confirmatoryStudy": {
+      "targetEnrolled": null,
+      "sampleSizeRule": "招募前由 scripts/power-study.mjs 对冻结效应和目标区间计算",
+      "comparisonCondition": "待外部研究设计确认后冻结，不得事后选择"
+    }
+  },
+  "outcomes": [
+    {
+      "id": "time-to-first-drag",
+      "type": "time",
+      "success": "从首次载入到第一次学生拖动不超过 45 秒",
+      "denominator": "全部报名并启动任务者"
+    },
+    {
+      "id": "independent-session-completion",
+      "type": "binary",
+      "success": "7 分钟内完成课程且未使用三级示范",
+      "denominator": "全部报名并启动任务者"
+    },
+    {
+      "id": "immediate-nonisomorphic-transfer",
+      "type": "binary",
+      "success": "冻结隐藏题在不使用三级示范时通过",
+      "denominator": "全部报名并启动任务者"
+    },
+    {
+      "id": "delayed-retention",
+      "type": "binary",
+      "success": "课程完成 24–72 小时后冻结延迟题通过",
+      "denominator": "全部到达延迟窗口者；未回应单列并按预设敏感性分析"
+    },
+    {
+      "id": "explanation-rubric",
+      "type": "ordinal",
+      "success": "至少两名真人盲评；改了什么、为什么、何时不成立三维分别报告",
+      "denominator": "所有提交解释者"
+    }
+  ],
+  "analysis": {
+    "binaryInterval": "Wilson 95%",
+    "timeSummary": ["median", "p25", "p75", "raw values"],
+    "missingPrimaryRule": "除延迟未回应外，启动后缺失按未通过进入主分析；同时报告缺失数",
+    "delayedMissingRule": "未回应不冒充失败或通过；报告 best/worst-case 敏感性区间",
+    "exclusions": [
+      "启动前撤回同意",
+      "系统级故障导致任务从未显示，须保留故障记录并单列",
+      "重复参与仅保留预先指定的第一次"
+    ],
+    "multipleOutcomes": "不合成可调权重总分；逐项报告",
+    "llmAuthority": "LLM 只做形成性反馈，不是结果权威裁判"
+  },
+  "stopping": {
+    "formativePilot": "恰好完成 12 名或外部伦理/安全要求停止；不得因结果好看提前停止",
+    "confirmatoryStudy": "招募前冻结样本量、最大样本和中止条件"
+  },
+  "claimBoundary": [
+    "pilot 只支持可用性和方向性信号",
+    "单次即时迁移只称课内达成",
+    "至少两项非同构迁移且延迟保持通过后才可使用掌握",
+    "没有比较条件和不确定性报告时不声称教育效果"
+  ],
+  "frozenItemManifest": "research/instruments/frozen-item-manifest.json"
+}

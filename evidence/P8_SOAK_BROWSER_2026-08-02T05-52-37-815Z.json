@@ -1,0 +1,67 @@
+{
+  "runId": "2026-08-02T05-52-37-815Z",
+  "qualification": false,
+  "generatedAt": "2026-08-02T05:53:46.256Z",
+  "browser": {
+    "version": "150.0.7871.187",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.34 Safari/537.36",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "scenario": {
+    "runtimes": 20,
+    "teachingBlocks": 50,
+    "interactionCount": 4
+  },
+  "budgets": {
+    "durationMs": 1800000,
+    "heapBytes": 314572800,
+    "heapGrowthBytes": 50331648,
+    "nodeGrowth": 500,
+    "listenerGrowth": 200,
+    "rafP95Ms": 50,
+    "rafMaxMs": 250,
+    "longestTaskMs": 750,
+    "storageBytes": 10485760,
+    "reloadRecoveryMs": 20000
+  },
+  "actual": {
+    "durationMs": 60837,
+    "maxHeapBytes": 18363947,
+    "heapGrowthBytes": 0,
+    "nodeGrowth": 0,
+    "listenerGrowth": 0,
+    "rafP95Ms": 16.80000000000291,
+    "rafMaxMs": 133.30000000000018,
+    "longestTaskMs": 142,
+    "maxStorageBytes": 72874,
+    "reloadRecoveryMs": 755,
+    "microphoneCalls": 0,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "localRequestFailures": [],
+    "unhealthySamples": []
+  },
+  "samples": [
+    {
+      "elapsedMs": 0,
+      "heapBytes": 18315609,
+      "nodes": 1552,
+      "listeners": 436,
+      "documents": 4,
+      "storageBytes": 64880,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 60014,
+      "heapBytes": 18363947,
+      "nodes": 1926,
+      "listeners": 595,
+      "documents": 4,
+      "storageBytes": 72874,
+      "health": "ok"
+    }
+  ]
+}

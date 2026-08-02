@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-08-03",
+  "language": "en",
+  "video": {
+    "path": "output/playwright/css-global-color-variables-youtube-demo-2026-08-03.webm",
+    "bytes": 19522089,
+    "sha256": "ffa4b354a05a1901df73513bdf879edbb7014a9aef85a1061fbfcb7468356ecd",
+    "durationSeconds": 300.008,
+    "width": 1280,
+    "height": 720,
+    "videoCodec": "vp8",
+    "audioCodec": "opus",
+    "audioLanguage": "eng",
+    "physicalMicrophoneCalls": 0
+  },
+  "narration": {
+    "path": "output/playwright/css-global-color-variables-narration-en-master-2026-08-03.wav",
+    "bytes": 13219250,
+    "sha256": "59ccb5588862046cb82f100cb5e4e13370677d9ec809e817b1097466504ad3b4",
+    "durationSeconds": 299.755,
+    "voice": "Microsoft Zira Desktop"
+  },
+  "cover": {
+    "path": "docs/submission/assets/ai-tutor-cover.png",
+    "bytes": 399683,
+    "sha256": "f7f346a0cb890c6b0dd838a206d51561057dd9ed1a0d28d24139db6f8cae0052",
+    "width": 1600,
+    "height": 900,
+    "format": "png"
+  },
+  "writeup": {
+    "path": "docs/submission/FULL_WRITEUP.md",
+    "bytes": 6745,
+    "sha256": "c1e84d493d43234a32a1830ee728d3fe57b9d6c9f8822f0b0fdfaeb3ff7e40d1",
+    "words": 943
+  },
+  "captions": {
+    "srt": "docs/submission/captions/ai-tutor-css-variables-en.srt",
+    "vtt": "docs/submission/captions/ai-tutor-css-variables-en.vtt"
+  },
+  "externalUrls": {
+    "github": null,
+    "youtube": null
+  }
+}

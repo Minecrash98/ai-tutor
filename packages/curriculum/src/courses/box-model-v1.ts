@@ -1,0 +1,151 @@
+import type { CurriculumCourse } from "../schema";
+
+type BoxModelCourse = CurriculumCourse<
+  "box-model-v1",
+  "css.box-model.padding",
+  "box-model-rules-v1"
+>;
+
+export const BOX_MODEL_COURSE: BoxModelCourse =
+  Object.freeze<BoxModelCourse>({
+  id: "box-model-v1",
+  version: 1,
+  conceptId: "css.box-model.content-box-total-width",
+  skillId: "css.box-model.padding",
+  evaluatorId: "box-model-rules-v1",
+  title: "卡片为什么会变大？",
+  outcome: "能预测、测量并解释 content-box 的内容宽度、内边距、边框与总宽关系。",
+  prerequisiteConceptIds: ["css.selector", "css.declaration", "css.length.px"],
+  behaviors: [
+    {
+      id: "box.predict.total-width",
+      kind: "prediction",
+      studentAction: "预测内容宽度不变而左右 padding 增大时总宽的变化",
+      observable: "选择 grows、same 或 unsure",
+      successCriterion: "选择 grows，或在观察后明确修正原判断",
+      independent: true,
+    },
+    {
+      id: "box.operate.padding",
+      kind: "operation",
+      studentAction: "把真实页面 padding 从 16px 调到 32px并保存",
+      observable: "不可变修订中的 padding 和浏览器测量",
+      successCriterion: "目标元素 padding=32px 且总宽从 320px 变为 352px",
+      independent: true,
+    },
+    {
+      id: "box.explain.cause",
+      kind: "explanation",
+      studentAction: "说明 width、左右 padding 和总宽的因果关系",
+      observable: "结构化解释选项及尝试次数",
+      successCriterion: "指出 content-box 的 width 只量内容区，padding 另加",
+      independent: true,
+    },
+    {
+      id: "box.transfer.notice",
+      kind: "transfer",
+      studentAction: "在结构不同的提示卡中独立写出 padding 声明",
+      observable: "学生原始 CSS 与目标元素 computed style",
+      successCriterion: "四个方向 padding 均为 20px，且没有旁路声明",
+      independent: true,
+    },
+  ],
+  misconceptions: [
+    {
+      id: "box.width-includes-padding",
+      label: "认为默认 width 已经包含 padding",
+      conceptTags: ["content-box", "total-size"],
+      elicitationPrompt: "内容宽不变、左右内边距变大时，卡片总宽会怎样？",
+      evidenceSignals: ["prediction.same", "explanation.margin-pushes"],
+      minimumOccurrences: 2,
+      singleErrorState: "uncertain",
+      supportHint: "先把内容、左右内边距和左右边框分开记数。",
+      correctionQuestion: "内容区保持 280px，左右各多 16px 后，总宽增加多少？",
+      correctionCriterion: "回答增加 32px，并能指出左右各加一次",
+    },
+    {
+      id: "box.margin-changes-border-box",
+      label: "把外边距误认为边框内尺寸",
+      conceptTags: ["margin-vs-padding", "total-size"],
+      elicitationPrompt: "只增加外边距时，卡片边框自身的宽度会不会改变？",
+      evidenceSignals: ["explanation.margin-pushes", "transfer.margin"],
+      minimumOccurrences: 2,
+      singleErrorState: "uncertain",
+      supportHint: "沿着边框看：外边距在边框外，内边距在边框内。",
+      correctionQuestion: "哪一层位于边框外，不计入卡片自身总宽？",
+      correctionCriterion: "选择 margin，并与 padding 分开说明",
+    },
+    {
+      id: "box.border-box-adds-padding",
+      label: "认为 border-box 仍会把内边距加到设定宽度之外",
+      conceptTags: ["border-box", "content-box"],
+      elicitationPrompt: "设为 border-box 后，width: 320px 是否已经包住内边距和边框？",
+      evidenceSignals: ["prediction.border-box-grows", "explanation.border-box-excludes-padding"],
+      minimumOccurrences: 2,
+      singleErrorState: "uncertain",
+      supportHint: "先看 box-sizing，再判断 width 量到内容边还是边框边。",
+      correctionQuestion: "border-box 下 width:320px、padding:20px 时，边框外沿宽度是多少？",
+      correctionCriterion: "回答 320px，并指出内容区会为内边距和边框让出空间",
+    },
+    {
+      id: "box.total-size-ignores-border",
+      label: "计算总尺寸时漏掉左右边框",
+      conceptTags: ["total-size", "border"],
+      elicitationPrompt: "content-box 下计算总宽时，左右边框是否各要加一次？",
+      evidenceSignals: ["prediction.omits-border", "explanation.border-not-counted"],
+      minimumOccurrences: 2,
+      singleErrorState: "uncertain",
+      supportHint: "从左边框走到右边框，逐段列出经过的宽度。",
+      correctionQuestion: "内容 280px、左右内边距各 16px、边框各 2px，总宽是多少？",
+      correctionCriterion: "回答 316px，并列出 280+16+16+2+2",
+    },
+  ],
+  hints: [
+    {
+      level: 1,
+      text: "先指出 width 此时量的是哪一层，再看看左右两边各发生了什么。",
+      revealsAnswer: false,
+      creditEligibleAfterUse: true,
+    },
+    {
+      level: 2,
+      text: "总宽 = 内容宽 + 左右 padding + 左右 border；把每一项写成数字。",
+      revealsAnswer: false,
+      creditEligibleAfterUse: true,
+    },
+    {
+      level: 3,
+      text: "演示：280 + 32×2 + 4×2 = 352px。接下来请换一张页面自己完成。",
+      revealsAnswer: true,
+      creditEligibleAfterUse: false,
+    },
+  ],
+  factSources: [
+    {
+      id: "box.fact.rect",
+      kind: "browser-measurement",
+      requiredFields: ["boundingRect.width", "boundingRect.height", "revisionId"],
+    },
+    {
+      id: "box.fact.computed",
+      kind: "computed-style",
+      requiredFields: ["width", "paddingLeft", "paddingRight", "borderLeftWidth", "borderRightWidth", "marginLeft", "marginRight", "boxSizing"],
+    },
+    {
+      id: "box.fact.rule",
+      kind: "matched-css-rule",
+      requiredFields: ["selector", "property", "value", "source"],
+    },
+  ],
+  transfer: {
+    sourceStructure: "#demo/article.card/content-box",
+    targetStructure: ".notice/aside.callout/content-box",
+    differences: ["dom", "rules", "visual"],
+    hiddenItemIds: ["box-transfer-b-1", "box-transfer-b-2"],
+  },
+  accessibility: {
+    regionLabel: "一分钟盒模型课",
+    operationLabel: "padding 控制器",
+    transferInputLabel: "补写 CSS 声明",
+  },
+  });

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS 空间与排列实验</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="lab-shell">
+      <header class="lab-heading">
+        <p class="eyebrow">CSS 从这里开始</p>
+        <h1>拖一拖，看见页面为什么会变</h1>
+        <p>点选下面任意内容，再试着改变它周围的空隙、排列或位置。</p>
+      </header>
+
+      <section class="lesson-grid" aria-label="CSS 三主题实验">
+        <article class="lesson-card box-model-card" id="box-model-card">
+          <span class="topic-number">01</span>
+          <p class="topic-label">卡片里面的空间</p>
+          <h2>文字离边框多远才舒服？</h2>
+          <div class="box-demo" id="padding-target">
+            <strong>文字内容</strong>
+            <span>我和边框之间留了多少空间？</span>
+          </div>
+          <p class="hint">可以问 AI：让我拖动看看卡片里面的空隙。</p>
+        </article>
+
+        <article class="lesson-card flex-card" id="flex-card">
+          <span class="topic-number">02</span>
+          <p class="topic-label">三个方块的间距</p>
+          <h2>它们挤在一起，还是松一点？</h2>
+          <div class="flex-demo" id="flex-target">
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+          </div>
+          <p class="hint">可以问 AI：把三个方块之间的距离调大一点。</p>
+        </article>
+
+        <article class="lesson-card position-card" id="position-card">
+          <span class="topic-number">03</span>
+          <p class="topic-label">标签放在哪里</p>
+          <h2>让标签在卡片里上下移动</h2>
+          <div class="position-demo" id="position-target">
+            <span>标签的活动范围</span>
+            <b class="floating-label">移动我</b>
+          </div>
+          <p class="hint">可以问 AI：让我拖动标签，看看它为什么只在这里移动。</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-02T18:39:06.300Z",
+  "scanner": {
+    "name": "docker-scout",
+    "version": "1.21.0",
+    "command": "docker scout sbom --format cyclonedx local://<image-digest>"
+  },
+  "images": {
+    "database": {
+      "image": {
+        "id": "sha256:8189a1f6e40904781fc9e2612687877791d21679866db58b1de996b31fc312e4",
+        "repository": "postgres",
+        "tag": null,
+        "platform": "linux/amd64",
+        "sizeBytes": 116671202,
+        "created": "2026-07-07T17:47:12.261288291Z"
+      },
+      "sbom": {
+        "path": "evidence/P8_DATABASE_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "f0c834ac5b73367efbbce3f94bb142e0a03e39307362c0197ea71de32d482efd",
+        "componentCount": 66
+      }
+    },
+    "migrate": {
+      "image": {
+        "id": "sha256:247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a",
+        "repository": "aitutor-migrate",
+        "tag": "latest",
+        "platform": "linux/amd64",
+        "sizeBytes": 54898306,
+        "created": "2026-08-02T18:37:09.582964983Z"
+      },
+      "sbom": {
+        "path": "evidence/P8_MIGRATION_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "8fa8135a8f10381cb6e3d08cbb147d2e9acbd01a27bc3b414b69d97940f471d4",
+        "componentCount": 20
+      }
+    },
+    "web": {
+      "image": {
+        "id": "sha256:cf1f0e332a34a4c98433fbfe4f6c376ee928220ae1fafe344a887bfc3eeaa6f6",
+        "repository": "aitutor-web",
+        "tag": "latest",
+        "platform": "linux/amd64",
+        "sizeBytes": 59382438,
+        "created": "2026-08-02T18:37:10.130207337Z"
+      },
+      "sbom": {
+        "path": "evidence/P8_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "9dc7e67a8717529043efcad142248cccf2055916baa157c145b4e0a2f6155e38",
+        "componentCount": 307
+      }
+    }
+  },
+  "bundledClientLibraries": [
+    {
+      "name": "@tldraw/editor",
+      "version": "3.15.5",
+      "license": "LicenseRef-tldraw-v3",
+      "evidence": "frozen workspace inventory plus direct/client bundle dependency; package manifests are not preserved in optimized static chunks"
+    },
+    {
+      "name": "@tldraw/state-react",
+      "version": "3.15.5",
+      "license": "MIT",
+      "evidence": "frozen workspace inventory plus direct/client bundle dependency; package manifests are not preserved in optimized static chunks"
+    },
+    {
+      "name": "@tldraw/state",
+      "version": "3.15.5",
+      "license": "MIT",
+      "evidence": "frozen workspace inventory plus direct/client bundle dependency; package manifests are not preserved in optimized static chunks"
+    },
+    {
+      "name": "@tldraw/store",
+      "version": "3.15.5",
+      "license": "MIT",
+      "evidence": "frozen workspace inventory plus direct/client bundle dependency; package manifests are not preserved in optimized static chunks"
+    },
+    {
+      "name": "@tldraw/tlschema",
+      "version": "3.15.5",
+      "license": "MIT",
+      "evidence": "frozen workspace inventory plus direct/client bundle dependency; package manifests are not preserved in optimized static chunks"
+    },
+    {
+      "name": "@tldraw/utils",
+      "version": "3.15.5",
+      "license": "MIT",
+      "evidence": "frozen workspace inventory plus direct/client bundle dependency; package manifests are not preserved in optimized static chunks"
+    },
+    {
+      "name": "@tldraw/validate",
+      "version": "3.15.5",
+      "license": "MIT",
+      "evidence": "frozen workspace inventory plus direct/client bundle dependency; package manifests are not preserved in optimized static chunks"
+    },
+    {
+      "name": "tldraw",
+      "version": "3.15.5",
+      "license": "LicenseRef-tldraw-v3",
+      "evidence": "frozen workspace inventory plus direct/client bundle dependency; package manifests are not preserved in optimized static chunks"
+    }
+  ],
+  "sourceInventory": {
+    "path": "evidence/P8_LICENSE_INVENTORY_2026-08-02.json",
+    "sha256": "301504f01992398e0a2728699631ad695f3e3cce601b442f46739407f0a9edd2",
+    "lockfileSha256": "a81ae93224e8929812c363d913bbaac6e6340dd15bc11d61a06d559cc02b8390"
+  },
+  "tldrawLicenseCopy": {
+    "path": "licenses/tldraw-v3.15.5-LICENSE.md",
+    "sha256": "a051565874fd424cc9c19049d425ead719b9b7cf214546f31a368b4a3822755d"
+  },
+  "scope": "The three image SBOMs cover packages and OS files discoverable in the optimized images. The source inventory complements them for browser libraries compiled into static chunks, whose package manifests are absent. Neither source alone is complete; this manifest binds both without claiming legal review."
+}

@@ -1,0 +1,79 @@
+services:
+  web:
+    build:
+      context: .
+      target: runtime
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-ai_tutor_local}@db:5432/ai_tutor
+      AI_TUTOR_LOG_DIR: /data/logs
+      NODE_OPTIONS: --max-old-space-size=512
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=256m,mode=1777
+      - /app/apps/web/.next/cache:rw,noexec,nosuid,size=128m,uid=1000,gid=1000,mode=0770
+    volumes:
+      - ai-tutor-logs:/data
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 256
+    mem_limit: 768m
+    cpus: 1.5
+    stop_grace_period: 20s
+
+  migrate:
+    build:
+      context: .
+      target: migration
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-ai_tutor_local}@db:5432/ai_tutor
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=128m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 128
+    mem_limit: 512m
+
+  db:
+    image: postgres:17.10-alpine3.23@sha256:8189a1f6e40904781fc9e2612687877791d21679866db58b1de996b31fc312e4
+    environment:
+      POSTGRES_DB: ai_tutor
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ai_tutor_local}
+      POSTGRES_INITDB_ARGS: --locale=C --encoding=UTF8
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ai_tutor"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - ai-tutor-postgres-17-10:/var/lib/postgresql/data
+    restart: unless-stopped
+    init: true
+    shm_size: 128mb
+    pids_limit: 256
+    mem_limit: 768m
+    cpus: 1.5
+    stop_grace_period: 30s
+
+volumes:
+  ai-tutor-postgres-17-10:
+  ai-tutor-logs:

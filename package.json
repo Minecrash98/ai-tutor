@@ -1,0 +1,58 @@
+{
+  "name": "ai-tutor",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.12.3",
+  "engines": {
+    "node": ">=24.18.0 <26",
+    "pnpm": "10.12.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss": "8.5.25",
+      "sharp": "0.35.3"
+    }
+  },
+  "scripts": {
+    "dev": "pnpm --filter @ai-tutor/web dev --hostname 127.0.0.1",
+    "build": "pnpm --filter @ai-tutor/web build",
+    "compliance:generate": "node scripts/generate-compliance.mjs",
+    "compliance:check": "node scripts/generate-compliance.mjs --check",
+    "compliance:check:exact": "node scripts/generate-compliance.mjs --check-exact",
+    "sbom:images": "node scripts/generate-image-sboms.mjs",
+    "status:check": "node scripts/check-goal-status.mjs",
+    "status:generate": "node scripts/check-goal-status.mjs --write",
+    "research:check": "node scripts/validate-prereg.mjs",
+    "research:test": "node --test scripts/research-tools.test.mjs",
+    "start": "pnpm --filter @ai-tutor/web start --hostname 127.0.0.1",
+    "start:container": "pnpm --filter @ai-tutor/web start --hostname 0.0.0.0",
+    "preflight": "node scripts/preflight.mjs",
+    "release:manifest": "node scripts/generate-release-manifest.mjs",
+    "verify": "node scripts/run-verify.mjs",
+    "verify:competition": "node scripts/run-verify.mjs --competition",
+    "lint": "pnpm -r --workspace-concurrency=1 --if-present run lint",
+    "typecheck": "pnpm -r --workspace-concurrency=1 --if-present run typecheck",
+    "test": "pnpm -r --workspace-concurrency=1 --if-present run test",
+    "test:e2e": "playwright test --project=chromium",
+    "test:e2e:compose": "playwright test --config=playwright.compose.config.ts tests/e2e/foundation.spec.ts tests/e2e/learning-proof.spec.ts tests/e2e/transfer-assessment.spec.ts tests/e2e/p8-learning-scenarios.spec.ts tests/e2e/p8-failure-matrix.spec.ts",
+    "test:e2e:a11y": "playwright test tests/e2e/p8-accessibility.spec.ts --project=chromium",
+    "test:e2e:failure": "playwright test tests/e2e/p8-failure-matrix.spec.ts --project=chromium",
+    "test:e2e:license": "playwright test tests/e2e/p8-license.spec.ts --project=chromium",
+    "test:e2e:learning-scenarios": "playwright test tests/e2e/p8-learning-scenarios.spec.ts --project=chromium",
+    "test:e2e:matrix": "playwright test tests/e2e/p8-browser-matrix.spec.ts --project=chrome --project=edge --project=firefox --project=webkit",
+    "test:e2e:portable-matrix": "playwright test tests/e2e/p8-browser-matrix.spec.ts --project=chromium --project=firefox --project=webkit",
+    "test:e2e:performance": "playwright test tests/e2e/p8-performance.spec.ts --project=performance --workers=1",
+    "test:e2e:security": "playwright test tests/e2e/p8-security.spec.ts --project=chromium",
+    "test:e2e:touch": "playwright test tests/e2e/p8-browser-matrix.spec.ts --project=mobile-touch",
+    "test:soak:p8": "node scripts/run-p8-soak.mjs",
+    "test:e2e:visual": "playwright test tests/e2e/p8-visual.spec.ts --project=chromium",
+    "db:generate": "pnpm --filter @ai-tutor/web db:generate",
+    "db:migrate": "pnpm --filter @ai-tutor/web db:migrate"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "^1.62.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}

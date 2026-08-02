@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1784993110222,
+      "tag": "0000_rich_slapstick",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1785607154040,
+      "tag": "0001_unique_abomination",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1785662044790,
+      "tag": "0002_marvelous_peter_parker",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1785665445911,
+      "tag": "0003_left_cargill",
+      "breakpoints": true
+    }
+  ]
+}

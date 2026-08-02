@@ -1,0 +1,102 @@
+{
+  "runId": "PREVIEW_2026-08-02T0822",
+  "qualification": false,
+  "passed": true,
+  "violations": [],
+  "releaseManifest": {
+    "path": "evidence/P8_RELEASE_MANIFEST_PREVIEW_2026-08-02T0822.json",
+    "sha256": "b3c709fa3da63848621d9f53a775bb96bfc462d5a42d1b51a0ade5ee77f91186"
+  },
+  "generatedAt": "2026-08-02T08:23:22.939Z",
+  "browser": {
+    "version": "150.0.7871.187",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "scenario": {
+    "runtimes": 20,
+    "teachingBlocks": 50,
+    "interactionCount": 4
+  },
+  "budgets": {
+    "durationMs": 1800000,
+    "heapBytes": 314572800,
+    "heapGrowthBytes": 50331648,
+    "nodeGrowth": 500,
+    "listenerGrowth": 200,
+    "interactionP95Ms": 3000,
+    "interactionMaxMs": 10000,
+    "rafP95Ms": 50,
+    "rafMaxMs": 250,
+    "longestTaskMs": 750,
+    "storageBytes": 10485760,
+    "reloadRecoveryMs": 20000,
+    "minimumPerformanceSamples": 31
+  },
+  "actual": {
+    "durationMs": 60861,
+    "performanceSampleCount": 2,
+    "maxHeapBytes": 19080695,
+    "heapGrowthBytes": 0,
+    "nodeGrowth": 0,
+    "listenerGrowth": 0,
+    "rafP95Ms": 16.80000000000291,
+    "rafMaxMs": 133.39999999999998,
+    "rafSampleCount": 3778,
+    "rafMinuteBuckets": [
+      {
+        "minute": 0,
+        "count": 3559,
+        "totalMs": 59975.00000001192,
+        "maxMs": 133.39999999999998,
+        "over50Ms": 7
+      },
+      {
+        "minute": 1,
+        "count": 219,
+        "totalMs": 3650.2000000000044,
+        "maxMs": 16.80000000000291,
+        "over50Ms": 0
+      }
+    ],
+    "longestTaskMs": 147,
+    "longTaskCount": 2,
+    "maxStorageBytes": 72874,
+    "reloadRecoveryMs": 780,
+    "microphoneCalls": 0,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "localRequestFailures": [],
+    "localHttpErrors": [],
+    "interactionLatencyMs": {
+      "count": 4,
+      "p50": 65.52669999999489,
+      "p95": 191.67110000000048,
+      "max": 191.67110000000048
+    },
+    "unhealthySamples": []
+  },
+  "samples": [
+    {
+      "elapsedMs": 0,
+      "heapBytes": 19080695,
+      "nodes": 1562,
+      "listeners": 440,
+      "documents": 4,
+      "storageBytes": 64880,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 60015,
+      "heapBytes": 18883754,
+      "nodes": 1937,
+      "listeners": 599,
+      "documents": 4,
+      "storageBytes": 72874,
+      "health": "ok"
+    }
+  ]
+}

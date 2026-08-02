@@ -1,0 +1,1302 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:af51f8c8-3838-4340-987e-573d6d9a5863",
+  "version": 11,
+  "metadata": {
+    "tools": [
+      {
+        "name": "docker-scout",
+        "version": "1.21.0"
+      }
+    ],
+    "component": {
+      "bom-ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "type": "container",
+      "name": "aitutor-migrate",
+      "version": "latest",
+      "purl": "pkg:oci/aitutor-migrate@sha256:247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a?repository_url=docker.io\u0026tag=latest"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "package-pkg-npm-postgres-3.4.9",
+      "type": "application",
+      "supplier": {
+        "name": "Rasmus Porsager \u003crasmus@porsager.com\u003e (https://www.porsager.com)"
+      },
+      "name": "postgres",
+      "version": "3.4.9",
+      "description": "Fastest full featured PostgreSQL client for Node.js",
+      "licenses": [
+        {
+          "license": {
+            "id": "Unlicense"
+          }
+        }
+      ],
+      "purl": "pkg:npm/postgres@3.4.9",
+      "components": [
+        {
+          "bom-ref": "File---app-node_modules-postgres-package.json",
+          "type": "file",
+          "name": "/app/node_modules/postgres/package.json"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "type": "application",
+      "name": "gcc-14",
+      "version": "14.2.0-19",
+      "purl": "pkg:deb/debian/gcc-14@14.2.0-19?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libgcc-s1",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libgcc-s1"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libstdc++6",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libstdc++6"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libstdc++6.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libstdc++6.md5sums"
+        },
+        {
+          "bom-ref": "File---usr-lib-x86_64-linux-gnu-libgomp.so.1.0.0",
+          "type": "file",
+          "name": "/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0"
+        },
+        {
+          "bom-ref": "File---usr-lib-x86_64-linux-gnu-libgcc_s.so.1",
+          "type": "file",
+          "name": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libgcc-s1.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libgcc-s1.md5sums"
+        },
+        {
+          "bom-ref": "File---usr-lib-x86_64-linux-gnu-libstdc++.so.6.0.33",
+          "type": "file",
+          "name": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-gcc-14-base",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/gcc-14-base"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-gcc-14-base.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/gcc-14-base.md5sums"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-libc6-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e"
+      },
+      "name": "libc6",
+      "version": "2.41-12+deb13u3",
+      "description": "GNU C Library: Shared libraries\n Contains the standard libraries that are used by nearly all programs on\n the system. This package includes shared versions of the standard C library\n and the standard math library, as well as many others.",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        },
+        {
+          "license": {
+            "id": "BSL-1.0"
+          }
+        },
+        {
+          "license": {
+            "id": "FSFAP"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-2.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "ISC"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-2.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-2.1-only"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "SunPro"
+          }
+        },
+        {
+          "license": {
+            "id": "Unicode-DFS-2016"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/libc6@2.41-12%2Bdeb13u3?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---usr-share-doc-libc6-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/libc6/copyright"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libc6",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libc6"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libc6.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libc6.md5sums"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-libzstd-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "type": "application",
+      "name": "libzstd",
+      "version": "1.5.7+dfsg-1",
+      "purl": "pkg:deb/debian/libzstd@1.5.7%2Bdfsg-1?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---usr-share-doc-libzstd1-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/libzstd1/copyright"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libzstd1",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libzstd1"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libzstd1.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libzstd1.md5sums"
+        },
+        {
+          "bom-ref": "File---usr-lib-x86_64-linux-gnu-libzstd.so.1.5.7",
+          "type": "file",
+          "name": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.5.7"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-zlib1g-1-3A1.3.dfsg-2Breally1.3.1-1-2Bb1-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Mark Brown \u003cbroonie@debian.org\u003e"
+      },
+      "name": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "description": "compression library - runtime\n zlib is a library implementing the deflate compression method found\n in gzip and PKZIP.  This package includes the shared library.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Zlib"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---usr-share-doc-zlib1g-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/zlib1g/copyright"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-zlib1g",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/zlib1g"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-zlib1g.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/zlib1g.md5sums"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-base-files-13.8-2Bdeb13u6-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Santiago Vila \u003csanvila@debian.org\u003e"
+      },
+      "name": "base-files",
+      "version": "13.8+deb13u6",
+      "description": "Debian base system miscellaneous files\n This package contains the basic filesystem hierarchy of a Debian system, and\n several important miscellaneous files, such as /etc/debian_version,\n /etc/host.conf, /etc/issue, /etc/motd, /etc/profile, and others,\n and the text of several common licenses in use on Debian systems.",
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/base-files@13.8%2Bdeb13u6?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-base-files",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/base-files"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-base-files.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/base-files.md5sums"
+        },
+        {
+          "bom-ref": "File---usr-share-doc-base-files-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/base-files/copyright"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-libgcc-s1-14.2.0-19-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e"
+      },
+      "name": "libgcc-s1",
+      "version": "14.2.0-19",
+      "description": "GCC support library\n Shared version of the support library, a library of internal subroutines\n that GCC uses to overcome shortcomings of particular machines, or\n special needs for some languages.",
+      "licenses": [
+        {
+          "license": {
+            "id": "GFDL-1.2-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/libgcc-s1@14.2.0-19?os_name=debian\u0026os_version=Debian"
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-libssl3t64-3.5.6-1-deb13u2-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Debian OpenSSL Team \u003cpkg-openssl-devel@alioth-lists.debian.net\u003e"
+      },
+      "name": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "description": "Secure Sockets Layer toolkit - shared libraries\n This package is part of the OpenSSL project's implementation of the SSL\n and TLS cryptographic protocols for secure communication over the\n Internet.\n .\n It provides the libssl and libcrypto shared libraries.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-1.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/libssl3t64@3.5.6-1~deb13u2?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---usr-share-doc-libssl3t64-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/libssl3t64/copyright"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libssl3t64",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libssl3t64"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libssl3t64.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libssl3t64.md5sums"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-libzstd1-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "RPM packaging team \u003cteam+pkg-rpm@tracker.debian.org\u003e"
+      },
+      "name": "libzstd1",
+      "version": "1.5.7+dfsg-1",
+      "description": "fast lossless compression algorithm\n Zstd, short for Zstandard, is a fast lossless compression algorithm, targeting\n real-time compression scenarios at zlib-level compression ratio.\n .\n This package contains the shared library.",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-2.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "Zlib"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/libzstd1@1.5.7%2Bdfsg-1?os_name=debian\u0026os_version=Debian"
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-tzdata-legacy-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e"
+      },
+      "name": "tzdata-legacy",
+      "version": "2026b-0+deb13u1",
+      "description": "time zone data for TAI minus ten seconds\n This package contains data required for the implementation of\n standard local time for many representative locations around the\n globe. It is updated periodically to reflect changes made by\n political bodies to time zone boundaries, UTC offsets, and\n daylight-saving rules.\n .\n This package contains timezones counted in International Atomic Time with a\n -10 second offset (TAI-10s) in /usr/share/zoneinfo/right. This is the current\n IBM recommended setting of hardware clocks on IBM mainframes, which ran on\n GMT until the inception of UTC in 1972 when TAI was 10 seconds ahead of UTC.\n IBM switched to running clocks at the atomic rate and introduced the\n 10-second offset in order to avoid a discontinuity.\n .\n This package also contains legacy timezone symlinks that are not following\n the current rule of using the geographical region (continent or ocean) and\n city name.\n .\n You do not need this package if you are unsure.",
+      "purl": "pkg:deb/debian/tzdata-legacy@2026b-0%2Bdeb13u1?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---usr-share-doc-tzdata-legacy-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/tzdata-legacy/copyright"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-tzdata-legacy",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/tzdata-legacy"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-tzdata-legacy.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/tzdata-legacy.md5sums"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-gcc-14-base-14.2.0-19-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e"
+      },
+      "name": "gcc-14-base",
+      "version": "14.2.0-19",
+      "description": "GCC, the GNU Compiler Collection (base package)\n This package contains files common to all languages and libraries\n contained in the GNU Compiler Collection (GCC).",
+      "licenses": [
+        {
+          "license": {
+            "id": "GFDL-1.2-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/gcc-14-base@14.2.0-19?os_name=debian\u0026os_version=Debian"
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-glibc-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e"
+      },
+      "name": "glibc",
+      "version": "2.41-12+deb13u3",
+      "description": "GNU C Library: Shared libraries\n Contains the standard libraries that are used by nearly all programs on\n the system. This package includes shared versions of the standard C library\n and the standard math library, as well as many others.",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        },
+        {
+          "license": {
+            "id": "BSL-1.0"
+          }
+        },
+        {
+          "license": {
+            "id": "FSFAP"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-2.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "ISC"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-2.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-2.1-only"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "id": "SunPro"
+          }
+        },
+        {
+          "license": {
+            "id": "Unicode-DFS-2016"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/glibc@2.41-12%2Bdeb13u3?os_name=debian\u0026os_version=Debian"
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-libstdc-2B-2B6-14.2.0-19-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e"
+      },
+      "name": "libstdc++6",
+      "version": "14.2.0-19",
+      "description": "GNU Standard C++ Library v3\n This package contains an additional runtime library for C++ programs\n built with the GNU compiler.\n .\n libstdc++-v3 is a complete rewrite from the previous libstdc++-v2, which\n was included up to g++-2.95. The first version of libstdc++-v3 appeared\n in g++-3.0.",
+      "licenses": [
+        {
+          "license": {
+            "id": "GFDL-1.2-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/libstdc%2B%2B6@14.2.0-19?os_name=debian\u0026os_version=Debian"
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-netbase-6.5-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Marco d'Itri \u003cmd@linux.it\u003e"
+      },
+      "name": "netbase",
+      "version": "6.5",
+      "description": "Basic TCP/IP networking system\n This package provides the necessary infrastructure for basic TCP/IP based\n networking.\n .\n In particular, it supplies common name-to-number mappings in /etc/services,\n /etc/rpc, /etc/protocols and /etc/ethertypes.",
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/netbase@6.5?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---usr-share-doc-netbase-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/netbase/copyright"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-netbase",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/netbase"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-netbase.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/netbase.md5sums"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-openssl-3.5.6-1-deb13u2-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Debian OpenSSL Team \u003cpkg-openssl-devel@alioth-lists.debian.net\u003e"
+      },
+      "name": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "description": "Secure Sockets Layer toolkit - shared libraries\n This package is part of the OpenSSL project's implementation of the SSL\n and TLS cryptographic protocols for secure communication over the\n Internet.\n .\n It provides the libssl and libcrypto shared libraries.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-1.0-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/openssl@3.5.6-1~deb13u2?os_name=debian\u0026os_version=Debian"
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-tzdata-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "GNU Libc Maintainers \u003cdebian-glibc@lists.debian.org\u003e"
+      },
+      "name": "tzdata",
+      "version": "2026b-0+deb13u1",
+      "description": "time zone and daylight-saving time data\n This package contains data required for the implementation of\n standard local time for many representative locations around the\n globe. It is updated periodically to reflect changes made by\n political bodies to time zone boundaries, UTC offsets, and\n daylight-saving rules.",
+      "purl": "pkg:deb/debian/tzdata@2026b-0%2Bdeb13u1?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-tzdata",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/tzdata"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-tzdata.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/tzdata.md5sums"
+        },
+        {
+          "bom-ref": "File---usr-share-doc-tzdata-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/tzdata/copyright"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-zlib-1-3A1.3.dfsg-2Breally1.3.1-1-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Mark Brown \u003cbroonie@debian.org\u003e"
+      },
+      "name": "zlib",
+      "version": "1:1.3.dfsg+really1.3.1-1",
+      "description": "compression library - runtime\n zlib is a library implementing the deflate compression method found\n in gzip and PKZIP.  This package includes the shared library.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Zlib"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/zlib@1%3A1.3.dfsg%2Breally1.3.1-1?os_name=debian\u0026os_version=Debian"
+    },
+    {
+      "bom-ref": "package-pkg-generic-node-24.18.0",
+      "type": "application",
+      "name": "node",
+      "version": "24.18.0",
+      "purl": "pkg:generic/node@24.18.0",
+      "components": [
+        {
+          "bom-ref": "File---nodejs-bin-node",
+          "type": "file",
+          "name": "/nodejs/bin/node"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-libgomp1-14.2.0-19-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Debian GCC Maintainers \u003cdebian-gcc@lists.debian.org\u003e"
+      },
+      "name": "libgomp1",
+      "version": "14.2.0-19",
+      "description": "GCC OpenMP (GOMP) support library\n GOMP is an implementation of OpenMP for the C, C++, and Fortran compilers\n in the GNU Compiler Collection.",
+      "licenses": [
+        {
+          "license": {
+            "id": "GFDL-1.2-only"
+          }
+        },
+        {
+          "license": {
+            "id": "GPL-3.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/libgomp1@14.2.0-19?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libgomp1.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libgomp1.md5sums"
+        },
+        {
+          "bom-ref": "File---usr-share-doc-gcc-14-base-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/gcc-14-base/copyright"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-libgomp1",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/libgomp1"
+        }
+      ]
+    },
+    {
+      "bom-ref": "package-pkg-deb-debian-media-types-13.0.0-os-name-debian-os-version-Debian",
+      "type": "application",
+      "supplier": {
+        "name": "Mime-Support Packagers \u003cteam+debian-mimesupport-packagers@tracker.debian.org\u003e"
+      },
+      "name": "media-types",
+      "version": "13.0.0",
+      "description": "List of standard media types and their usual file extension\n This package installs the configuration file /etc/mime.types, that lists\n standard media types (originally known as \"MIME\" types) and their usual file\n extension.  This provides a simple way for programs to have a first guess at a\n file's content.  On standard Debian desktop systems, one will also find more\n sophisticated tools, for instance provided by the \"file\" and \"xdg-utils\"\n packages.\n .\n The /etc/mime.types file is compiled by hand using mostly information provided\n by the Internet Assigned Numbers Authority (IANA).",
+      "purl": "pkg:deb/debian/media-types@13.0.0?os_name=debian\u0026os_version=Debian",
+      "components": [
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-media-types.md5sums",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/media-types.md5sums"
+        },
+        {
+          "bom-ref": "File---usr-share-doc-media-types-copyright",
+          "type": "file",
+          "name": "/usr/share/doc/media-types/copyright"
+        },
+        {
+          "bom-ref": "File---var-lib-dpkg-status.d-media-types",
+          "type": "file",
+          "name": "/var/lib/dpkg/status.d/media-types"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-base-files-13.8-2Bdeb13u6-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-base-files-13.8-2Bdeb13u6-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-base-files-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-base-files-13.8-2Bdeb13u6-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-base-files"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-base-files-13.8-2Bdeb13u6-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-base-files.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-gcc-14-base-14.2.0-19-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-base-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-gcc-14-base-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-base-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-gcc-14-base"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-base-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-gcc-14-base.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-lib-x86_64-linux-gnu-libgcc_s.so.1"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-lib-x86_64-linux-gnu-libgomp.so.1.0.0"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-lib-x86_64-linux-gnu-libstdc++.so.6.0.33"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-gcc-14-base-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-gcc-14-base"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-gcc-14-base.md5sums"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libgcc-s1"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libgcc-s1.md5sums"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libgomp1"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libgomp1.md5sums"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libstdc++6"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-gcc-14-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libstdc++6.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-glibc-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-glibc-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-libc6-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-glibc-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libc6"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-glibc-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libc6.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-libc6-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libc6-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-libc6-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libc6-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libc6"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libc6-2.41-12-2Bdeb13u3-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libc6.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-libgcc-s1-14.2.0-19-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libgcc-s1-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-gcc-14-base-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libgcc-s1-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libgcc-s1"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libgcc-s1-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libgcc-s1.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-libgomp1-14.2.0-19-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libgomp1-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-gcc-14-base-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libgomp1-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libgomp1"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libgomp1-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libgomp1.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-libssl3t64-3.5.6-1-deb13u2-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libssl3t64-3.5.6-1-deb13u2-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-libssl3t64-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libssl3t64-3.5.6-1-deb13u2-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libssl3t64"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libssl3t64-3.5.6-1-deb13u2-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libssl3t64.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-libstdc-2B-2B6-14.2.0-19-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libstdc-2B-2B6-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-gcc-14-base-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libstdc-2B-2B6-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libstdc++6"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libstdc-2B-2B6-14.2.0-19-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libstdc++6.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-libzstd1-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libzstd1-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-libzstd1-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libzstd1-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libzstd1"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libzstd1-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libzstd1.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-libzstd-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libzstd-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-lib-x86_64-linux-gnu-libzstd.so.1.5.7"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libzstd-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-libzstd1-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libzstd-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libzstd1"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-libzstd-1.5.7-2Bdfsg-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libzstd1.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-media-types-13.0.0-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-media-types-13.0.0-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-media-types-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-media-types-13.0.0-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-media-types"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-media-types-13.0.0-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-media-types.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-netbase-6.5-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-netbase-6.5-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-netbase-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-netbase-6.5-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-netbase"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-netbase-6.5-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-netbase.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-openssl-3.5.6-1-deb13u2-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-openssl-3.5.6-1-deb13u2-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-libssl3t64-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-openssl-3.5.6-1-deb13u2-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libssl3t64"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-openssl-3.5.6-1-deb13u2-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-libssl3t64.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-tzdata-legacy-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-legacy-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-tzdata-legacy-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-legacy-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-tzdata-legacy"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-legacy-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-tzdata-legacy.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-tzdata-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-tzdata-legacy-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-tzdata-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-tzdata"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-tzdata-legacy"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-tzdata-legacy.md5sums"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-tzdata-2026b-0-2Bdeb13u1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-tzdata.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-zlib1g-1-3A1.3.dfsg-2Breally1.3.1-1-2Bb1-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-zlib1g-1-3A1.3.dfsg-2Breally1.3.1-1-2Bb1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-zlib1g-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-zlib1g-1-3A1.3.dfsg-2Breally1.3.1-1-2Bb1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-zlib1g"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-zlib1g-1-3A1.3.dfsg-2Breally1.3.1-1-2Bb1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-zlib1g.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-deb-debian-zlib-1-3A1.3.dfsg-2Breally1.3.1-1-os-name-debian-os-version-Debian"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-zlib-1-3A1.3.dfsg-2Breally1.3.1-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---usr-share-doc-zlib1g-copyright"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-zlib-1-3A1.3.dfsg-2Breally1.3.1-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-zlib1g"
+      ]
+    },
+    {
+      "ref": "package-pkg-deb-debian-zlib-1-3A1.3.dfsg-2Breally1.3.1-1-os-name-debian-os-version-Debian",
+      "dependsOn": [
+        "File---var-lib-dpkg-status.d-zlib1g.md5sums"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-generic-node-24.18.0"
+      ]
+    },
+    {
+      "ref": "package-pkg-generic-node-24.18.0",
+      "dependsOn": [
+        "File---nodejs-bin-node"
+      ]
+    },
+    {
+      "ref": "pkg-oci-aitutor-migrate-sha256-247f3039005d5de2f12deda3b76fae552946b10be3a252c9f1204758ca17403a-repository-url-docker.io-tag-latest",
+      "dependsOn": [
+        "package-pkg-npm-postgres-3.4.9"
+      ]
+    },
+    {
+      "ref": "package-pkg-npm-postgres-3.4.9",
+      "dependsOn": [
+        "File---app-node_modules-postgres-package.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "policyVersion": "p6-performance-v1",
+  "measuredAt": "2026-08-01",
+  "sampleCount": 20,
+  "failureCount": 0,
+  "conditions": {
+    "browser": "Playwright Chromium in a fresh isolated context per session",
+    "microphone": "synthetic Chinese WAV through Chromium fake audio capture",
+    "physicalMicrophoneAccessed": false,
+    "audioOutput": "Chromium --mute-audio",
+    "t0Source": "last-above-threshold-vad-sample",
+    "percentileMethod": "nearest-rank",
+    "pairing": "10 cold/warm pairs"
+  },
+  "summary": {
+    "combined": {
+      "confirmationAudioMs": { "n": 20, "min": 1678, "p50": 1982, "p95": 2200, "max": 3923 },
+      "firstMeaningfulCaptionMs": { "n": 20, "min": 1135, "p50": 1960, "p95": 3885, "max": 21327 },
+      "firstModelAudioMs": { "n": 20, "min": 1240, "p50": 2221, "p95": 2373, "max": 4275 }
+    },
+    "cold": {
+      "confirmationAudioMs": { "n": 10, "min": 1759, "p50": 2071, "p95": 3923, "max": 3923 },
+      "firstMeaningfulCaptionMs": { "n": 10, "min": 1556, "p50": 2040, "p95": 3885, "max": 3885 },
+      "firstModelAudioMs": { "n": 10, "min": 1661, "p50": 2270, "p95": 4275, "max": 4275 }
+    },
+    "warm": {
+      "confirmationAudioMs": { "n": 10, "min": 1678, "p50": 1965, "p95": 2200, "max": 2200 },
+      "firstMeaningfulCaptionMs": { "n": 10, "min": 1135, "p50": 1920, "p95": 21327, "max": 21327 },
+      "firstModelAudioMs": { "n": 10, "min": 1240, "p50": 2215, "p95": 2297, "max": 2297 }
+    }
+  },
+  "samples": [
+    { "sessionId": "10639bc2-f1d3-470b-a8f9-05a14164ded0", "startupKind": "cold", "confirmationAudioMs": 2071, "firstMeaningfulCaptionMs": 2040, "firstModelAudioMs": 2178 },
+    { "sessionId": "2b8e996e-27ae-459c-b974-fb9f6639d31d", "startupKind": "cold", "confirmationAudioMs": 2108, "firstMeaningfulCaptionMs": 2074, "firstModelAudioMs": 2300 },
+    { "sessionId": "4d0424a2-48ae-4620-9539-a31dc31b54ba", "startupKind": "cold", "confirmationAudioMs": 2099, "firstMeaningfulCaptionMs": 2071, "firstModelAudioMs": 2373 },
+    { "sessionId": "5a6d8fad-1ffd-4c89-bb15-21dbb144ba19", "startupKind": "cold", "confirmationAudioMs": 2143, "firstMeaningfulCaptionMs": 2103, "firstModelAudioMs": 2345 },
+    { "sessionId": "5c72a2dd-4996-4286-b534-919ca87d788c", "startupKind": "warm", "confirmationAudioMs": 1914, "firstMeaningfulCaptionMs": 1891, "firstModelAudioMs": 2141 },
+    { "sessionId": "5e1ff7bc-fe9f-48e5-9153-54843a337bd4", "startupKind": "cold", "confirmationAudioMs": 1759, "firstMeaningfulCaptionMs": 1556, "firstModelAudioMs": 1661 },
+    { "sessionId": "612af1d6-adc7-4706-851e-38bcd8b2d2b7", "startupKind": "warm", "confirmationAudioMs": 1965, "firstMeaningfulCaptionMs": 1135, "firstModelAudioMs": 1240 },
+    { "sessionId": "64ae3b3d-925d-4333-8e65-2914d01e6590", "startupKind": "cold", "confirmationAudioMs": 3923, "firstMeaningfulCaptionMs": 3885, "firstModelAudioMs": 4275 },
+    { "sessionId": "95f288c2-cf49-4bdc-806d-0aebda6325d1", "startupKind": "warm", "confirmationAudioMs": 2200, "firstMeaningfulCaptionMs": 2175, "firstModelAudioMs": 2297 },
+    { "sessionId": "b26c2c7d-2fd7-4eac-8b7b-7c56df3ce2f3", "startupKind": "cold", "confirmationAudioMs": 2006, "firstMeaningfulCaptionMs": 1958, "firstModelAudioMs": 2309 },
+    { "sessionId": "b4c39da1-a039-4068-8851-ad3ded579c41", "startupKind": "cold", "confirmationAudioMs": 1896, "firstMeaningfulCaptionMs": 1690, "firstModelAudioMs": 1836 },
+    { "sessionId": "b55172f6-5bf0-4376-8022-fe819a06630a", "startupKind": "warm", "confirmationAudioMs": 1932, "firstMeaningfulCaptionMs": 1920, "firstModelAudioMs": 2269 },
+    { "sessionId": "b5783e80-57cb-48d5-8c26-6b26d396ffa0", "startupKind": "cold", "confirmationAudioMs": 2075, "firstMeaningfulCaptionMs": 2058, "firstModelAudioMs": 2270 },
+    { "sessionId": "b6f00107-b527-42c4-8b0e-ba0def72eba3", "startupKind": "cold", "confirmationAudioMs": 1876, "firstMeaningfulCaptionMs": 1858, "firstModelAudioMs": 1920 },
+    { "sessionId": "b9fef573-c154-4446-ae48-cfed38a2e543", "startupKind": "warm", "confirmationAudioMs": 1982, "firstMeaningfulCaptionMs": 1960, "firstModelAudioMs": 2128 },
+    { "sessionId": "bfccd6ae-ec94-4bb2-b8f7-04c7ff7f7b44", "startupKind": "warm", "confirmationAudioMs": 1972, "firstMeaningfulCaptionMs": 21327, "firstModelAudioMs": 2272 },
+    { "sessionId": "c77a493b-8e56-441e-a419-6d08d67515e9", "startupKind": "warm", "confirmationAudioMs": 2133, "firstMeaningfulCaptionMs": 2093, "firstModelAudioMs": 2221 },
+    { "sessionId": "c98bcee6-3b7a-4d79-b2e9-6394118914a0", "startupKind": "warm", "confirmationAudioMs": 1920, "firstMeaningfulCaptionMs": 1884, "firstModelAudioMs": 2224 },
+    { "sessionId": "fbcfde99-affa-4019-8189-d802593b68a5", "startupKind": "warm", "confirmationAudioMs": 1678, "firstMeaningfulCaptionMs": 1652, "firstModelAudioMs": 1810 },
+    { "sessionId": "fd031e19-f4d8-4c7d-a84b-51354ccbb400", "startupKind": "warm", "confirmationAudioMs": 2061, "firstMeaningfulCaptionMs": 2032, "firstModelAudioMs": 2215 }
+  ]
+}

@@ -1,0 +1,162 @@
+:root {
+  color: #182016;
+  background: #ece9df;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 28px;
+  background:
+    linear-gradient(rgba(24, 32, 22, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 32, 22, 0.06) 1px, transparent 1px),
+    #ece9df;
+  background-size: 24px 24px;
+}
+
+.lesson-shell {
+  width: min(100%, 620px);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #5f665a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.demo-card {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border: 3px solid #182016;
+  border-radius: 18px;
+  padding: 24px;
+  overflow: hidden;
+  background: #fffef8;
+  color: #182016;
+  line-height: 1.55;
+  box-shadow: 8px 8px 0 rgba(24, 32, 22, 0.16);
+}
+
+.demo-card::before {
+  position: absolute;
+  top: -46px;
+  right: -38px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #d9ff52;
+  content: "";
+}
+
+.card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card-header > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff623d;
+  box-shadow: 0 0 0 4px rgba(255, 98, 61, 0.16);
+}
+
+.badge {
+  border: 1px solid #182016;
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: #d9ff52;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  position: relative;
+  margin: 22px 0 8px;
+  font-size: clamp(24px, 5vw, 38px);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.card-copy {
+  max-width: 470px;
+  margin: 0;
+  color: #62685d;
+  font-size: 13px;
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.feature-row span {
+  border: 1px solid rgba(24, 32, 22, 0.24);
+  border-radius: 9px;
+  padding: 7px 10px;
+  background: #f4f2ea;
+  font-family: Consolas, monospace;
+  font-size: 10px;
+}
+
+.position-stage {
+  position: relative;
+  min-height: 76px;
+  margin-top: 18px;
+  border: 2px dashed rgba(24, 32, 22, 0.34);
+  border-radius: 12px;
+  padding: 14px;
+  background: #eef5ff;
+  color: #31506e;
+  font-family: Consolas, monospace;
+  font-size: 10px;
+}
+
+.floating-note {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border-radius: 8px;
+  padding: 7px 9px;
+  background: #cdd9ff;
+  color: #182016;
+  font-size: 9px;
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 14px;
+  }
+
+  .demo-card {
+    padding: 18px;
+  }
+
+  .card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

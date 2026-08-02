@@ -1,0 +1,566 @@
+{
+  "runId": "2026-08-02T14-59-50-085Z",
+  "qualification": true,
+  "passed": true,
+  "violations": [],
+  "releaseManifest": {
+    "path": "evidence/P8_RELEASE_MANIFEST_2026-08-02T14-59-50-085Z.json",
+    "sha256": "5be00569016b58e4985997f892f98dd221adc89e57445c79cbdbadf684823502"
+  },
+  "generatedAt": "2026-08-02T15:29:59.320Z",
+  "browser": {
+    "version": "150.0.7871.187",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "scenario": {
+    "runtimes": 20,
+    "teachingBlocks": 50,
+    "interactionCount": 119
+  },
+  "budgets": {
+    "durationMs": 1800000,
+    "heapBytes": 314572800,
+    "heapGrowthBytes": 50331648,
+    "nodeGrowth": 500,
+    "listenerGrowth": 200,
+    "interactionP95Ms": 3000,
+    "interactionMaxMs": 10000,
+    "rafP95Ms": 50,
+    "rafMaxMs": 250,
+    "longestTaskMs": 750,
+    "storageBytes": 10485760,
+    "reloadRecoveryMs": 20000,
+    "minimumPerformanceSamples": 31
+  },
+  "actual": {
+    "durationMs": 1801121,
+    "performanceSampleCount": 31,
+    "maxHeapBytes": 21765431,
+    "heapGrowthBytes": 882963,
+    "nodeGrowth": 0,
+    "listenerGrowth": 0,
+    "rafP95Ms": 16.79999999998836,
+    "rafMaxMs": 116.6,
+    "rafSampleCount": 108016,
+    "rafMinuteBuckets": [
+      {
+        "minute": 0,
+        "count": 3564,
+        "totalMs": 59963.6,
+        "maxMs": 116.6,
+        "over50Ms": 5
+      },
+      {
+        "minute": 1,
+        "count": 3590,
+        "totalMs": 60002.1,
+        "maxMs": 83.19999999999709,
+        "over50Ms": 2
+      },
+      {
+        "minute": 2,
+        "count": 3580,
+        "totalMs": 60002.000000000015,
+        "maxMs": 83.29999999998836,
+        "over50Ms": 3
+      },
+      {
+        "minute": 3,
+        "count": 3586,
+        "totalMs": 60002,
+        "maxMs": 66.79999999998836,
+        "over50Ms": 3
+      },
+      {
+        "minute": 4,
+        "count": 3594,
+        "totalMs": 60002,
+        "maxMs": 83.29999999998836,
+        "over50Ms": 1
+      },
+      {
+        "minute": 5,
+        "count": 3599,
+        "totalMs": 60001.899999999965,
+        "maxMs": 33.399999999965075,
+        "over50Ms": 0
+      },
+      {
+        "minute": 6,
+        "count": 3598,
+        "totalMs": 59985.30000000005,
+        "maxMs": 33.20000000001164,
+        "over50Ms": 0
+      },
+      {
+        "minute": 7,
+        "count": 3599,
+        "totalMs": 60002.09999999998,
+        "maxMs": 33.29999999998836,
+        "over50Ms": 0
+      },
+      {
+        "minute": 8,
+        "count": 3597,
+        "totalMs": 60001.90000000002,
+        "maxMs": 33.40000000002328,
+        "over50Ms": 0
+      },
+      {
+        "minute": 9,
+        "count": 3599,
+        "totalMs": 60002,
+        "maxMs": 33.5,
+        "over50Ms": 0
+      },
+      {
+        "minute": 10,
+        "count": 3600,
+        "totalMs": 60002,
+        "maxMs": 17.100000000093132,
+        "over50Ms": 0
+      },
+      {
+        "minute": 11,
+        "count": 3599,
+        "totalMs": 60002,
+        "maxMs": 33.29999999993015,
+        "over50Ms": 0
+      },
+      {
+        "minute": 12,
+        "count": 3599,
+        "totalMs": 60001.90000000002,
+        "maxMs": 33.29999999993015,
+        "over50Ms": 0
+      },
+      {
+        "minute": 13,
+        "count": 3596,
+        "totalMs": 60002,
+        "maxMs": 66.79999999993015,
+        "over50Ms": 1
+      },
+      {
+        "minute": 14,
+        "count": 3597,
+        "totalMs": 59985.29999999993,
+        "maxMs": 50,
+        "over50Ms": 0
+      },
+      {
+        "minute": 15,
+        "count": 3600,
+        "totalMs": 60002,
+        "maxMs": 17,
+        "over50Ms": 0
+      },
+      {
+        "minute": 16,
+        "count": 3596,
+        "totalMs": 60002,
+        "maxMs": 66.60000000009313,
+        "over50Ms": 1
+      },
+      {
+        "minute": 17,
+        "count": 3597,
+        "totalMs": 60002.00000000012,
+        "maxMs": 66.60000000009313,
+        "over50Ms": 1
+      },
+      {
+        "minute": 18,
+        "count": 3596,
+        "totalMs": 60002,
+        "maxMs": 66.60000000009313,
+        "over50Ms": 1
+      },
+      {
+        "minute": 19,
+        "count": 3595,
+        "totalMs": 60002,
+        "maxMs": 66.60000000009313,
+        "over50Ms": 1
+      },
+      {
+        "minute": 20,
+        "count": 3599,
+        "totalMs": 60002,
+        "maxMs": 33.300000000046566,
+        "over50Ms": 0
+      },
+      {
+        "minute": 21,
+        "count": 3592,
+        "totalMs": 60001.89999999991,
+        "maxMs": 83.39999999990687,
+        "over50Ms": 2
+      },
+      {
+        "minute": 22,
+        "count": 3594,
+        "totalMs": 60002,
+        "maxMs": 83.29999999981374,
+        "over50Ms": 1
+      },
+      {
+        "minute": 23,
+        "count": 3588,
+        "totalMs": 59985.30000000005,
+        "maxMs": 66.60000000009313,
+        "over50Ms": 3
+      },
+      {
+        "minute": 24,
+        "count": 3599,
+        "totalMs": 60002,
+        "maxMs": 33.300000000046566,
+        "over50Ms": 0
+      },
+      {
+        "minute": 25,
+        "count": 3594,
+        "totalMs": 60002,
+        "maxMs": 66.60000000009313,
+        "over50Ms": 1
+      },
+      {
+        "minute": 26,
+        "count": 3591,
+        "totalMs": 60002,
+        "maxMs": 83.30000000004657,
+        "over50Ms": 1
+      },
+      {
+        "minute": 27,
+        "count": 3598,
+        "totalMs": 60001.89999999991,
+        "maxMs": 33.39999999990687,
+        "over50Ms": 0
+      },
+      {
+        "minute": 28,
+        "count": 3593,
+        "totalMs": 60002.10000000009,
+        "maxMs": 66.69999999995343,
+        "over50Ms": 2
+      },
+      {
+        "minute": 29,
+        "count": 3590,
+        "totalMs": 60002,
+        "maxMs": 66.80000000004657,
+        "over50Ms": 2
+      },
+      {
+        "minute": 30,
+        "count": 197,
+        "totalMs": 3283.399999999907,
+        "maxMs": 16.800000000046566,
+        "over50Ms": 0
+      }
+    ],
+    "longestTaskMs": 135,
+    "longTaskCount": 2,
+    "maxStorageBytes": 280820,
+    "reloadRecoveryMs": 710,
+    "microphoneCalls": 0,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "localRequestFailures": [],
+    "localHttpErrors": [],
+    "interactionLatencyMs": {
+      "count": 119,
+      "p50": 111.5183000001125,
+      "p95": 188.49739999999292,
+      "max": 964.2018000000098
+    },
+    "unhealthySamples": []
+  },
+  "samples": [
+    {
+      "elapsedMs": 0,
+      "heapBytes": 20832287,
+      "nodes": 1766,
+      "listeners": 476,
+      "documents": 4,
+      "storageBytes": 11561,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 60541,
+      "heapBytes": 20631823,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 96664,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 121169,
+      "heapBytes": 20900125,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 105346,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 181982,
+      "heapBytes": 21022603,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 114716,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 243512,
+      "heapBytes": 20080407,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 124774,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 304054,
+      "heapBytes": 20159813,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 135520,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 364481,
+      "heapBytes": 20252666,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 146954,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 424944,
+      "heapBytes": 20377008,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 159076,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 485334,
+      "heapBytes": 20411103,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 171886,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 545831,
+      "heapBytes": 20461934,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 185384,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 606293,
+      "heapBytes": 20704405,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 199570,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 666759,
+      "heapBytes": 20723625,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 214444,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 727167,
+      "heapBytes": 20748265,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 230006,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 787631,
+      "heapBytes": 20776307,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 246256,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 848174,
+      "heapBytes": 21000224,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 263194,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 908642,
+      "heapBytes": 21017903,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 280820,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 969134,
+      "heapBytes": 21053838,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1029565,
+      "heapBytes": 21073221,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1090013,
+      "heapBytes": 21100979,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1150578,
+      "heapBytes": 21132879,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1211229,
+      "heapBytes": 21195320,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1271805,
+      "heapBytes": 21520178,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1332490,
+      "heapBytes": 21562069,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1393125,
+      "heapBytes": 21583696,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1453692,
+      "heapBytes": 21619383,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1514353,
+      "heapBytes": 21647836,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1574978,
+      "heapBytes": 21675241,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1620484,
+      "heapBytes": 21690675,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1681225,
+      "heapBytes": 21715250,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1741798,
+      "heapBytes": 21740860,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    },
+    {
+      "elapsedMs": 1800014,
+      "heapBytes": 21765431,
+      "nodes": 1776,
+      "listeners": 620,
+      "documents": 4,
+      "storageBytes": 422,
+      "health": "ok"
+    }
+  ]
+}

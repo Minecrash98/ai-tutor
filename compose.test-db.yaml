@@ -1,0 +1,6 @@
+# Local-only override for the dedicated PostgreSQL integration harness.
+# The release stack does not publish the database port.
+services:
+  db:
+    ports:
+      - "127.0.0.1:${AI_TUTOR_TEST_DB_PORT:-55432}:5432"

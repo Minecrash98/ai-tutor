@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-08-02T18-28-49-923Z",
+  "generatedAt": "2026-08-02T18:28:50.876Z",
+  "source": {
+    "sha256": "3b579076448a3ceb7fa69777668c49d6e6a6b7140c6d295606fe78b9cdcee8f9",
+    "fileCount": 261,
+    "scope": "Release inputs only. Generated evidence, reports, planning/status ledgers, and operator documentation are excluded so evidence updates cannot change the runtime fingerprint.",
+    "git": {
+      "available": false,
+      "commit": null,
+      "clean": null,
+      "detail": "workspace has no Git provenance"
+    },
+    "lockfileSha256": "a81ae93224e8929812c363d913bbaac6e6340dd15bc11d61a06d559cc02b8390"
+  },
+  "toolchain": {
+    "node": "v25.9.0",
+    "packageManager": "pnpm@10.12.3",
+    "playwright": "1.62.0",
+    "dockerScout": "1.21.0"
+  },
+  "host": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "cpuModel": "12th Gen Intel(R) Core(TM) i9-12900KF",
+    "logicalCpuCount": 24,
+    "totalMemoryBytes": 68523712512,
+    "headlessBrowserEvidence": true
+  },
+  "composeServiceHashes": {
+    "db": "36f0c19c26e4ffcf5d9a8676b479caa675cd9f1e764ebd71f83e0d3ce539ec9e",
+    "migrate": "80d5c0458f99fcf4333a1d3fca6602f883aea6541d833a0a801fbac9dd1d84e6",
+    "web": "c66aa06be621b430b618e603573daede19d49636596c97db8c9cc22b83497c00"
+  },
+  "expectedContainers": {
+    "web": {
+      "service": "web",
+      "id": "d0bb3b126e7419dbd9565c8840a7f526b1a2c6afccbaefd1d03c2ca67de6cafe",
+      "name": "aitutor-web-1"
+    },
+    "database": {
+      "service": "db",
+      "id": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+      "name": "aitutor-db-1"
+    }
+  },
+  "images": {
+    "database": {
+      "id": "sha256:8189a1f6e40904781fc9e2612687877791d21679866db58b1de996b31fc312e4",
+      "repository": "postgres",
+      "tag": null,
+      "platform": "linux/amd64",
+      "sizeBytes": 116671202,
+      "created": "2026-07-07T17:47:12.261288291Z",
+      "sbom": {
+        "path": "evidence/P8_DATABASE_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "aeeaa011bb58d0bad2cd86c486c821744c95b843fc13fec22ea053d7662be209",
+        "imageDigest": "sha256:8189a1f6e40904781fc9e2612687877791d21679866db58b1de996b31fc312e4",
+        "componentCount": 66,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    },
+    "migrate": {
+      "id": "sha256:58d17fac7327cc6ec4c49488abce61a86c762ddffd69f6f01e94789f3ebf95fb",
+      "repository": "aitutor-migrate",
+      "tag": "latest",
+      "platform": "linux/amd64",
+      "sizeBytes": 54898309,
+      "created": "2026-08-02T18:26:41.276721695Z",
+      "sbom": {
+        "path": "evidence/P8_MIGRATION_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "ab89ba530ed99104506f2c71ec5dbc3dffe5e316dd32440c85ecc22d2f88a3cb",
+        "imageDigest": "sha256:58d17fac7327cc6ec4c49488abce61a86c762ddffd69f6f01e94789f3ebf95fb",
+        "componentCount": 20,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    },
+    "web": {
+      "id": "sha256:58d95af0299927eb865a6508a758c7dac99e739ad27b6b89d5e6a6ea89f5e704",
+      "repository": "aitutor-web",
+      "tag": "latest",
+      "platform": "linux/amd64",
+      "sizeBytes": 59382446,
+      "created": "2026-08-02T18:26:41.883066493Z",
+      "sbom": {
+        "path": "evidence/P8_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "5b4dec4656488ef8b3af140f76ecdc4dcc60b48bca1a92f5e6bb8d8d2c90dfa7",
+        "imageDigest": "sha256:58d95af0299927eb865a6508a758c7dac99e739ad27b6b89d5e6a6ea89f5e704",
+        "componentCount": 307,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    }
+  },
+  "scope": "This fingerprint binds one local release candidate on this host to the release-input snapshot, lockfile, Compose service hashes, and three image SBOMs. A soak is separate evidence and is not implied by this manifest. Generated evidence and governance documentation are excluded; representative competition hardware and human-visible GPU performance remain unverified."
+}

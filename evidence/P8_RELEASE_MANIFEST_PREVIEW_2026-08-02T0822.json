@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "runId": "PREVIEW_2026-08-02T0822",
+  "generatedAt": "2026-08-02T08:22:14.524Z",
+  "source": {
+    "sha256": "2e88d93e6737ac9ccfd402e340695616466ca48e267fd7cfc6ebf219276f3fe1",
+    "fileCount": 208,
+    "git": {
+      "available": false,
+      "commit": null,
+      "clean": null,
+      "detail": "workspace has no Git provenance"
+    },
+    "lockfileSha256": "a81ae93224e8929812c363d913bbaac6e6340dd15bc11d61a06d559cc02b8390"
+  },
+  "toolchain": {
+    "node": "v25.9.0",
+    "packageManager": "pnpm@10.12.3",
+    "playwright": "1.62.0",
+    "dockerScout": "1.21.0"
+  },
+  "host": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "cpuModel": "12th Gen Intel(R) Core(TM) i9-12900KF",
+    "logicalCpuCount": 24,
+    "totalMemoryBytes": 68523712512,
+    "headlessBrowserEvidence": true
+  },
+  "composeServiceHashes": {
+    "db": "2fad62a26ef742824ae23e1241ae3bcac89b8a3263ce1899fb5f196c05b358df",
+    "migrate": "80d5c0458f99fcf4333a1d3fca6602f883aea6541d833a0a801fbac9dd1d84e6",
+    "web": "c66aa06be621b430b618e603573daede19d49636596c97db8c9cc22b83497c00"
+  },
+  "expectedContainers": {
+    "web": {
+      "service": "web",
+      "id": "d49aebfb0c8da7bbc903cb66a3402569328068d4682551553620586a00cd9aaf",
+      "name": "aitutor-web-1"
+    },
+    "database": {
+      "service": "db",
+      "id": "ede0e538de2cd9269049a0a042f943dfa46defde06a97c2c57fefed1166f3e9a",
+      "name": "aitutor-db-1"
+    }
+  },
+  "images": {
+    "web": {
+      "id": "sha256:1c4fa04f210f0c3aa79e009abc161674f0861524dacf7f08630f8154a656c960",
+      "repository": "aitutor-web",
+      "tag": "latest",
+      "platform": "linux/amd64",
+      "sizeBytes": 82432122,
+      "created": "2026-08-02T08:16:05.830213067Z",
+      "sbom": {
+        "path": "evidence/P8_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "d83b1d83b4ca50d255392b082ca2ea9717cc72e11658f73f006d2502137febd9",
+        "imageDigest": "sha256:1c4fa04f210f0c3aa79e009abc161674f0861524dacf7f08630f8154a656c960",
+        "componentCount": 628,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    },
+    "database": {
+      "id": "sha256:fbcea1bd13b6a882cd6caa6b58db3ae5c102efe50ec625b3e2a5cbc50db5bfe4",
+      "repository": "postgres",
+      "tag": null,
+      "platform": "linux/amd64",
+      "sizeBytes": 156327340,
+      "created": "2025-06-06T18:27:47Z",
+      "sbom": {
+        "path": "evidence/P8_DATABASE_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "437f6485de7fa0ec17109f096d328f2f0bb8e5addfd6a2223953ad2a67d6c3ca",
+        "imageDigest": "sha256:fbcea1bd13b6a882cd6caa6b58db3ae5c102efe50ec625b3e2a5cbc50db5bfe4",
+        "componentCount": 211,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    },
+    "migrate": {
+      "id": "sha256:a80401953e31fca952360c4467fb6f811231be29d1ef00908a51e2142eb818c4",
+      "repository": "aitutor-migrate",
+      "tag": "latest",
+      "platform": "linux/amd64",
+      "sizeBytes": 78020418,
+      "created": "2026-08-02T08:16:05.232939922Z",
+      "sbom": {
+        "path": "evidence/P8_MIGRATION_CONTAINER_SBOM_2026-08-02.cdx.json",
+        "sha256": "77ee0a2b24f24d8ab1bd03e0af7725329efc946a10feab5192d210c51a4e6a98",
+        "imageDigest": "sha256:a80401953e31fca952360c4467fb6f811231be29d1ef00908a51e2142eb818c4",
+        "componentCount": 342,
+        "generator": [
+          {
+            "name": "docker-scout",
+            "version": "1.21.0"
+          }
+        ]
+      }
+    }
+  },
+  "scope": "This fingerprint binds one headless-browser soak on this host to the exact workspace snapshot, lockfile, Compose service hashes, and three image SBOMs. It does not prove representative competition hardware or human-visible GPU performance."
+}

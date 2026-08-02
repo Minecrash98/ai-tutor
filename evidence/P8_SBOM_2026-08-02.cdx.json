@@ -1,0 +1,4168 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-02T13:49:10.268Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "pnpm",
+          "version": "10.12.3"
+        },
+        {
+          "type": "application",
+          "name": "ai-tutor-compliance-generator",
+          "version": "2"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "ai-tutor-workspace-report",
+      "version": "0.1.0",
+      "bom-ref": "pkg:npm/ai-tutor@0.1.0",
+      "purl": "pkg:npm/ai-tutor@0.1.0",
+      "properties": [
+        {
+          "name": "ai-tutor:pnpm-lock-sha256",
+          "value": "a81ae93224e8929812c363d913bbaac6e6340dd15bc11d61a06d559cc02b8390"
+        },
+        {
+          "name": "ai-tutor:scope",
+          "value": "workspace-report-not-runtime-image"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "@babel/code-frame",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/code-frame@7.29.7",
+      "purl": "pkg:npm/%40babel/code-frame@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-code-frame"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/compat-data",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/compat-data@7.29.7",
+      "purl": "pkg:npm/%40babel/compat-data@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/babel/babel#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/core",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/core@7.29.7",
+      "purl": "pkg:npm/%40babel/core@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-core"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/generator",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/generator@7.29.7",
+      "purl": "pkg:npm/%40babel/generator@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-generator"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helper-compilation-targets",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/helper-compilation-targets@7.29.7",
+      "purl": "pkg:npm/%40babel/helper-compilation-targets@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/babel/babel#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helper-globals",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/helper-globals@7.29.7",
+      "purl": "pkg:npm/%40babel/helper-globals@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/babel/babel#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helper-module-imports",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/helper-module-imports@7.29.7",
+      "purl": "pkg:npm/%40babel/helper-module-imports@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-helper-module-imports"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helper-module-transforms",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/helper-module-transforms@7.29.7",
+      "purl": "pkg:npm/%40babel/helper-module-transforms@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-helper-module-transforms"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helper-string-parser",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/helper-string-parser@7.29.7",
+      "purl": "pkg:npm/%40babel/helper-string-parser@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-helper-string-parser"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/helper-validator-identifier@7.29.7",
+      "purl": "pkg:npm/%40babel/helper-validator-identifier@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/babel/babel#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helper-validator-option",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/helper-validator-option@7.29.7",
+      "purl": "pkg:npm/%40babel/helper-validator-option@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/babel/babel#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/helpers",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/helpers@7.29.7",
+      "purl": "pkg:npm/%40babel/helpers@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-helpers"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/parser",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/parser@7.29.7",
+      "purl": "pkg:npm/%40babel/parser@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-parser"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/template",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/template@7.29.7",
+      "purl": "pkg:npm/%40babel/template@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-template"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/traverse",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/traverse@7.29.7",
+      "purl": "pkg:npm/%40babel/traverse@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-traverse"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@babel/types",
+      "version": "7.29.7",
+      "bom-ref": "pkg:npm/%40babel/types@7.29.7",
+      "purl": "pkg:npm/%40babel/types@7.29.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-types"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@floating-ui/core",
+      "version": "1.8.0",
+      "bom-ref": "pkg:npm/%40floating-ui/core@1.8.0",
+      "purl": "pkg:npm/%40floating-ui/core@1.8.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://floating-ui.com"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@floating-ui/dom",
+      "version": "1.8.0",
+      "bom-ref": "pkg:npm/%40floating-ui/dom@1.8.0",
+      "purl": "pkg:npm/%40floating-ui/dom@1.8.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://floating-ui.com"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@floating-ui/react-dom",
+      "version": "2.1.9",
+      "bom-ref": "pkg:npm/%40floating-ui/react-dom@2.1.9",
+      "purl": "pkg:npm/%40floating-ui/react-dom@2.1.9",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://floating-ui.com/docs/react-dom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@floating-ui/utils",
+      "version": "0.2.12",
+      "bom-ref": "pkg:npm/%40floating-ui/utils@0.2.12",
+      "purl": "pkg:npm/%40floating-ui/utils@0.2.12",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://floating-ui.com"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/colour",
+      "version": "1.1.0",
+      "bom-ref": "pkg:npm/%40img/colour@1.1.0",
+      "purl": "pkg:npm/%40img/colour@1.1.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/lovell/colour#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-win32-x64",
+      "version": "0.35.3",
+      "bom-ref": "pkg:npm/%40img/sharp-win32-x64@0.35.3",
+      "purl": "pkg:npm/%40img/sharp-win32-x64@0.35.3",
+      "licenses": [
+        {
+          "expression": "Apache-2.0 AND LGPL-3.0-or-later"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://sharp.pixelplumbing.com"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@jridgewell/gen-mapping",
+      "version": "0.3.13",
+      "bom-ref": "pkg:npm/%40jridgewell/gen-mapping@0.3.13",
+      "purl": "pkg:npm/%40jridgewell/gen-mapping@0.3.13",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jridgewell/sourcemaps/tree/main/packages/gen-mapping"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@jridgewell/remapping",
+      "version": "2.3.5",
+      "bom-ref": "pkg:npm/%40jridgewell/remapping@2.3.5",
+      "purl": "pkg:npm/%40jridgewell/remapping@2.3.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jridgewell/sourcemaps/tree/main/packages/remapping"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@jridgewell/resolve-uri",
+      "version": "3.1.2",
+      "bom-ref": "pkg:npm/%40jridgewell/resolve-uri@3.1.2",
+      "purl": "pkg:npm/%40jridgewell/resolve-uri@3.1.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jridgewell/resolve-uri#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@jridgewell/sourcemap-codec",
+      "version": "1.5.5",
+      "bom-ref": "pkg:npm/%40jridgewell/sourcemap-codec@1.5.5",
+      "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.5.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jridgewell/sourcemaps/tree/main/packages/sourcemap-codec"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@jridgewell/trace-mapping",
+      "version": "0.3.31",
+      "bom-ref": "pkg:npm/%40jridgewell/trace-mapping@0.3.31",
+      "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.31",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jridgewell/sourcemaps/tree/main/packages/trace-mapping"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/env",
+      "version": "16.2.12",
+      "bom-ref": "pkg:npm/%40next/env@16.2.12",
+      "purl": "pkg:npm/%40next/env@16.2.12",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/vercel/next.js#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@next/swc-win32-x64-msvc",
+      "version": "16.2.12",
+      "bom-ref": "pkg:npm/%40next/swc-win32-x64-msvc@16.2.12",
+      "purl": "pkg:npm/%40next/swc-win32-x64-msvc@16.2.12",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/vercel/next.js#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@playwright/test",
+      "version": "1.62.0",
+      "bom-ref": "pkg:npm/%40playwright/test@1.62.0",
+      "purl": "pkg:npm/%40playwright/test@1.62.0",
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://playwright.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@popperjs/core",
+      "version": "2.11.8",
+      "bom-ref": "pkg:npm/%40popperjs/core@2.11.8",
+      "purl": "pkg:npm/%40popperjs/core@2.11.8",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/popperjs/popper-core#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/number",
+      "version": "1.1.3",
+      "bom-ref": "pkg:npm/%40radix-ui/number@1.1.3",
+      "purl": "pkg:npm/%40radix-ui/number@1.1.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/primitive",
+      "version": "1.1.7",
+      "bom-ref": "pkg:npm/%40radix-ui/primitive@1.1.7",
+      "purl": "pkg:npm/%40radix-ui/primitive@1.1.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-accessible-icon",
+      "version": "1.1.15",
+      "bom-ref": "pkg:npm/%40radix-ui/react-accessible-icon@1.1.15",
+      "purl": "pkg:npm/%40radix-ui/react-accessible-icon@1.1.15",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-accordion",
+      "version": "1.2.20",
+      "bom-ref": "pkg:npm/%40radix-ui/react-accordion@1.2.20",
+      "purl": "pkg:npm/%40radix-ui/react-accordion@1.2.20",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-alert-dialog",
+      "version": "1.1.23",
+      "bom-ref": "pkg:npm/%40radix-ui/react-alert-dialog@1.1.23",
+      "purl": "pkg:npm/%40radix-ui/react-alert-dialog@1.1.23",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-arrow",
+      "version": "1.1.15",
+      "bom-ref": "pkg:npm/%40radix-ui/react-arrow@1.1.15",
+      "purl": "pkg:npm/%40radix-ui/react-arrow@1.1.15",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-aspect-ratio",
+      "version": "1.1.15",
+      "bom-ref": "pkg:npm/%40radix-ui/react-aspect-ratio@1.1.15",
+      "purl": "pkg:npm/%40radix-ui/react-aspect-ratio@1.1.15",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-avatar",
+      "version": "1.2.6",
+      "bom-ref": "pkg:npm/%40radix-ui/react-avatar@1.2.6",
+      "purl": "pkg:npm/%40radix-ui/react-avatar@1.2.6",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-checkbox",
+      "version": "1.3.11",
+      "bom-ref": "pkg:npm/%40radix-ui/react-checkbox@1.3.11",
+      "purl": "pkg:npm/%40radix-ui/react-checkbox@1.3.11",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-collapsible",
+      "version": "1.1.20",
+      "bom-ref": "pkg:npm/%40radix-ui/react-collapsible@1.1.20",
+      "purl": "pkg:npm/%40radix-ui/react-collapsible@1.1.20",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-collection",
+      "version": "1.1.15",
+      "bom-ref": "pkg:npm/%40radix-ui/react-collection@1.1.15",
+      "purl": "pkg:npm/%40radix-ui/react-collection@1.1.15",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-compose-refs",
+      "version": "1.1.5",
+      "bom-ref": "pkg:npm/%40radix-ui/react-compose-refs@1.1.5",
+      "purl": "pkg:npm/%40radix-ui/react-compose-refs@1.1.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-context-menu",
+      "version": "2.3.7",
+      "bom-ref": "pkg:npm/%40radix-ui/react-context-menu@2.3.7",
+      "purl": "pkg:npm/%40radix-ui/react-context-menu@2.3.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-context",
+      "version": "1.2.2",
+      "bom-ref": "pkg:npm/%40radix-ui/react-context@1.2.2",
+      "purl": "pkg:npm/%40radix-ui/react-context@1.2.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-dialog",
+      "version": "1.1.23",
+      "bom-ref": "pkg:npm/%40radix-ui/react-dialog@1.1.23",
+      "purl": "pkg:npm/%40radix-ui/react-dialog@1.1.23",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-direction",
+      "version": "1.1.4",
+      "bom-ref": "pkg:npm/%40radix-ui/react-direction@1.1.4",
+      "purl": "pkg:npm/%40radix-ui/react-direction@1.1.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-dismissable-layer",
+      "version": "1.1.19",
+      "bom-ref": "pkg:npm/%40radix-ui/react-dismissable-layer@1.1.19",
+      "purl": "pkg:npm/%40radix-ui/react-dismissable-layer@1.1.19",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-dropdown-menu",
+      "version": "2.1.24",
+      "bom-ref": "pkg:npm/%40radix-ui/react-dropdown-menu@2.1.24",
+      "purl": "pkg:npm/%40radix-ui/react-dropdown-menu@2.1.24",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-focus-guards",
+      "version": "1.1.6",
+      "bom-ref": "pkg:npm/%40radix-ui/react-focus-guards@1.1.6",
+      "purl": "pkg:npm/%40radix-ui/react-focus-guards@1.1.6",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-focus-scope",
+      "version": "1.1.16",
+      "bom-ref": "pkg:npm/%40radix-ui/react-focus-scope@1.1.16",
+      "purl": "pkg:npm/%40radix-ui/react-focus-scope@1.1.16",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-form",
+      "version": "0.1.16",
+      "bom-ref": "pkg:npm/%40radix-ui/react-form@0.1.16",
+      "purl": "pkg:npm/%40radix-ui/react-form@0.1.16",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-hover-card",
+      "version": "1.1.23",
+      "bom-ref": "pkg:npm/%40radix-ui/react-hover-card@1.1.23",
+      "purl": "pkg:npm/%40radix-ui/react-hover-card@1.1.23",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-id",
+      "version": "1.1.4",
+      "bom-ref": "pkg:npm/%40radix-ui/react-id@1.1.4",
+      "purl": "pkg:npm/%40radix-ui/react-id@1.1.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-label",
+      "version": "2.1.15",
+      "bom-ref": "pkg:npm/%40radix-ui/react-label@2.1.15",
+      "purl": "pkg:npm/%40radix-ui/react-label@2.1.15",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-menu",
+      "version": "2.1.24",
+      "bom-ref": "pkg:npm/%40radix-ui/react-menu@2.1.24",
+      "purl": "pkg:npm/%40radix-ui/react-menu@2.1.24",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-menubar",
+      "version": "1.1.24",
+      "bom-ref": "pkg:npm/%40radix-ui/react-menubar@1.1.24",
+      "purl": "pkg:npm/%40radix-ui/react-menubar@1.1.24",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-navigation-menu",
+      "version": "1.2.22",
+      "bom-ref": "pkg:npm/%40radix-ui/react-navigation-menu@1.2.22",
+      "purl": "pkg:npm/%40radix-ui/react-navigation-menu@1.2.22",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-one-time-password-field",
+      "version": "0.1.16",
+      "bom-ref": "pkg:npm/%40radix-ui/react-one-time-password-field@0.1.16",
+      "purl": "pkg:npm/%40radix-ui/react-one-time-password-field@0.1.16",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-password-toggle-field",
+      "version": "0.1.11",
+      "bom-ref": "pkg:npm/%40radix-ui/react-password-toggle-field@0.1.11",
+      "purl": "pkg:npm/%40radix-ui/react-password-toggle-field@0.1.11",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-popover",
+      "version": "1.1.23",
+      "bom-ref": "pkg:npm/%40radix-ui/react-popover@1.1.23",
+      "purl": "pkg:npm/%40radix-ui/react-popover@1.1.23",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-popper",
+      "version": "1.3.7",
+      "bom-ref": "pkg:npm/%40radix-ui/react-popper@1.3.7",
+      "purl": "pkg:npm/%40radix-ui/react-popper@1.3.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-portal",
+      "version": "1.1.17",
+      "bom-ref": "pkg:npm/%40radix-ui/react-portal@1.1.17",
+      "purl": "pkg:npm/%40radix-ui/react-portal@1.1.17",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-presence",
+      "version": "1.1.10",
+      "bom-ref": "pkg:npm/%40radix-ui/react-presence@1.1.10",
+      "purl": "pkg:npm/%40radix-ui/react-presence@1.1.10",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-primitive",
+      "version": "2.1.10",
+      "bom-ref": "pkg:npm/%40radix-ui/react-primitive@2.1.10",
+      "purl": "pkg:npm/%40radix-ui/react-primitive@2.1.10",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-progress",
+      "version": "1.1.16",
+      "bom-ref": "pkg:npm/%40radix-ui/react-progress@1.1.16",
+      "purl": "pkg:npm/%40radix-ui/react-progress@1.1.16",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-radio-group",
+      "version": "1.4.7",
+      "bom-ref": "pkg:npm/%40radix-ui/react-radio-group@1.4.7",
+      "purl": "pkg:npm/%40radix-ui/react-radio-group@1.4.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-roving-focus",
+      "version": "1.1.19",
+      "bom-ref": "pkg:npm/%40radix-ui/react-roving-focus@1.1.19",
+      "purl": "pkg:npm/%40radix-ui/react-roving-focus@1.1.19",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-scroll-area",
+      "version": "1.2.18",
+      "bom-ref": "pkg:npm/%40radix-ui/react-scroll-area@1.2.18",
+      "purl": "pkg:npm/%40radix-ui/react-scroll-area@1.2.18",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-select",
+      "version": "2.3.7",
+      "bom-ref": "pkg:npm/%40radix-ui/react-select@2.3.7",
+      "purl": "pkg:npm/%40radix-ui/react-select@2.3.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-separator",
+      "version": "1.1.15",
+      "bom-ref": "pkg:npm/%40radix-ui/react-separator@1.1.15",
+      "purl": "pkg:npm/%40radix-ui/react-separator@1.1.15",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-slider",
+      "version": "1.4.7",
+      "bom-ref": "pkg:npm/%40radix-ui/react-slider@1.4.7",
+      "purl": "pkg:npm/%40radix-ui/react-slider@1.4.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-slot",
+      "version": "1.3.3",
+      "bom-ref": "pkg:npm/%40radix-ui/react-slot@1.3.3",
+      "purl": "pkg:npm/%40radix-ui/react-slot@1.3.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-switch",
+      "version": "1.3.7",
+      "bom-ref": "pkg:npm/%40radix-ui/react-switch@1.3.7",
+      "purl": "pkg:npm/%40radix-ui/react-switch@1.3.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-tabs",
+      "version": "1.1.21",
+      "bom-ref": "pkg:npm/%40radix-ui/react-tabs@1.1.21",
+      "purl": "pkg:npm/%40radix-ui/react-tabs@1.1.21",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-toast",
+      "version": "1.2.23",
+      "bom-ref": "pkg:npm/%40radix-ui/react-toast@1.2.23",
+      "purl": "pkg:npm/%40radix-ui/react-toast@1.2.23",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-toggle-group",
+      "version": "1.1.19",
+      "bom-ref": "pkg:npm/%40radix-ui/react-toggle-group@1.1.19",
+      "purl": "pkg:npm/%40radix-ui/react-toggle-group@1.1.19",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-toggle",
+      "version": "1.1.18",
+      "bom-ref": "pkg:npm/%40radix-ui/react-toggle@1.1.18",
+      "purl": "pkg:npm/%40radix-ui/react-toggle@1.1.18",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-toolbar",
+      "version": "1.1.19",
+      "bom-ref": "pkg:npm/%40radix-ui/react-toolbar@1.1.19",
+      "purl": "pkg:npm/%40radix-ui/react-toolbar@1.1.19",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-tooltip",
+      "version": "1.2.16",
+      "bom-ref": "pkg:npm/%40radix-ui/react-tooltip@1.2.16",
+      "purl": "pkg:npm/%40radix-ui/react-tooltip@1.2.16",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-callback-ref",
+      "version": "1.1.4",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-callback-ref@1.1.4",
+      "purl": "pkg:npm/%40radix-ui/react-use-callback-ref@1.1.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-controllable-state",
+      "version": "1.2.6",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-controllable-state@1.2.6",
+      "purl": "pkg:npm/%40radix-ui/react-use-controllable-state@1.2.6",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-effect-event",
+      "version": "0.0.5",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-effect-event@0.0.5",
+      "purl": "pkg:npm/%40radix-ui/react-use-effect-event@0.0.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-escape-keydown",
+      "version": "1.1.5",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-escape-keydown@1.1.5",
+      "purl": "pkg:npm/%40radix-ui/react-use-escape-keydown@1.1.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-is-hydrated",
+      "version": "0.1.3",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-is-hydrated@0.1.3",
+      "purl": "pkg:npm/%40radix-ui/react-use-is-hydrated@0.1.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-layout-effect",
+      "version": "1.1.4",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-layout-effect@1.1.4",
+      "purl": "pkg:npm/%40radix-ui/react-use-layout-effect@1.1.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-previous",
+      "version": "1.1.4",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-previous@1.1.4",
+      "purl": "pkg:npm/%40radix-ui/react-use-previous@1.1.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-rect",
+      "version": "1.1.4",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-rect@1.1.4",
+      "purl": "pkg:npm/%40radix-ui/react-use-rect@1.1.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-use-size",
+      "version": "1.1.4",
+      "bom-ref": "pkg:npm/%40radix-ui/react-use-size@1.1.4",
+      "purl": "pkg:npm/%40radix-ui/react-use-size@1.1.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/react-visually-hidden",
+      "version": "1.2.11",
+      "bom-ref": "pkg:npm/%40radix-ui/react-visually-hidden@1.2.11",
+      "purl": "pkg:npm/%40radix-ui/react-visually-hidden@1.2.11",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@radix-ui/rect",
+      "version": "1.1.3",
+      "bom-ref": "pkg:npm/%40radix-ui/rect@1.1.3",
+      "purl": "pkg:npm/%40radix-ui/rect@1.1.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@remirror/core-constants",
+      "version": "3.0.0",
+      "bom-ref": "pkg:npm/%40remirror/core-constants@3.0.0",
+      "purl": "pkg:npm/%40remirror/core-constants@3.0.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/remirror/remirror/tree/HEAD/packages/remirror__core-constants"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swc/helpers",
+      "version": "0.5.15",
+      "bom-ref": "pkg:npm/%40swc/helpers@0.5.15",
+      "purl": "pkg:npm/%40swc/helpers@0.5.15",
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://swc.rs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/core",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/core@2.27.2",
+      "purl": "pkg:npm/%40tiptap/core@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-blockquote",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-blockquote@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-blockquote@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-bold",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-bold@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-bold@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-bubble-menu",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-bubble-menu@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-bubble-menu@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-bullet-list",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-bullet-list@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-bullet-list@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-code-block",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-code-block@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-code-block@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-code",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-code@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-code@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-document",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-document@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-document@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-dropcursor",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-dropcursor@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-dropcursor@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-floating-menu",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-floating-menu@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-floating-menu@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-gapcursor",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-gapcursor@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-gapcursor@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-hard-break",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-hard-break@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-hard-break@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-heading",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-heading@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-heading@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-highlight",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-highlight@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-highlight@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-history",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-history@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-history@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-horizontal-rule",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-horizontal-rule@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-horizontal-rule@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-italic",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-italic@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-italic@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-link",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-link@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-link@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-list-item",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-list-item@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-list-item@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-ordered-list",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-ordered-list@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-ordered-list@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-paragraph",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-paragraph@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-paragraph@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-strike",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-strike@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-strike@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-text-style",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-text-style@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-text-style@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/extension-text",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/extension-text@2.27.2",
+      "purl": "pkg:npm/%40tiptap/extension-text@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/pm",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/pm@2.27.2",
+      "purl": "pkg:npm/%40tiptap/pm@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/react",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/react@2.27.2",
+      "purl": "pkg:npm/%40tiptap/react@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tiptap/starter-kit",
+      "version": "2.27.2",
+      "bom-ref": "pkg:npm/%40tiptap/starter-kit@2.27.2",
+      "purl": "pkg:npm/%40tiptap/starter-kit@2.27.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tiptap.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tldraw/editor",
+      "version": "3.15.5",
+      "bom-ref": "pkg:npm/%40tldraw/editor@3.15.5",
+      "purl": "pkg:npm/%40tldraw/editor@3.15.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "tldraw license (watermark required)"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tldraw.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tldraw/state-react",
+      "version": "3.15.5",
+      "bom-ref": "pkg:npm/%40tldraw/state-react@3.15.5",
+      "purl": "pkg:npm/%40tldraw/state-react@3.15.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tldraw.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tldraw/state",
+      "version": "3.15.5",
+      "bom-ref": "pkg:npm/%40tldraw/state@3.15.5",
+      "purl": "pkg:npm/%40tldraw/state@3.15.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tldraw.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tldraw/store",
+      "version": "3.15.5",
+      "bom-ref": "pkg:npm/%40tldraw/store@3.15.5",
+      "purl": "pkg:npm/%40tldraw/store@3.15.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tldraw.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tldraw/tlschema",
+      "version": "3.15.5",
+      "bom-ref": "pkg:npm/%40tldraw/tlschema@3.15.5",
+      "purl": "pkg:npm/%40tldraw/tlschema@3.15.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tldraw.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tldraw/utils",
+      "version": "3.15.5",
+      "bom-ref": "pkg:npm/%40tldraw/utils@3.15.5",
+      "purl": "pkg:npm/%40tldraw/utils@3.15.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tldraw.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@tldraw/validate",
+      "version": "3.15.5",
+      "bom-ref": "pkg:npm/%40tldraw/validate@3.15.5",
+      "purl": "pkg:npm/%40tldraw/validate@3.15.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tldraw.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/core-js",
+      "version": "2.5.8",
+      "bom-ref": "pkg:npm/%40types/core-js@2.5.8",
+      "purl": "pkg:npm/%40types/core-js@2.5.8",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/core-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/linkify-it",
+      "version": "5.0.0",
+      "bom-ref": "pkg:npm/%40types/linkify-it@5.0.0",
+      "purl": "pkg:npm/%40types/linkify-it@5.0.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/linkify-it"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/markdown-it",
+      "version": "14.1.2",
+      "bom-ref": "pkg:npm/%40types/markdown-it@14.1.2",
+      "purl": "pkg:npm/%40types/markdown-it@14.1.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/markdown-it"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/mdurl",
+      "version": "2.0.0",
+      "bom-ref": "pkg:npm/%40types/mdurl@2.0.0",
+      "purl": "pkg:npm/%40types/mdurl@2.0.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mdurl"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/node",
+      "version": "20.19.43",
+      "bom-ref": "pkg:npm/%40types/node@20.19.43",
+      "purl": "pkg:npm/%40types/node@20.19.43",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/react-dom",
+      "version": "19.2.3",
+      "bom-ref": "pkg:npm/%40types/react-dom@19.2.3",
+      "purl": "pkg:npm/%40types/react-dom@19.2.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/react",
+      "version": "19.2.17",
+      "bom-ref": "pkg:npm/%40types/react@19.2.17",
+      "purl": "pkg:npm/%40types/react@19.2.17",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/use-sync-external-store",
+      "version": "0.0.6",
+      "bom-ref": "pkg:npm/%40types/use-sync-external-store@0.0.6",
+      "purl": "pkg:npm/%40types/use-sync-external-store@0.0.6",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/use-sync-external-store"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@use-gesture/core",
+      "version": "10.3.1",
+      "bom-ref": "pkg:npm/%40use-gesture/core@10.3.1",
+      "purl": "pkg:npm/%40use-gesture/core@10.3.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://use-gesture.netlify.app"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@use-gesture/react",
+      "version": "10.3.1",
+      "bom-ref": "pkg:npm/%40use-gesture/react@10.3.1",
+      "purl": "pkg:npm/%40use-gesture/react@10.3.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://use-gesture.netlify.app"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "argparse",
+      "version": "2.0.1",
+      "bom-ref": "pkg:npm/argparse@2.0.1",
+      "purl": "pkg:npm/argparse@2.0.1",
+      "licenses": [
+        {
+          "expression": "Python-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/nodeca/argparse#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "aria-hidden",
+      "version": "1.2.6",
+      "bom-ref": "pkg:npm/aria-hidden@1.2.6",
+      "purl": "pkg:npm/aria-hidden@1.2.6",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/theKashey/aria-hidden#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "baseline-browser-mapping",
+      "version": "2.11.3",
+      "bom-ref": "pkg:npm/baseline-browser-mapping@2.11.3",
+      "purl": "pkg:npm/baseline-browser-mapping@2.11.3",
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/web-platform-dx/baseline-browser-mapping#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "browserslist",
+      "version": "4.28.7",
+      "bom-ref": "pkg:npm/browserslist@4.28.7",
+      "purl": "pkg:npm/browserslist@4.28.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/browserslist/browserslist#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "caniuse-lite",
+      "version": "1.0.30001806",
+      "bom-ref": "pkg:npm/caniuse-lite@1.0.30001806",
+      "purl": "pkg:npm/caniuse-lite@1.0.30001806",
+      "licenses": [
+        {
+          "expression": "CC-BY-4.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/browserslist/caniuse-lite#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "classnames",
+      "version": "2.5.1",
+      "bom-ref": "pkg:npm/classnames@2.5.1",
+      "purl": "pkg:npm/classnames@2.5.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/JedWatson/classnames#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "client-only",
+      "version": "0.0.1",
+      "bom-ref": "pkg:npm/client-only@0.0.1",
+      "purl": "pkg:npm/client-only@0.0.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://reactjs.org/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "convert-source-map",
+      "version": "2.0.0",
+      "bom-ref": "pkg:npm/convert-source-map@2.0.0",
+      "purl": "pkg:npm/convert-source-map@2.0.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/thlorenz/convert-source-map"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "core-js",
+      "version": "3.49.0",
+      "bom-ref": "pkg:npm/core-js@3.49.0",
+      "purl": "pkg:npm/core-js@3.49.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://core-js.io"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "crelt",
+      "version": "1.0.7",
+      "bom-ref": "pkg:npm/crelt@1.0.7",
+      "purl": "pkg:npm/crelt@1.0.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://code.haverbeke.berlin/marijn/crelt"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "csstype",
+      "version": "3.2.3",
+      "bom-ref": "pkg:npm/csstype@3.2.3",
+      "purl": "pkg:npm/csstype@3.2.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/frenic/csstype#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "debug",
+      "version": "4.4.3",
+      "bom-ref": "pkg:npm/debug@4.4.3",
+      "purl": "pkg:npm/debug@4.4.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/debug-js/debug#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "bom-ref": "pkg:npm/detect-libc@2.1.2",
+      "purl": "pkg:npm/detect-libc@2.1.2",
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/lovell/detect-libc#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "detect-node-es",
+      "version": "1.1.0",
+      "bom-ref": "pkg:npm/detect-node-es@1.1.0",
+      "purl": "pkg:npm/detect-node-es@1.1.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/thekashey/detect-node"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "drizzle-orm",
+      "version": "0.45.2",
+      "bom-ref": "pkg:npm/drizzle-orm@0.45.2",
+      "purl": "pkg:npm/drizzle-orm@0.45.2",
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://orm.drizzle.team"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "electron-to-chromium",
+      "version": "1.5.396",
+      "bom-ref": "pkg:npm/electron-to-chromium@1.5.396",
+      "purl": "pkg:npm/electron-to-chromium@1.5.396",
+      "licenses": [
+        {
+          "expression": "ISC"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/Kilian/electron-to-chromium#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "entities",
+      "version": "4.5.0",
+      "bom-ref": "pkg:npm/entities@4.5.0",
+      "purl": "pkg:npm/entities@4.5.0",
+      "licenses": [
+        {
+          "expression": "BSD-2-Clause"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/fb55/entities#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "escalade",
+      "version": "3.2.0",
+      "bom-ref": "pkg:npm/escalade@3.2.0",
+      "purl": "pkg:npm/escalade@3.2.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/lukeed/escalade#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "escape-string-regexp",
+      "version": "4.0.0",
+      "bom-ref": "pkg:npm/escape-string-regexp@4.0.0",
+      "purl": "pkg:npm/escape-string-regexp@4.0.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/sindresorhus/escape-string-regexp#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "eventemitter3",
+      "version": "4.0.7",
+      "bom-ref": "pkg:npm/eventemitter3@4.0.7",
+      "purl": "pkg:npm/eventemitter3@4.0.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/primus/eventemitter3#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "bom-ref": "pkg:npm/fast-deep-equal@3.1.3",
+      "purl": "pkg:npm/fast-deep-equal@3.1.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/epoberezkin/fast-deep-equal#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fractional-indexing-jittered",
+      "version": "1.0.0",
+      "bom-ref": "pkg:npm/fractional-indexing-jittered@1.0.0",
+      "purl": "pkg:npm/fractional-indexing-jittered@1.0.0",
+      "licenses": [
+        {
+          "expression": "CC0-1.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/TMeerhof/fractional-indexing-jittered"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "gensync",
+      "version": "1.0.0-beta.2",
+      "bom-ref": "pkg:npm/gensync@1.0.0-beta.2",
+      "purl": "pkg:npm/gensync@1.0.0-beta.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/loganfsmyth/gensync"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "get-nonce",
+      "version": "1.0.1",
+      "bom-ref": "pkg:npm/get-nonce@1.0.1",
+      "purl": "pkg:npm/get-nonce@1.0.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/theKashey/get-nonce"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "hotkeys-js",
+      "version": "3.13.15",
+      "bom-ref": "pkg:npm/hotkeys-js@3.13.15",
+      "purl": "pkg:npm/hotkeys-js@3.13.15",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://jaywcjlove.github.io/hotkeys-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "idb",
+      "version": "7.1.1",
+      "bom-ref": "pkg:npm/idb@7.1.1",
+      "purl": "pkg:npm/idb@7.1.1",
+      "licenses": [
+        {
+          "expression": "ISC"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jakearchibald/idb#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-plain-object",
+      "version": "5.0.0",
+      "bom-ref": "pkg:npm/is-plain-object@5.0.0",
+      "purl": "pkg:npm/is-plain-object@5.0.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jonschlinkert/is-plain-object"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "js-tokens",
+      "version": "4.0.0",
+      "bom-ref": "pkg:npm/js-tokens@4.0.0",
+      "purl": "pkg:npm/js-tokens@4.0.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/lydell/js-tokens#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jsesc",
+      "version": "3.1.0",
+      "bom-ref": "pkg:npm/jsesc@3.1.0",
+      "purl": "pkg:npm/jsesc@3.1.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://mths.be/jsesc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "json5",
+      "version": "2.2.3",
+      "bom-ref": "pkg:npm/json5@2.2.3",
+      "purl": "pkg:npm/json5@2.2.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "http://json5.org/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "linkify-it",
+      "version": "5.0.2",
+      "bom-ref": "pkg:npm/linkify-it@5.0.2",
+      "purl": "pkg:npm/linkify-it@5.0.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/markdown-it/linkify-it#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "linkifyjs",
+      "version": "4.3.3",
+      "bom-ref": "pkg:npm/linkifyjs@4.3.3",
+      "purl": "pkg:npm/linkifyjs@4.3.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://linkify.js.org"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lodash.isequal",
+      "version": "4.5.0",
+      "bom-ref": "pkg:npm/lodash.isequal@4.5.0",
+      "purl": "pkg:npm/lodash.isequal@4.5.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://lodash.com/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lodash.isequalwith",
+      "version": "4.4.0",
+      "bom-ref": "pkg:npm/lodash.isequalwith@4.4.0",
+      "purl": "pkg:npm/lodash.isequalwith@4.4.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://lodash.com/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lodash.throttle",
+      "version": "4.1.1",
+      "bom-ref": "pkg:npm/lodash.throttle@4.1.1",
+      "purl": "pkg:npm/lodash.throttle@4.1.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://lodash.com/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lodash.uniq",
+      "version": "4.5.0",
+      "bom-ref": "pkg:npm/lodash.uniq@4.5.0",
+      "purl": "pkg:npm/lodash.uniq@4.5.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://lodash.com/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lru-cache",
+      "version": "5.1.1",
+      "bom-ref": "pkg:npm/lru-cache@5.1.1",
+      "purl": "pkg:npm/lru-cache@5.1.1",
+      "licenses": [
+        {
+          "expression": "ISC"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/isaacs/node-lru-cache#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lz-string",
+      "version": "1.5.0",
+      "bom-ref": "pkg:npm/lz-string@1.5.0",
+      "purl": "pkg:npm/lz-string@1.5.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "http://pieroxy.net/blog/pages/lz-string/index.html"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "markdown-it",
+      "version": "14.3.0",
+      "bom-ref": "pkg:npm/markdown-it@14.3.0",
+      "purl": "pkg:npm/markdown-it@14.3.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/markdown-it/markdown-it#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mdurl",
+      "version": "2.1.0",
+      "bom-ref": "pkg:npm/mdurl@2.1.0",
+      "purl": "pkg:npm/mdurl@2.1.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/markdown-it/mdurl#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ms",
+      "version": "2.1.3",
+      "bom-ref": "pkg:npm/ms@2.1.3",
+      "purl": "pkg:npm/ms@2.1.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/vercel/ms#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "nanoid",
+      "version": "3.3.16",
+      "bom-ref": "pkg:npm/nanoid@3.3.16",
+      "purl": "pkg:npm/nanoid@3.3.16",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ai/nanoid#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "next",
+      "version": "16.2.12",
+      "bom-ref": "pkg:npm/next@16.2.12",
+      "purl": "pkg:npm/next@16.2.12",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://nextjs.org"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "node-releases",
+      "version": "2.0.51",
+      "bom-ref": "pkg:npm/node-releases@2.0.51",
+      "purl": "pkg:npm/node-releases@2.0.51",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/chicoxyzzy/node-releases#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "orderedmap",
+      "version": "2.1.1",
+      "bom-ref": "pkg:npm/orderedmap@2.1.1",
+      "purl": "pkg:npm/orderedmap@2.1.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/marijnh/orderedmap#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "picocolors",
+      "version": "1.1.1",
+      "bom-ref": "pkg:npm/picocolors@1.1.1",
+      "purl": "pkg:npm/picocolors@1.1.1",
+      "licenses": [
+        {
+          "expression": "ISC"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/alexeyraspopov/picocolors#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "playwright-core",
+      "version": "1.62.0",
+      "bom-ref": "pkg:npm/playwright-core@1.62.0",
+      "purl": "pkg:npm/playwright-core@1.62.0",
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://playwright.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "playwright",
+      "version": "1.62.0",
+      "bom-ref": "pkg:npm/playwright@1.62.0",
+      "purl": "pkg:npm/playwright@1.62.0",
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://playwright.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "postcss",
+      "version": "8.5.25",
+      "bom-ref": "pkg:npm/postcss@8.5.25",
+      "purl": "pkg:npm/postcss@8.5.25",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://postcss.org/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "postgres",
+      "version": "3.4.9",
+      "bom-ref": "pkg:npm/postgres@3.4.9",
+      "purl": "pkg:npm/postgres@3.4.9",
+      "licenses": [
+        {
+          "expression": "Unlicense"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/porsager/postgres"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-changeset",
+      "version": "2.4.1",
+      "bom-ref": "pkg:npm/prosemirror-changeset@2.4.1",
+      "purl": "pkg:npm/prosemirror-changeset@2.4.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-collab",
+      "version": "1.3.1",
+      "bom-ref": "pkg:npm/prosemirror-collab@1.3.1",
+      "purl": "pkg:npm/prosemirror-collab@1.3.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-collab#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-commands",
+      "version": "1.7.1",
+      "bom-ref": "pkg:npm/prosemirror-commands@1.7.1",
+      "purl": "pkg:npm/prosemirror-commands@1.7.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-commands#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-dropcursor",
+      "version": "1.8.3",
+      "bom-ref": "pkg:npm/prosemirror-dropcursor@1.8.3",
+      "purl": "pkg:npm/prosemirror-dropcursor@1.8.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-gapcursor",
+      "version": "1.4.1",
+      "bom-ref": "pkg:npm/prosemirror-gapcursor@1.4.1",
+      "purl": "pkg:npm/prosemirror-gapcursor@1.4.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-gapcursor#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-history",
+      "version": "1.5.0",
+      "bom-ref": "pkg:npm/prosemirror-history@1.5.0",
+      "purl": "pkg:npm/prosemirror-history@1.5.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-history#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-inputrules",
+      "version": "1.5.1",
+      "bom-ref": "pkg:npm/prosemirror-inputrules@1.5.1",
+      "purl": "pkg:npm/prosemirror-inputrules@1.5.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-inputrules#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-keymap",
+      "version": "1.2.3",
+      "bom-ref": "pkg:npm/prosemirror-keymap@1.2.3",
+      "purl": "pkg:npm/prosemirror-keymap@1.2.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-keymap#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-markdown",
+      "version": "1.13.5",
+      "bom-ref": "pkg:npm/prosemirror-markdown@1.13.5",
+      "purl": "pkg:npm/prosemirror-markdown@1.13.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-menu",
+      "version": "1.3.2",
+      "bom-ref": "pkg:npm/prosemirror-menu@1.3.2",
+      "purl": "pkg:npm/prosemirror-menu@1.3.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-model",
+      "version": "1.25.11",
+      "bom-ref": "pkg:npm/prosemirror-model@1.25.11",
+      "purl": "pkg:npm/prosemirror-model@1.25.11",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-schema-basic",
+      "version": "1.2.4",
+      "bom-ref": "pkg:npm/prosemirror-schema-basic@1.2.4",
+      "purl": "pkg:npm/prosemirror-schema-basic@1.2.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-schema-basic#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-schema-list",
+      "version": "1.5.1",
+      "bom-ref": "pkg:npm/prosemirror-schema-list@1.5.1",
+      "purl": "pkg:npm/prosemirror-schema-list@1.5.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-schema-list#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-state",
+      "version": "1.4.4",
+      "bom-ref": "pkg:npm/prosemirror-state@1.4.4",
+      "purl": "pkg:npm/prosemirror-state@1.4.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-state#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-tables",
+      "version": "1.8.5",
+      "bom-ref": "pkg:npm/prosemirror-tables@1.8.5",
+      "purl": "pkg:npm/prosemirror-tables@1.8.5",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/ProseMirror/prosemirror-tables#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-trailing-node",
+      "version": "3.0.0",
+      "bom-ref": "pkg:npm/prosemirror-trailing-node@3.0.0",
+      "purl": "pkg:npm/prosemirror-trailing-node@3.0.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/remirror/remirror/tree/HEAD/packages/prosemirror-trailing-node"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-transform",
+      "version": "1.12.0",
+      "bom-ref": "pkg:npm/prosemirror-transform@1.12.0",
+      "purl": "pkg:npm/prosemirror-transform@1.12.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/prosemirror/prosemirror-transform#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prosemirror-view",
+      "version": "1.42.2",
+      "bom-ref": "pkg:npm/prosemirror-view@1.42.2",
+      "purl": "pkg:npm/prosemirror-view@1.42.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "punycode.js",
+      "version": "2.3.1",
+      "bom-ref": "pkg:npm/punycode.js@2.3.1",
+      "purl": "pkg:npm/punycode.js@2.3.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://mths.be/punycode"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "radix-ui",
+      "version": "1.6.7",
+      "bom-ref": "pkg:npm/radix-ui@1.6.7",
+      "purl": "pkg:npm/radix-ui@1.6.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://radix-ui.com/primitives"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react-dom",
+      "version": "19.2.4",
+      "bom-ref": "pkg:npm/react-dom@19.2.4",
+      "purl": "pkg:npm/react-dom@19.2.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://react.dev/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react-remove-scroll-bar",
+      "version": "2.3.8",
+      "bom-ref": "pkg:npm/react-remove-scroll-bar@2.3.8",
+      "purl": "pkg:npm/react-remove-scroll-bar@2.3.8",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/theKashey/react-remove-scroll-bar#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react-remove-scroll",
+      "version": "2.7.2",
+      "bom-ref": "pkg:npm/react-remove-scroll@2.7.2",
+      "purl": "pkg:npm/react-remove-scroll@2.7.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/theKashey/react-remove-scroll#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react-style-singleton",
+      "version": "2.2.3",
+      "bom-ref": "pkg:npm/react-style-singleton@2.2.3",
+      "purl": "pkg:npm/react-style-singleton@2.2.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/theKashey/react-style-singleton#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "react",
+      "version": "19.2.4",
+      "bom-ref": "pkg:npm/react@19.2.4",
+      "purl": "pkg:npm/react@19.2.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://react.dev/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rope-sequence",
+      "version": "1.3.4",
+      "bom-ref": "pkg:npm/rope-sequence@1.3.4",
+      "purl": "pkg:npm/rope-sequence@1.3.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/marijnh/rope-sequence#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "scheduler",
+      "version": "0.27.0",
+      "bom-ref": "pkg:npm/scheduler@0.27.0",
+      "purl": "pkg:npm/scheduler@0.27.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://react.dev/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "semver",
+      "version": "6.3.1",
+      "bom-ref": "pkg:npm/semver@6.3.1",
+      "purl": "pkg:npm/semver@6.3.1",
+      "licenses": [
+        {
+          "expression": "ISC"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/npm/node-semver#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "semver",
+      "version": "7.8.5",
+      "bom-ref": "pkg:npm/semver@7.8.5",
+      "purl": "pkg:npm/semver@7.8.5",
+      "licenses": [
+        {
+          "expression": "ISC"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/npm/node-semver#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sharp",
+      "version": "0.35.3",
+      "bom-ref": "pkg:npm/sharp@0.35.3",
+      "purl": "pkg:npm/sharp@0.35.3",
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://sharp.pixelplumbing.com"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "source-map-js",
+      "version": "1.2.1",
+      "bom-ref": "pkg:npm/source-map-js@1.2.1",
+      "purl": "pkg:npm/source-map-js@1.2.1",
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/7rulnik/source-map-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "styled-jsx",
+      "version": "5.1.6",
+      "bom-ref": "pkg:npm/styled-jsx@5.1.6",
+      "purl": "pkg:npm/styled-jsx@5.1.6",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/vercel/styled-jsx#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tippy.js",
+      "version": "6.3.7",
+      "bom-ref": "pkg:npm/tippy.js@6.3.7",
+      "purl": "pkg:npm/tippy.js@6.3.7",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://atomiks.github.io/tippyjs/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tldraw",
+      "version": "3.15.5",
+      "bom-ref": "pkg:npm/tldraw@3.15.5",
+      "purl": "pkg:npm/tldraw@3.15.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "tldraw license (watermark required)"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tldraw.dev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tslib",
+      "version": "2.8.1",
+      "bom-ref": "pkg:npm/tslib@2.8.1",
+      "purl": "pkg:npm/tslib@2.8.1",
+      "licenses": [
+        {
+          "expression": "0BSD"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.typescriptlang.org/"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "uc.micro",
+      "version": "2.1.0",
+      "bom-ref": "pkg:npm/uc.micro@2.1.0",
+      "purl": "pkg:npm/uc.micro@2.1.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/markdown-it/uc.micro#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "undici-types",
+      "version": "6.21.0",
+      "bom-ref": "pkg:npm/undici-types@6.21.0",
+      "purl": "pkg:npm/undici-types@6.21.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://undici.nodejs.org"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "update-browserslist-db",
+      "version": "1.2.3",
+      "bom-ref": "pkg:npm/update-browserslist-db@1.2.3",
+      "purl": "pkg:npm/update-browserslist-db@1.2.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/browserslist/update-db#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "use-callback-ref",
+      "version": "1.3.3",
+      "bom-ref": "pkg:npm/use-callback-ref@1.3.3",
+      "purl": "pkg:npm/use-callback-ref@1.3.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/theKashey/use-callback-ref#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "use-sidecar",
+      "version": "1.1.3",
+      "bom-ref": "pkg:npm/use-sidecar@1.1.3",
+      "purl": "pkg:npm/use-sidecar@1.1.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/theKashey/use-sidecar"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "use-sync-external-store",
+      "version": "1.6.0",
+      "bom-ref": "pkg:npm/use-sync-external-store@1.6.0",
+      "purl": "pkg:npm/use-sync-external-store@1.6.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/facebook/react#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "w3c-keyname",
+      "version": "2.2.8",
+      "bom-ref": "pkg:npm/w3c-keyname@2.2.8",
+      "purl": "pkg:npm/w3c-keyname@2.2.8",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/marijnh/w3c-keyname#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yallist",
+      "version": "3.1.1",
+      "bom-ref": "pkg:npm/yallist@3.1.1",
+      "purl": "pkg:npm/yallist@3.1.1",
+      "licenses": [
+        {
+          "expression": "ISC"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/isaacs/yallist#readme"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "zod",
+      "version": "4.4.3",
+      "bom-ref": "pkg:npm/zod@4.4.3",
+      "purl": "pkg:npm/zod@4.4.3",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://zod.dev"
+        }
+      ]
+    }
+  ]
+}

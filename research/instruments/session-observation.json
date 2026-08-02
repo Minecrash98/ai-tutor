@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "instrumentStatus": "DRAFT_BEFORE_EXTERNAL_REVIEW",
+  "fields": [
+    { "id": "participantId", "type": "pseudonymous-id", "required": true },
+    { "id": "startedAt", "type": "timestamp", "required": true },
+    { "id": "firstDragMs", "type": "nonnegative-number-or-missing", "required": true },
+    { "id": "completedWithinSevenMinutes", "type": "boolean-or-missing", "required": true },
+    { "id": "highestHintLevel", "type": "integer-0-to-3", "required": true },
+    { "id": "immediateTransferPassed", "type": "boolean-or-missing", "required": true },
+    { "id": "delayedWindowReached", "type": "boolean", "required": true },
+    { "id": "delayedTransferPassed", "type": "boolean-or-missing", "required": true },
+    { "id": "systemFailure", "type": "boolean", "required": true },
+    { "id": "withdrawnBeforeStart", "type": "boolean", "required": true }
+  ]
+}

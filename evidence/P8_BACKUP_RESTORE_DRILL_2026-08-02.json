@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "runId": "1785679261430",
+  "sourceDatabase": "ai_tutor",
+  "restoreDatabase": "ai_tutor_restore_1785679261430",
+  "startedAt": "2026-08-02T14:01:01.430Z",
+  "finishedAt": "2026-08-02T14:01:28.625Z",
+  "method": "pg_dump custom format to host temp, restore into isolated temporary database; production database never overwritten",
+  "backup": {
+    "sha256": "A86CA3F9C096DD25892FF9C8E4B1974C3D3AE6BCABD360F0F2194F3C2B955882",
+    "format": "PostgreSQL custom",
+    "retained": false
+  },
+  "source": {
+    "tables": {
+      "canvas": 116,
+      "code_revision": 0,
+      "comparison": 0,
+      "import_snapshot": 0,
+      "learning_evidence_analysis": 165,
+      "session_event": 677,
+      "session_snapshot": 470,
+      "teaching_block": 0,
+      "teaching_session": 116,
+      "transfer_assessment_assignment": 86,
+      "transfer_assessment_attempt": 14,
+      "tutor_turn": 0
+    },
+    "schema": {
+      "publicTables": 12,
+      "publicIndexes": 18,
+      "publicConstraints": 25,
+      "drizzleMigrations": 4
+    }
+  },
+  "restored": {
+    "tables": {
+      "canvas": 116,
+      "code_revision": 0,
+      "comparison": 0,
+      "import_snapshot": 0,
+      "learning_evidence_analysis": 165,
+      "session_event": 677,
+      "session_snapshot": 470,
+      "teaching_block": 0,
+      "teaching_session": 116,
+      "transfer_assessment_assignment": 86,
+      "transfer_assessment_attempt": 14,
+      "tutor_turn": 0
+    },
+    "schema": {
+      "publicTables": 12,
+      "publicIndexes": 18,
+      "publicConstraints": 25,
+      "drizzleMigrations": 4
+    }
+  },
+  "passed": true,
+  "cleanup": {
+    "temporaryDatabaseRemoved": true,
+    "containerBackupRemoved": true,
+    "hostBackupRemoved": true,
+    "webRestarted": true
+  },
+  "health": {
+    "passed": true,
+    "endpoint": "http://127.0.0.1:3000/api/health",
+    "httpStatus": 200,
+    "status": "ok",
+    "database": {
+      "configured": true,
+      "ready": true,
+      "latencyMs": 14
+    }
+  },
+  "scope": "Machine restore evidence on the local release-candidate host. It does not prove off-host disaster recovery or operator rehearsal."
+}

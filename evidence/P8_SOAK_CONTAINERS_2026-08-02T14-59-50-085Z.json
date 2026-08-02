@@ -1,0 +1,782 @@
+{
+  "runId": "2026-08-02T14-59-50-085Z",
+  "qualification": true,
+  "passed": true,
+  "generatedAt": "2026-08-02T15:30:01.738Z",
+  "durationMs": 1810248,
+  "browserExitCode": 0,
+  "expectedContainers": {
+    "web": {
+      "service": "web",
+      "id": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+      "name": "aitutor-web-1"
+    },
+    "database": {
+      "service": "db",
+      "id": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+      "name": "aitutor-db-1"
+    }
+  },
+  "releaseManifest": {
+    "path": "evidence/P8_RELEASE_MANIFEST_2026-08-02T14-59-50-085Z.json",
+    "sha256": "5be00569016b58e4985997f892f98dd221adc89e57445c79cbdbadf684823502"
+  },
+  "budgets": {
+    "durationMs": 1800000,
+    "minimumSamples": 31,
+    "webMaxBytes": 536870912,
+    "databaseMaxBytes": 268435456,
+    "growthBytes": 67108864
+  },
+  "actual": {
+    "web": {
+      "samples": 32,
+      "maxBytes": 101386813,
+      "growthBytes": -2558525
+    },
+    "database": {
+      "samples": 32,
+      "maxBytes": 60806922,
+      "growthBytes": -7497318
+    }
+  },
+  "samplingErrorCount": 0,
+  "samples": [
+    {
+      "elapsedMs": 2084,
+      "at": "2026-08-02T14:59:53.574Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 92023030,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60702065,
+          "cpuPercent": 0.01,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 64174,
+      "at": "2026-08-02T15:00:55.664Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 97171538,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60481864,
+          "cpuPercent": 0.01,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 124230,
+      "at": "2026-08-02T15:01:55.720Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 98041856,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60555264,
+          "cpuPercent": 0.01,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 184221,
+      "at": "2026-08-02T15:02:55.711Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 99425976,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60460892,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 243226,
+      "at": "2026-08-02T15:03:54.716Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 98115256,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60670607,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 303212,
+      "at": "2026-08-02T15:04:54.702Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 98157199,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60681093,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 364218,
+      "at": "2026-08-02T15:05:55.708Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 98387886,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60702065,
+          "cpuPercent": 1.92,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 424230,
+      "at": "2026-08-02T15:06:55.720Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 98513715,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60555264,
+          "cpuPercent": 1.77,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 483252,
+      "at": "2026-08-02T15:07:54.742Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 98733916,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60670607,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 544249,
+      "at": "2026-08-02T15:08:55.739Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 99488891,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60481864,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 603257,
+      "at": "2026-08-02T15:09:54.747Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 99688120,
+          "cpuPercent": 0.02,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60723036,
+          "cpuPercent": 0.01,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 664265,
+      "at": "2026-08-02T15:10:55.755Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 100233380,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60408463,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 723265,
+      "at": "2026-08-02T15:11:54.755Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 100589896,
+          "cpuPercent": 0.01,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60439921,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 784292,
+      "at": "2026-08-02T15:12:55.782Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 101208556,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60534292,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 844313,
+      "at": "2026-08-02T15:13:55.803Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 101386813,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 60806922,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 904302,
+      "at": "2026-08-02T15:14:55.792Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 93983867,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 52932116,
+          "cpuPercent": 0.01,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 964313,
+      "at": "2026-08-02T15:15:55.803Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 94633984,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53383004,
+          "cpuPercent": 0.01,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1024328,
+      "at": "2026-08-02T15:16:55.818Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 94948557,
+          "cpuPercent": 0.01,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 52900659,
+          "cpuPercent": 1.82,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1084369,
+      "at": "2026-08-02T15:17:55.859Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95252644,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53383004,
+          "cpuPercent": 1.86,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1144363,
+      "at": "2026-08-02T15:18:55.853Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95210701,
+          "cpuPercent": 0.01,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53110374,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1204336,
+      "at": "2026-08-02T15:19:55.826Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95483331,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53760492,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1264356,
+      "at": "2026-08-02T15:20:55.846Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 94822728,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53466890,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1323358,
+      "at": "2026-08-02T15:21:54.848Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95284101,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53812920,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1384385,
+      "at": "2026-08-02T15:22:55.875Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95095357,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53194260,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1443393,
+      "at": "2026-08-02T15:23:54.883Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 96070533,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53403976,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1504396,
+      "at": "2026-08-02T15:24:55.886Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95724503,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53120860,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1563422,
+      "at": "2026-08-02T15:25:54.912Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 96458506,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53561262,
+          "cpuPercent": 0.01,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1624425,
+      "at": "2026-08-02T15:26:55.915Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95483331,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53424947,
+          "cpuPercent": 1.73,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1683438,
+      "at": "2026-08-02T15:27:54.928Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95661588,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53571748,
+          "cpuPercent": 0.08,
+          "pids": 13
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1744444,
+      "at": "2026-08-02T15:28:55.934Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95913247,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 52953088,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1804454,
+      "at": "2026-08-02T15:29:55.944Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95189729,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 52932116,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    },
+    {
+      "elapsedMs": 1810248,
+      "at": "2026-08-02T15:30:01.738Z",
+      "containers": [
+        {
+          "service": "web",
+          "containerId": "1c0c4e95597a477bd5d51a36005d8606ae08f798da5d6d26de69a0a3066fcf8e",
+          "name": "aitutor-web-1",
+          "memoryBytes": 95420416,
+          "cpuPercent": 0,
+          "pids": 12
+        },
+        {
+          "service": "db",
+          "containerId": "84d7720c9fea1a6609994dd60a368131f27b065806d8dc724a992e5d56cd9d9a",
+          "name": "aitutor-db-1",
+          "memoryBytes": 53057946,
+          "cpuPercent": 0,
+          "pids": 7
+        }
+      ],
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "policyVersion": "p6-performance-v2",
+  "measuredAt": "2026-08-02",
+  "sampleCount": 20,
+  "pairCount": 10,
+  "failureCount": 0,
+  "supersedesForCurrentClaims": "evidence/P6_LATENCY_SAMPLES_2026-08-01.json",
+  "conditions": {
+    "browser": "Playwright Chromium in a fresh isolated context per session",
+    "microphone": "C:/tmp/ai-tutor-one-action-ready.wav through Chromium fake audio capture",
+    "physicalMicrophoneAccessed": false,
+    "audioOutput": "Chromium --mute-audio",
+    "recognizedRequestRequirement": "explicit create/build one box-model experiment request",
+    "t0Source": "last-above-threshold-vad-sample",
+    "firstMeaningfulCaptionSource": "canvas-visible-confirmation after a successful mutating canvas tool",
+    "percentileMethod": "nearest-rank",
+    "pairing": "10 cold/warm pairs, serial worker",
+    "network": "uncontrolled live network; machine evidence only",
+    "command": "pnpm exec playwright test tests/e2e/realtime-voice-latency-live.spec.ts --project=chromium --repeat-each=10 --workers=1"
+  },
+  "summary": {
+    "combined": {
+      "confirmationAudioMs": { "n": 20, "min": 1632, "p50": 1889, "p95": 2088, "max": 2148 },
+      "inputTranscriptFinalMs": { "n": 20, "min": 1621, "p50": 1874, "p95": 2072, "max": 2139 },
+      "firstMeaningfulCaptionMs": { "n": 20, "min": 6143, "p50": 7733, "p95": 10228, "max": 10859 },
+      "firstModelAudioMs": { "n": 20, "min": 1532, "p50": 1928, "p95": 2324, "max": 2390 },
+      "canvasVisibleT1Ms": { "n": 20, "min": 6096, "p50": 7696, "p95": 10214, "max": 10824 },
+      "captionAfterCanvasMs": { "n": 20, "min": 8, "p50": 17, "p95": 55, "max": 55 },
+      "voiceIntentGateSuppressedCharacters": { "n": 20, "min": 1, "p50": 2, "p95": 7, "max": 7 }
+    },
+    "cold": {
+      "confirmationAudioMs": { "n": 10, "min": 1751, "p50": 1828, "p95": 2088, "max": 2088 },
+      "inputTranscriptFinalMs": { "n": 10, "min": 1729, "p50": 1814, "p95": 2072, "max": 2072 },
+      "firstMeaningfulCaptionMs": { "n": 10, "min": 6143, "p50": 7332, "p95": 10859, "max": 10859 },
+      "firstModelAudioMs": { "n": 10, "min": 1532, "p50": 1888, "p95": 2324, "max": 2324 },
+      "canvasVisibleT1Ms": { "n": 10, "min": 6096, "p50": 7289, "p95": 10824, "max": 10824 },
+      "captionAfterCanvasMs": { "n": 10, "min": 35, "p50": 41, "p95": 55, "max": 55 },
+      "voiceIntentGateSuppressedCharacters": { "n": 10, "min": 2, "p50": 2, "p95": 7, "max": 7 }
+    },
+    "warm": {
+      "confirmationAudioMs": { "n": 10, "min": 1632, "p50": 1919, "p95": 2148, "max": 2148 },
+      "inputTranscriptFinalMs": { "n": 10, "min": 1621, "p50": 1911, "p95": 2139, "max": 2139 },
+      "firstMeaningfulCaptionMs": { "n": 10, "min": 6987, "p50": 7921, "p95": 10228, "max": 10228 },
+      "firstModelAudioMs": { "n": 10, "min": 1598, "p50": 2105, "p95": 2390, "max": 2390 },
+      "canvasVisibleT1Ms": { "n": 10, "min": 6977, "p50": 7904, "p95": 10214, "max": 10214 },
+      "captionAfterCanvasMs": { "n": 10, "min": 8, "p50": 12, "p95": 17, "max": 17 },
+      "voiceIntentGateSuppressedCharacters": { "n": 10, "min": 1, "p50": 2, "p95": 5, "max": 5 }
+    }
+  },
+  "samples": [
+    { "pairIndex": 0, "startupKind": "cold", "sessionId": "70ffa62f-b9ec-4b8f-952c-157aec5e1a00", "turnId": "00747763-8a23-432e-83d2-9060aebc0240", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1751, "inputTranscriptFinalMs": 1741, "firstMeaningfulCaptionMs": 10859, "firstModelAudioMs": 1721, "canvasVisibleT1Ms": 10824, "captionAfterCanvasMs": 35, "voiceIntentGateSuppressedCharacters": 6 },
+    { "pairIndex": 0, "startupKind": "warm", "sessionId": "459bf380-7d35-424e-ad5a-9b26851ce87c", "turnId": "2aef26eb-6b98-4bf0-a1db-db204deb64e4", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1632, "inputTranscriptFinalMs": 1623, "firstMeaningfulCaptionMs": 7008, "firstModelAudioMs": 1813, "canvasVisibleT1Ms": 6999, "captionAfterCanvasMs": 9, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 1, "startupKind": "cold", "sessionId": "7ac124b8-3944-4e12-93da-5dde8f4dc336", "turnId": "ed811605-75f2-4334-8741-765a9988ac97", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 2040, "inputTranscriptFinalMs": 2029, "firstMeaningfulCaptionMs": 7733, "firstModelAudioMs": 2267, "canvasVisibleT1Ms": 7696, "captionAfterCanvasMs": 37, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 1, "startupKind": "warm", "sessionId": "2722b00c-096b-4c65-b15d-7e93662c7157", "turnId": "bbb2f97e-fe54-4e87-b0fb-41cd9821ec1b", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1919, "inputTranscriptFinalMs": 1911, "firstMeaningfulCaptionMs": 6987, "firstModelAudioMs": 2107, "canvasVisibleT1Ms": 6977, "captionAfterCanvasMs": 10, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 2, "startupKind": "cold", "sessionId": "f06429b9-3012-4af1-86a5-320230854489", "turnId": "cac4df0b-bde2-4463-8836-a35fcdc4d3d6", "recognizedRequest": "你 给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1923, "inputTranscriptFinalMs": 1911, "firstMeaningfulCaptionMs": 8791, "firstModelAudioMs": 2306, "canvasVisibleT1Ms": 8750, "captionAfterCanvasMs": 41, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 2, "startupKind": "warm", "sessionId": "bbe62424-df14-40a6-abc2-436ebe55b787", "turnId": "988aa51d-a0d8-4244-8466-6a679d026449", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1858, "inputTranscriptFinalMs": 1850, "firstMeaningfulCaptionMs": 7921, "firstModelAudioMs": 1927, "canvasVisibleT1Ms": 7904, "captionAfterCanvasMs": 17, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 3, "startupKind": "cold", "sessionId": "03377819-21a0-4648-8110-ca3546f4efa7", "turnId": "e410a413-0545-4607-a447-517a7477f460", "recognizedRequest": "你给我做一个能看懂、能编辑变化的盒模型小实验", "confirmationAudioMs": 1796, "inputTranscriptFinalMs": 1729, "firstMeaningfulCaptionMs": 9129, "firstModelAudioMs": 1756, "canvasVisibleT1Ms": 9074, "captionAfterCanvasMs": 55, "voiceIntentGateSuppressedCharacters": 4 },
+    { "pairIndex": 3, "startupKind": "warm", "sessionId": "9398de00-b11a-4ca6-bead-1af1b93ad2fa", "turnId": "ea15c83d-0396-4d20-9e6f-3fc539032531", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1931, "inputTranscriptFinalMs": 1919, "firstMeaningfulCaptionMs": 8504, "firstModelAudioMs": 2318, "canvasVisibleT1Ms": 8494, "captionAfterCanvasMs": 10, "voiceIntentGateSuppressedCharacters": 1 },
+    { "pairIndex": 4, "startupKind": "cold", "sessionId": "85335dad-7a3b-4a0e-be9e-6b072325aca6", "turnId": "025ab3e8-27b5-41ab-a0a8-462c4f72f322", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1827, "inputTranscriptFinalMs": 1807, "firstMeaningfulCaptionMs": 6670, "firstModelAudioMs": 1888, "canvasVisibleT1Ms": 6615, "captionAfterCanvasMs": 55, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 4, "startupKind": "warm", "sessionId": "63b963cc-3277-48c6-97b9-3d75af032b1f", "turnId": "fc22ee24-3ca2-4416-86ff-44ee33edaa21", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1941, "inputTranscriptFinalMs": 1933, "firstMeaningfulCaptionMs": 7429, "firstModelAudioMs": 2261, "canvasVisibleT1Ms": 7416, "captionAfterCanvasMs": 13, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 5, "startupKind": "cold", "sessionId": "e1dacc3f-1242-44be-a301-2269cefa0801", "turnId": "238ca687-6369-4659-a6d6-993b711f60a6", "recognizedRequest": "你 给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1828, "inputTranscriptFinalMs": 1814, "firstMeaningfulCaptionMs": 8087, "firstModelAudioMs": 1532, "canvasVisibleT1Ms": 8052, "captionAfterCanvasMs": 35, "voiceIntentGateSuppressedCharacters": 7 },
+    { "pairIndex": 5, "startupKind": "warm", "sessionId": "3b779355-8d63-4476-948b-2317d72f3c8b", "turnId": "5aa6c1ba-900c-4fa7-b8a4-5b4d247e87ad", "recognizedRequest": "你 给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1988, "inputTranscriptFinalMs": 1976, "firstMeaningfulCaptionMs": 8579, "firstModelAudioMs": 2125, "canvasVisibleT1Ms": 8567, "captionAfterCanvasMs": 12, "voiceIntentGateSuppressedCharacters": 3 },
+    { "pairIndex": 6, "startupKind": "cold", "sessionId": "bef78582-37cd-4654-ac58-4d99e97330aa", "turnId": "eb451865-e594-49b6-b6aa-481923872fb7", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 2088, "inputTranscriptFinalMs": 2072, "firstMeaningfulCaptionMs": 7232, "firstModelAudioMs": 2324, "canvasVisibleT1Ms": 7191, "captionAfterCanvasMs": 41, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 6, "startupKind": "warm", "sessionId": "c5586016-0393-4f82-9431-1929815fdddd", "turnId": "133289ea-253c-4263-b6b1-2539d49389d6", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1633, "inputTranscriptFinalMs": 1621, "firstMeaningfulCaptionMs": 8136, "firstModelAudioMs": 1598, "canvasVisibleT1Ms": 8128, "captionAfterCanvasMs": 8, "voiceIntentGateSuppressedCharacters": 4 },
+    { "pairIndex": 7, "startupKind": "cold", "sessionId": "a1df3c7c-4daf-4467-8a28-48d0d09e422b", "turnId": "e150c9af-a694-4356-b957-1533ce23cb60", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 2054, "inputTranscriptFinalMs": 2040, "firstMeaningfulCaptionMs": 6560, "firstModelAudioMs": 2123, "canvasVisibleT1Ms": 6518, "captionAfterCanvasMs": 42, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 7, "startupKind": "warm", "sessionId": "825dea31-85c8-4b00-8269-20949c4b0e14", "turnId": "04e9a443-8ea9-4259-a9cb-ea6d3373f206", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 2002, "inputTranscriptFinalMs": 1994, "firstMeaningfulCaptionMs": 9179, "firstModelAudioMs": 2105, "canvasVisibleT1Ms": 9162, "captionAfterCanvasMs": 17, "voiceIntentGateSuppressedCharacters": 5 },
+    { "pairIndex": 8, "startupKind": "cold", "sessionId": "7881b953-f25f-4a0a-ba10-4c755aa2c01c", "turnId": "1d630592-e21a-4128-91eb-892eb53cc188", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1816, "inputTranscriptFinalMs": 1806, "firstMeaningfulCaptionMs": 7332, "firstModelAudioMs": 1928, "canvasVisibleT1Ms": 7289, "captionAfterCanvasMs": 43, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 8, "startupKind": "warm", "sessionId": "1ec0d33a-683e-4395-b88e-5eb985d41068", "turnId": "99714507-4983-41f7-82c8-971626c257ab", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 2148, "inputTranscriptFinalMs": 2139, "firstMeaningfulCaptionMs": 10228, "firstModelAudioMs": 2390, "canvasVisibleT1Ms": 10214, "captionAfterCanvasMs": 14, "voiceIntentGateSuppressedCharacters": 2 },
+    { "pairIndex": 9, "startupKind": "cold", "sessionId": "3963994c-4348-41d8-a571-1f1395dc47ad", "turnId": "2f5d601c-ce8a-4308-9e1d-f1bcfff78b9c", "recognizedRequest": "你给我做一个能看懂内边距变化的盒模型小实验", "confirmationAudioMs": 1889, "inputTranscriptFinalMs": 1874, "firstMeaningfulCaptionMs": 6143, "firstModelAudioMs": 1588, "canvasVisibleT1Ms": 6096, "captionAfterCanvasMs": 47, "voiceIntentGateSuppressedCharacters": 7 },
+    { "pairIndex": 9, "startupKind": "warm", "sessionId": "a6af0333-e3fd-4aa8-8608-6f1e8075dbac", "turnId": "6963ffc4-4d36-4fa5-a873-93b1712128a5", "recognizedRequest": "你给我做一个能看懂、能编辑变化的盒模型小实验", "confirmationAudioMs": 1746, "inputTranscriptFinalMs": 1738, "firstMeaningfulCaptionMs": 7635, "firstModelAudioMs": 1925, "canvasVisibleT1Ms": 7623, "captionAfterCanvasMs": 12, "voiceIntentGateSuppressedCharacters": 3 }
+  ]
+}

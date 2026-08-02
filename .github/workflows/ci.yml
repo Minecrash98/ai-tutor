@@ -36,9 +36,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-      - run: npm install --global corepack@0.34.0
-      - run: corepack enable
-      - run: corepack prepare pnpm@10.12.3 --activate
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.3
+          run_install: false
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium firefox webkit
       - run: pnpm db:migrate
@@ -66,9 +67,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-      - run: npm install --global corepack@0.34.0
-      - run: corepack enable
-      - run: corepack prepare pnpm@10.12.3 --activate
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.3
+          run_install: false
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install chromium
       - run: pnpm exec playwright test tests/e2e/p8-browser-matrix.spec.ts --project=chrome --project=edge
@@ -93,9 +95,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-      - run: npm install --global corepack@0.34.0
-      - run: corepack enable
-      - run: corepack prepare pnpm@10.12.3 --activate
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.3
+          run_install: false
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
       - run: docker compose config --quiet
@@ -147,9 +150,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-      - run: npm install --global corepack@0.34.0
-      - run: corepack enable
-      - run: corepack prepare pnpm@10.12.3 --activate
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.3
+          run_install: false
       - run: pnpm install --frozen-lockfile
       - run: pnpm compliance:check
       - uses: actions/upload-artifact@v4

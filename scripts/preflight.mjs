@@ -3,6 +3,7 @@ import {
   constants as fsConstants,
   accessSync,
   existsSync,
+  mkdirSync,
   readFileSync,
 } from "node:fs";
 import { createRequire } from "node:module";
@@ -124,6 +125,13 @@ record(
 );
 
 const writablePaths = ["evidence", "output"].map((path) => resolve(root, path));
+for (const path of writablePaths) {
+  try {
+    mkdirSync(path, { recursive: true });
+  } catch {
+    // The required check below reports a missing or unwritable directory.
+  }
+}
 const unwritablePaths = writablePaths.filter(
   (path) =>
     !existsSync(path) ||

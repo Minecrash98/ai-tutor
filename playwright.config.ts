@@ -4,13 +4,14 @@ const liveRealtime = process.env.AI_TUTOR_LIVE_REALTIME === "1";
 const fakeAudioCapture = process.env.AI_TUTOR_FAKE_AUDIO_CAPTURE;
 const e2ePort = process.env.AI_TUTOR_E2E_PORT ?? "3100";
 const e2eBaseUrl = `http://127.0.0.1:${e2ePort}`;
+const visualTestIgnore =
+  process.env.AI_TUTOR_SKIP_VISUAL === "1"
+    ? ["**/p8-visual.spec.ts"]
+    : [];
 
 export default defineConfig({
   testDir: "./tests/e2e",
-  testIgnore:
-    process.env.AI_TUTOR_SKIP_VISUAL === "1"
-      ? ["**/p8-visual.spec.ts"]
-      : [],
+  testIgnore: visualTestIgnore,
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 2 : 0,
@@ -37,7 +38,7 @@ export default defineConfig({
   projects: [
     {
       name: "chromium",
-      testIgnore: ["**/p8-performance.spec.ts"],
+      testIgnore: ["**/p8-performance.spec.ts", ...visualTestIgnore],
       use: { ...devices["Desktop Chrome"] },
     },
     {

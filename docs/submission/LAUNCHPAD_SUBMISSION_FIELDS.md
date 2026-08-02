@@ -10,11 +10,9 @@ AI Tutor
 
 ## Q2 — Link to GitHub Repository
 
-PENDING_PUBLIC_REPOSITORY_URL
+https://github.com/Minecrash98/ai-tutor
 
-Required final form:
-
-https://github.com/USERNAME/ai-tutor
+Verified public repository main page.
 
 ## Q3 — Link to YouTube Video Demo
 
@@ -48,6 +46,7 @@ Target format: PNG, 1600×900, below 2 MB.
 
 - The GitHub repository must be public and the link must point to its main page.
 - The YouTube video must be public or unlisted and playable when embedded.
-- Replace both PENDING placeholders only after each public URL is verified.
+- The GitHub URL above was verified public on 2026-08-03. Replace the YouTube
+  placeholder only after the video URL is verified.
 - Do not publish .env files, OAuth material, API keys, personal data, raw
   participant data, or local browser state.

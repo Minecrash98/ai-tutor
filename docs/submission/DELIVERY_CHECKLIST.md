@@ -69,19 +69,18 @@
 - Realtime depends on an authenticated local Codex app-server; deterministic
   lessons do not.
 
-## External fields still requiring real URLs
+## External publication status
 
-- PENDING_PUBLIC_REPOSITORY_URL
-- PENDING_YOUTUBE_URL
+- GitHub: https://github.com/Minecrash98/ai-tutor — verified public, main branch
+  published at commit `727dad77ac2c39911834b73e31e53ca650bcdfc6`.
+- YouTube: PENDING_YOUTUBE_URL
 
-The current workspace has no .git metadata and no existing public repository
-link. The video has not yet been uploaded to a verified public or unlisted
-YouTube URL. Do not invent either link. After publication, replace the
-placeholders in:
+The video has not yet been uploaded to a verified public or unlisted YouTube
+URL. Do not invent the link. After publication, replace its placeholder in:
 
 - docs/submission/LAUNCHPAD_SUBMISSION_FIELDS.md
-- docs/submission/YOUTUBE_DEMO_PACKAGE.md
+- docs/submission/YOUTUBE_DEMO_PACKAGE.md if a direct video link is added there
 
-Then verify the GitHub main page is public, the YouTube video embeds while
-signed out, captions are attached, the cover is below 2 MB, and no credentials
-or personal data are present.
+Then verify the YouTube video embeds while signed out and captions are
+attached. The GitHub main page, cover size, and public-source credential scan
+have already been verified.

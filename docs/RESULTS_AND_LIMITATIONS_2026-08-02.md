@@ -12,7 +12,9 @@
 - PostgreSQL 镜像：`sha256:8189a1f6e40904781fc9e2612687877791d21679866db58b1de996b31fc312e4`。
 - 绑定清单：`evidence/P8_RELEASE_MANIFEST_2026-08-02T18-39-13-438Z.json`；文件 SHA-256：`ad715ffee3a1f234c85caa33126428b9d653e99f98e23a818b65c43bf2a5da5e`。
 - 清单明确只绑定本地 release candidate，不暗示完成 30 分钟浸泡。
-- 当前目录没有 `.git`，因此不能提供 commit、干净 checkout、源码签名或 CI 来源证明。
+- 2026-08-03 已初始化 Git、建立公开仓库并把 `main` 推送到
+  `https://github.com/Minecrash98/ai-tutor`；首个公开提交为
+  `727dad77ac2c39911834b73e31e53ca650bcdfc6`。CI 来源证明仍需等待公开工作流实际完成。
 
 ## 2. 完整机器基线
 
@@ -89,7 +91,8 @@
 - 官方比赛名称、评分表、时限、联网/外部服务规则：未提供。
 - 法律、隐私、商标和比赛展示权意见：未取得；工程 license/SBOM 不是法律意见。
 - 第二台机器、第二网络、投影、热点、耳麦和真实噪声麦克风矩阵：未验收。
-- 公共部署和最终提交：未发生；当前没有已验证的公共 GitHub 或 YouTube URL。
+- 公共 GitHub：已验证 `https://github.com/Minecrash98/ai-tutor` 为公开主页面；
+  YouTube 与比赛表单最终提交尚未完成。
 - 30 分钟浸泡：没有合格的当前源码记录，且按用户要求不再重跑。
 - 购买：未发生，也不会执行。
 - 视频 Demo：已在全新隔离浏览器中录制全英文 CSS 全局颜色变量候选，离线英文旁白通过 Microsoft Zira 生成，物理麦克风调用 0；最终 WebM 为 300.008 秒、1280×720、VP8 + Opus。文件与 SHA-256 见 `docs/submission/DELIVERY_CHECKLIST.md`。这是本地候选，尚未上传或冒充官方最终提交。

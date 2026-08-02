@@ -15,7 +15,7 @@ The product is designed around Predict–Observe–Explain–Transfer rather tha
 answer generation alone. Tutor claims can be grounded in page facts, and
 lesson, tutor, tool, and canvas events can be replayed as Learning Proof.
 
-Repository: PENDING_PUBLIC_REPOSITORY_URL
+Repository: https://github.com/Minecrash98/ai-tutor
 
 Honest scope: this video demonstrates implemented machine-validated behavior.
 It is not human learning-outcome evidence. The current product shell is

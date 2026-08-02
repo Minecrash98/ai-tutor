@@ -349,7 +349,7 @@
 
 | ID | 状态 | 当前证据或阻塞 |
 |---:|:---:|---|
-| 081 | BLOCKED | 固定 Node/pnpm 和完整基线已重复通过；当前交付目录没有 `.git`，无法从“干净 checkout”建立可信 commit/CI 来源，本轮也未擅自初始化、提交或推送。 |
+| 081 | BLOCKED | 固定 Node/pnpm 和完整基线已重复通过；2026-08-03 已建立公开 GitHub 仓库并推送 `main`（首个公开提交 `727dad77ac2c39911834b73e31e53ca650bcdfc6`）。仍需公开 CI 完成和干净 checkout 复现证据，故不提前改为 VERIFIED。 |
 | 082 | VERIFIED | Chrome、Edge、Firefox、WebKit 与 Chromium 移动触摸矩阵真实运行：12 项通过、8 项按明确能力边界跳过；`390×844` 核心路径另行通过。 |
 | 083 | IN_PROGRESS | 21 runtime/53 block 当前主机性能与交互预算通过；当前源码没有完整、合格的 30 分钟浏览器+容器泄漏记录。用户明确取消重跑，故保持未验证且不伪造。 |
 | 084 | VERIFIED | tldraw/Tutor/检查器按使用懒加载，预览热路径不重选 target/刷新 overlay；47 次拖动 P95 23.3ms、>50ms long task 0、松手权威写入 1 次。 |
@@ -372,7 +372,7 @@
 | 096 | BLOCKED | 诚实结果报告模板、去标识规则和确定性统计脚本已完成；真实参与者为 0，无法形成真人性能/学习结果，机器数据不会冒充。 |
 | 097 | BLOCKED | 赛前工作已授权，但仍缺陌生演示者和真实投影/热点/耳麦。 |
 | 098 | BLOCKED | 赛前工作已授权，但仍缺第二台机器、第二网络和真实切换条件。 |
-| 099 | BLOCKED | 主备候选脚本、离线 fallback、证据索引和禁语清单已形成；另已生成 300.008 秒全英文 CSS 变量本地候选、英文旁白、SRT/VTT、封面和 943 词 write-up，见 `docs/submission/DELIVERY_CHECKLIST.md`。公共 GitHub/YouTube URL、官方完整规则、法律确认、真人研究、现场演练和独立终检仍缺失，因此不改为 VERIFIED。 |
+| 099 | BLOCKED | 主备候选脚本、离线 fallback、证据索引和禁语清单已形成；另已生成 300.008 秒全英文 CSS 变量候选、英文旁白、SRT/VTT、封面和 943 词 write-up，见 `docs/submission/DELIVERY_CHECKLIST.md`。公开 GitHub 已验证；YouTube URL、官方完整规则、法律确认、真人研究、现场演练和独立终检仍缺失，因此不改为 VERIFIED。 |
 | 100 | BLOCKED | 100 项台账与机器证据已收口，但仍需独立审查者；下方 10 项硬门禁尚未全部通过，不能自行宣布第一名就绪。 |
 
 ## 当前 go/no-go 复核
@@ -387,7 +387,7 @@
 | 6 | BLOCKED | 水印、notices、许可证副本、SBOM 和隐私工程已核对；外部法律/比赛展示权与真人隐私确认缺失。 |
 | 7 | VERIFIED | 权威事件、快照、outbox、冲突、删除恢复、跨三课回放、Tutor 文字/合成语音、工具、事实 receipt、画布动作和审计包已统一；通用审计事件不改写课程 reducer，隐私关闭时正文不保存。 |
 | 8 | BLOCKED | 研究已授权，但尚无 12 名真实目标学生、招募渠道或确认性研究数据。 |
-| 9 | BLOCKED | 发布包、manifest、基线和 claim 证据可复核；缺 `.git` 干净 checkout/CI 来源与官方评分映射，无法证明所有比赛 claim 可从正式提交复现。 |
+| 9 | BLOCKED | 发布包、manifest、基线、claim 证据和公开 Git 来源可复核；仍缺公开 CI 完成、干净 checkout 复现与官方评分映射，无法证明所有比赛 claim 可从正式提交复现。 |
 | 10 | BLOCKED | 主备流程已有候选文档；三次陌生演示者盲演和独立复核尚未执行。 |
 
 结论保持 `NO-GO`。100 项已不再有 `NOT_STARTED`；75 项本地机器验收完成，只有 083 因用户取消重跑 30 分钟浸泡而保持 `IN_PROGRESS`，24 项等待真实外部证据。P6/P7/P8 与后续阶段均已授权，购买永久排除；只有 10 项硬标准真实全部通过并获独立确认后，才可宣布“第一名就绪”。

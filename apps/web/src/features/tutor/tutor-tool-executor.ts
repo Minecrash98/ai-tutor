@@ -38,6 +38,7 @@ export interface TutorCanvasOperations {
   createController(input: {
     readonly blockId: string;
     readonly property: TutorCssProperty;
+    readonly selector?: string;
   }): string | Promise<string>;
   createComparison(input: {
     readonly blockId: string;
@@ -137,6 +138,9 @@ export function createTutorToolExecutor(
           const blockId = await operations.createController({
             blockId: call.arguments.blockId,
             property: call.arguments.property,
+            ...(call.arguments.selector
+              ? { selector: call.arguments.selector }
+              : {}),
           });
           return { success: true, message: `已创建 CSS 控制器 ${blockId}。` };
         }

@@ -19,6 +19,7 @@ import {
   useRef,
   useState,
   useSyncExternalStore,
+  type CSSProperties,
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
@@ -447,6 +448,22 @@ function computedStyleValue(
   return computedStyles[expandedProperty ?? property] ?? computedStyles[property];
 }
 
+const BRAND_COLOR_PRESETS = [
+  { label: "Violet", value: "#7c3aed" },
+  { label: "Ocean", value: "#0284c7" },
+  { label: "Coral", value: "#e85d4a" },
+  { label: "Mint", value: "#0f9f8f" },
+] as const;
+
+function normalizedColorValue(value: number | string | null): string {
+  if (typeof value !== "string") return "#7c3aed";
+  const shortHex = value.match(/^#([0-9a-f])([0-9a-f])([0-9a-f])$/i);
+  if (shortHex) {
+    return `#${shortHex[1]}${shortHex[1]}${shortHex[2]}${shortHex[2]}${shortHex[3]}${shortHex[3]}`.toLowerCase();
+  }
+  return /^#[0-9a-f]{6}$/i.test(value) ? value.toLowerCase() : "#7c3aed";
+}
+
 export function CssControllerBlockRuntime({
   sourceBlockId,
   selector,
@@ -464,16 +481,22 @@ export function CssControllerBlockRuntime({
   const enumControl = ENUM_CONTROLS.find(
     (candidate) => candidate.property === property,
   );
+  const colorControl = property === "--brand";
   const savedValue = record
     ? control
       ? latestNumericCssValue(record, selector, property)
       : latestCssValue(record, selector, property)
     : null;
   const initialValue =
-    savedValue ?? control?.min ?? enumControl?.values[0] ?? "";
+    savedValue ??
+    (colorControl ? "#7c3aed" : control?.min ?? enumControl?.values[0] ?? "");
   const [draftValue, setDraftValue] = useState<number | string | null>(null);
   const value = draftValue ?? initialValue;
-  const [status, setStatus] = useState("拖动时马上看到变化");
+  const [status, setStatus] = useState(
+    colorControl
+      ? "Choose a color. The live page updates before you save."
+      : "拖动时马上看到变化",
+  );
   const previewFrameRef = useRef<number | null>(null);
   const queuedPreviewValueRef = useRef<number | string | null>(null);
   const queuedPreviewStartedAtRef = useRef<number | null>(null);
@@ -489,7 +512,7 @@ export function CssControllerBlockRuntime({
     [],
   );
 
-  if (!record || (!control && !enumControl)) {
+  if (!record || (!control && !enumControl && !colorControl)) {
     return (
       <div className="teaching-block__control">
         <small>这个调节项暂时找不到对应的页面内容。</small>
@@ -518,12 +541,12 @@ export function CssControllerBlockRuntime({
     if (savedValue === nextValue) {
       await preview.reset(sourceBlockId);
       setDraftValue(null);
-      setStatus("当前值已保存");
+      setStatus(colorControl ? "This color is already saved." : "当前值已保存");
       return;
     }
     lastCommittedValueRef.current = nextValue;
     commitInFlightRef.current = true;
-    setStatus("正在保存…");
+    setStatus(colorControl ? "Saving color…" : "正在保存…");
     try {
       await preview
         .apply(
@@ -549,12 +572,18 @@ export function CssControllerBlockRuntime({
       );
       await preview.reset(sourceBlockId);
       setDraftValue(null);
-      setStatus("已保存");
+      setStatus(colorControl ? "Color saved as a new version." : "已保存");
     } catch (error) {
       lastCommittedValueRef.current = null;
       await preview.reset(sourceBlockId).catch(() => undefined);
       setDraftValue(null);
-      setStatus(error instanceof Error ? error.message : "保存失败");
+      setStatus(
+        error instanceof Error
+          ? error.message
+          : colorControl
+            ? "Could not save this color."
+            : "保存失败",
+      );
     } finally {
       commitInFlightRef.current = false;
     }
@@ -562,7 +591,7 @@ export function CssControllerBlockRuntime({
 
   const previewValue = (nextValue: number | string) => {
     setDraftValue(nextValue);
-    setStatus("正在跟着变化…");
+    setStatus(colorControl ? "Previewing across the page…" : "正在跟着变化…");
     queuedPreviewValueRef.current = nextValue;
     queuedPreviewStartedAtRef.current = performance.now();
     if (previewFrameRef.current !== null) return;
@@ -577,7 +606,13 @@ export function CssControllerBlockRuntime({
         .apply(
           sourceBlockId,
           { domPath: selector },
-          { property, value: `${queuedValue}px` },
+          {
+            property,
+            value:
+              typeof queuedValue === "number"
+                ? `${queuedValue}px`
+                : queuedValue,
+          },
         )
         .then(() => {
           if (startedAt === null) return;
@@ -599,6 +634,8 @@ export function CssControllerBlockRuntime({
   return (
     <div
       className="teaching-block__control"
+      data-css-property={property}
+      data-css-selector={selector}
       onPointerDown={(event) => event.stopPropagation()}
     >
       <div>
@@ -631,6 +668,38 @@ export function CssControllerBlockRuntime({
             }
           }}
         />
+      ) : colorControl ? (
+        <div className="teaching-block__color-control">
+          <label>
+            <span>Custom color</span>
+            <input
+              type="color"
+              aria-label="Brand color picker"
+              value={normalizedColorValue(value)}
+              onChange={(event) => previewValue(event.currentTarget.value)}
+              onPointerUp={(event) =>
+                void commitValue(event.currentTarget.value)
+              }
+              onBlur={(event) => void commitValue(event.currentTarget.value)}
+              onKeyDown={(event) => event.stopPropagation()}
+            />
+          </label>
+          <div className="teaching-block__color-presets" aria-label="Brand color presets">
+            {BRAND_COLOR_PRESETS.map((preset) => (
+              <button
+                key={preset.value}
+                type="button"
+                aria-label={`Use ${preset.label} brand color`}
+                title={preset.label}
+                style={{ "--preset-color": preset.value } as CSSProperties}
+                onClick={() => {
+                  previewValue(preset.value);
+                  void commitValue(preset.value);
+                }}
+              />
+            ))}
+          </div>
+        </div>
       ) : (
         <select
           aria-label={`${property} 控制器`}

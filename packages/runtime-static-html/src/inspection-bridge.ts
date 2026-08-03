@@ -27,6 +27,7 @@ export function createInspectionBridgeScript(
     "padding-right", "padding-bottom", "padding-left", "border-width",
     "gap", "top", "right", "bottom", "left",
   ]);
+  const colorControlProperties = new Set(["--brand"]);
   const enumControlValues = new Map([
     ["box-sizing", new Set(["content-box", "border-box"])],
     ["display", new Set(["block", "inline", "inline-block", "flex", "grid", "none"])],
@@ -606,6 +607,12 @@ export function createInspectionBridgeScript(
         fail("INVALID_CSS_VALUE", "Numeric CSS controls require a bounded value.");
       }
       return { property, value };
+    }
+    if (colorControlProperties.has(property)) {
+      if (!/^#[0-9a-f]{6}$/i.test(value)) {
+        fail("INVALID_CSS_VALUE", "Color controls require a six-digit hex color.");
+      }
+      return { property, value: value.toLowerCase() };
     }
     const allowedValues = enumControlValues.get(property);
     if (!allowedValues || !allowedValues.has(value)) {

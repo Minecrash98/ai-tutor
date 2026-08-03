@@ -1,73 +1,125 @@
 {
+  "schemaVersion": "ai-tutor-submission-delivery.v3",
   "generatedAt": "2026-08-03",
+  "projectName": "AI Tutor Canvas",
   "language": "en",
   "video": {
-    "path": "output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.mp4",
-    "bytes": 14992855,
-    "sha256": "76e26d5875aaf5f6d71a590f1cfd637d5956eae20cddd764b7a869691bbe448b",
+    "path": "output/playwright/css-global-color-variables-youtube-demo-en-v3-2026-08-03.mp4",
+    "bytes": 19327115,
+    "sha256": "ca3cfbb4a9d0892ebb4b67559c5d843ddcc90bcb910080d4156367cc8c672c43",
     "durationSeconds": 300,
+    "frames": 7500,
     "width": 1280,
     "height": 720,
     "framesPerSecond": 25,
     "videoCodec": "h264",
+    "videoProfile": "High",
+    "pixelFormat": "yuv420p",
     "audioCodec": "aac",
     "audioSampleRate": 48000,
     "audioChannels": 1,
-    "audioIntegratedLufs": -16.3,
+    "audioIntegratedLufs": -17.2,
     "audioTruePeakDbfs": -1.4
   },
-  "alternateVideo": {
-    "path": "output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.webm",
-    "bytes": 21478459,
-    "sha256": "9224e9403eb4ecb4685320999ca317c0567216de4f6e22095a14d5750fa63929",
-    "durationSeconds": 300.008,
-    "videoCodec": "vp8",
-    "audioCodec": "opus"
-  },
   "capture": {
+    "evidencePath": "output/playwright/ai-tutor-demo-evidence-raw-en-v3-2026-08-03.json",
+    "evidenceBytes": 9238,
+    "evidenceSha256": "5f3861ce94326b635d6aae14618713a2f642777a9817c66b9f3b95d7a34023c0",
+    "rawTimelineSeconds": 311.38,
+    "finalSpeedFactor": 1.0379333333333334,
     "browserProfile": "fresh isolated",
     "browserAudioMuted": true,
-    "fakeMediaDevice": true,
-    "physicalMicrophoneCalls": 0,
+    "fakeMediaDeviceCalls": 1,
+    "fakeMicrophoneLabel": "Fake Default Audio Input",
+    "physicalMicrophoneUsed": false,
     "visibleCjkMatches": 0,
-    "studentTurns": 2,
-    "assistantTurns": 2,
-    "interactionKind": "real authenticated text Tutor session"
+    "scriptedStudentTurns": 10,
+    "liveTutorTurns": 10,
+    "controllerSelector": ":root",
+    "controllerProperty": "--brand",
+    "initialBrand": "#6750a4",
+    "finalBrand": "#0f9f8f",
+    "createCssControllerObserved": true
   },
-  "narration": {
-    "path": "output/playwright/css-global-color-variables-narration-en-v2-local-normalized-2026-08-03.wav",
-    "bytes": 108563504,
-    "sha256": "188e721ef186993a412cedb4044db0efed64a93ca77006bddb20a8b0ba139a23",
-    "durationSeconds": 282.717,
-    "words": 801,
-    "voice": "Piper en_US-lessac-high",
-    "generation": "local"
+  "voices": {
+    "tutor": {
+      "path": "output/playwright/ai-tutor-live-voice-raw-en-v3-2026-08-03.webm",
+      "bytes": 4391448,
+      "sha256": "0de7523081343cffd40d077e4ddc348aef81af02fc60e1d5b6708e03e1e5694c",
+      "source": "authenticated live remote WebRTC track",
+      "codec": "opus",
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    "local": {
+      "path": "output/playwright/css-global-color-variables-local-voices-raw-en-v3-2026-08-03.wav",
+      "bytes": 29902124,
+      "sha256": "61842f711e4c140c281f32dd78696e680897902fa2b8a3b12155c33aecf81cf4",
+      "voice": "Piper en_US-lessac-high",
+      "generation": "local",
+      "narratorSegments": 8,
+      "studentSegments": 10
+    }
   },
+  "captions": {
+    "cues": 66,
+    "finalCueEndSeconds": 299.14,
+    "srt": {
+      "path": "docs/submission/captions/ai-tutor-css-variables-en-v3.srt",
+      "bytes": 6127,
+      "sha256": "9c442b237c7c5549a8ff541c587eac64c4edd772b0cedcbf2ce2dc5a18d329a1"
+    },
+    "vtt": {
+      "path": "docs/submission/captions/ai-tutor-css-variables-en-v3.vtt",
+      "bytes": 6137,
+      "sha256": "347342be9b246fcc000b86c2416f7446f7656c0ea6fb96f632e5ea20fac063b1"
+    }
+  },
+  "visualQa": [
+    {
+      "path": "output/playwright/css-v3-final-contact-sheet.jpg",
+      "sha256": "f983cc589ef1084139bb5d1a24b496c33c81ec0f364c28abf4c66525a7409eb6"
+    },
+    {
+      "path": "output/playwright/css-v3-control-interaction-frame.jpg",
+      "sha256": "ee1819035e4b682e81a5eadb731ee388215ecac344c743163666ebb5424ecd01"
+    },
+    {
+      "path": "output/playwright/css-v3-mint-evidence-frame.jpg",
+      "sha256": "cdc3b5c9a9a36aa9c7f8c42a2ede185bdaf3ceda083a4f4538c531cad95932f6"
+    },
+    {
+      "path": "output/playwright/css-v3-comparison-frame.jpg",
+      "sha256": "9647d70063b9da941b72aab0eea8ac91fc8192ba0cfa36b1825962519dd14d22"
+    },
+    {
+      "path": "output/playwright/css-v3-final-ending-frame.jpg",
+      "sha256": "ded9193a72d23fb9cdd368def14168ee279c4c652666ed9be462880f7fd3b737"
+    }
+  ],
   "cover": {
     "path": "docs/submission/assets/ai-tutor-cover.png",
-    "bytes": 399683,
-    "sha256": "f7f346a0cb890c6b0dd838a206d51561057dd9ed1a0d28d24139db6f8cae0052",
+    "bytes": 417238,
+    "sha256": "d060b3f8bf5c511d5a50d755ed1d30910aee9afc9391294bffcabc8c6d5caba2",
     "width": 1600,
     "height": 900,
     "format": "png"
   },
   "writeup": {
     "path": "docs/submission/FULL_WRITEUP.md",
-    "bytes": 6927,
-    "sha256": "39668e639f78cd14386777ab2149f6e06849bd979f179bef1bd7c0e14ff34bcd",
-    "words": 964
+    "bytes": 6600,
+    "sha256": "6c7eda82bb43c17d2ea3c4a82f327c7fa818a120b0cfe042c0fa4dbf2bcd29f7",
+    "words": 874
   },
-  "captions": {
-    "srt": {
-      "path": "docs/submission/captions/ai-tutor-css-variables-en-v2.srt",
-      "bytes": 8936,
-      "sha256": "8571a77d6e2ce183c97d1d5c3c9f8aa95bb4e02cdcdd2afac67f9bafd6a41dfe"
-    },
-    "vtt": {
-      "path": "docs/submission/captions/ai-tutor-css-variables-en-v2.vtt",
-      "bytes": 8946,
-      "sha256": "4acabe275e11aa69061ae243712e9af3291b9e74ae8cda49bb7f789f01999699"
-    }
+  "validation": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "workspacePackagesTypechecked": 6,
+    "unitAndIntegrationPassed": 246,
+    "unitAndIntegrationAccountDependentSkipped": 10,
+    "build": "passed",
+    "chromiumE2ePassed": 67,
+    "chromiumLiveCapabilitySkipped": 18
   },
   "externalUrls": {
     "github": "https://github.com/Minecrash98/ai-tutor",

@@ -62,6 +62,7 @@ const TOPIC_LABELS: Readonly<Record<TutorTopic, string>> = {
   "box-model": "内容周围的空隙",
   flex: "横向排列与间距",
   positioning: "把元素放到指定位置",
+  "css-variables": "全局颜色变量",
 };
 
 export function RealtimeTutorPanel({
@@ -98,6 +99,15 @@ export function RealtimeTutorPanel({
     onToolCall,
     ...(onLearningAudit ? { onLearningAudit } : {}),
   });
+
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    if (query.get("lang") !== "en" || query.get("demo") !== "css-vars") return;
+    const timer = window.setTimeout(() => {
+      setTopic("css-variables");
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
   const sendTutorCue = tutor.sendTutorCue;
   const active = [
     "connected",
@@ -604,7 +614,11 @@ export function RealtimeTutorPanel({
             <p>试着问：“怎么让卡片里面更宽松？”</p>
           ) : (
             tutor.transcripts.map((entry) => (
-              <article key={entry.id} data-role={entry.role}>
+              <article
+                key={entry.id}
+                data-role={entry.role}
+                data-final={entry.final ? "true" : "false"}
+              >
                 <b>{entry.role === "user" ? "你" : "AI"}</b>
                 <span>{entry.text}</span>
               </article>

@@ -79,6 +79,7 @@ const NUMERIC_PROPERTIES: ReadonlySet<string> = new Set(
 const ENUM_VALUES: ReadonlyMap<string, ReadonlySet<string>> = new Map(
   ENUM_CONTROLS.map((control) => [control.property, new Set(control.values)]),
 );
+const COLOR_PROPERTIES: ReadonlySet<string> = new Set(["--brand"]);
 
 export function isSafeExperimentChange(
   change: CssExperimentChange,
@@ -87,6 +88,9 @@ export function isSafeExperimentChange(
     const match = change.value.match(/^(-?\d+(?:\.\d+)?)(px|%|rem|em|vh|vw)?$/);
     const value = match ? Number(match[1]) : Number.NaN;
     return Boolean(match) && Number.isFinite(value) && value >= -2000 && value <= 2000;
+  }
+  if (COLOR_PROPERTIES.has(change.property)) {
+    return /^#[0-9a-f]{6}$/i.test(change.value);
   }
   return ENUM_VALUES.get(change.property)?.has(change.value) ?? false;
 }

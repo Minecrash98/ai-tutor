@@ -19,6 +19,13 @@ function activeState(
 }
 
 describe("authoritative tutor lesson gate", () => {
+  it("keeps evidence reads available when lesson state is temporarily unavailable", () => {
+    expect(evaluateTutorToolLessonGate("read_canvas_state", null)).toMatchObject({
+      allowed: true,
+      code: "READ_ONLY",
+    });
+  });
+
   it.each(["predict", "observe", "explain", "transfer"] as const)(
     "blocks answer-changing tools during independent %s work",
     (phase) => {
@@ -50,6 +57,18 @@ describe("authoritative tutor lesson gate", () => {
     expect(evaluateTutorToolLessonGate("focus_block", lesson).allowed).toBe(
       true,
     );
+  });
+
+  it("allows the Tutor to create a control while leaving the value choice to the student", () => {
+    expect(
+      evaluateTutorToolLessonGate(
+        "create_css_controller",
+        activeState("observe"),
+      ),
+    ).toMatchObject({
+      allowed: true,
+      code: "LEARNING_SCAFFOLD",
+    });
   });
 
   it("allows guided mutation only after explicit demonstration or takeover", () => {

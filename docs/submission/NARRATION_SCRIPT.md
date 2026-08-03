@@ -1,111 +1,163 @@
-# English narration script — Demo v2
+# English audio script — Demo v3
 
-Voice: local Piper `en_US-lessac-high`; 801 words; approximately 170 words
-per minute. The final card remains on screen without narration from 04:43 to
-05:00.
+The final mix uses three roles:
 
-## 00:00–00:20 — The learning claim
+- Narrator — fast, warm local English voice used for launch framing.
+- Student — lighter local English voice speaking all ten scripted prompts.
+- AI Tutor — unedited transcript content from the authenticated live Tutor
+  session.
 
-Most CSS tutorials tell you what a custom property is. AI Tutor makes you prove
-what it does. In the next five minutes, a student will import a real page, ask
-the Tutor a question, make a prediction, change one global color token, and
-compare the result with the original. Everything you see is running in the real
-product, inside a fresh browser session.
+The browser output stayed muted during capture. The Tutor track was recorded
+directly from the remote WebRTC stream.
 
-## 00:20–00:45 — Import a real exercise
+## 00:00–00:20 — Launch opening
 
-We begin with two ordinary files: index dot HTML and theme dot CSS. AI Tutor
-normalizes the upload, removes executable scripts, and renders the page inside
-a sandboxed frame. The exercise is deliberately small, but it is not a
-screenshot or a mockup. The button, cards, borders, labels, and code highlights
-are all live HTML and CSS. The interface and lesson are presented in English
-for this recording.
+Narrator:
 
-## 00:45–01:08 — Semantic tokens
+Most CSS lessons explain variables. AI Tutor turns them into a live experiment.
 
-The purple theme is controlled by custom properties in the root selector.
-Names such as brand, surface, text, accent, and line describe design roles
-instead of individual components. That is the first useful pattern: choose
-semantic token names. A token called brand can serve a button, an eyebrow
-label, a border, and a code highlight. A name such as purple button would lock
-the variable to one color and one component.
+A student imports real HTML and CSS. The page, source, and every saved version
+stay together.
 
-## 01:08–01:38 — Scope, inheritance, and fallbacks
+One root token drives buttons, borders, labels, highlights, and shadows.
 
-Now we open the actual source. Root gives these tokens page-wide scope. Custom
-properties participate in the cascade, and descendants inherit them unless a
-closer declaration wins. Components consume a token with the var function,
-while an optional second argument can provide a fallback. The code highlight
-also uses color mix, deriving a softer tint from brand instead of introducing
-another unrelated literal. So the page already exposes a small design system:
-centralized decisions at the top, reusable component rules below.
+Now the student asks the Tutor to build the next useful tool.
 
-## 01:38–02:06 — Real student–AI Tutor interaction
+## 00:21–00:59 — Turn 1: create the learning tool
 
-Before editing, the student opens the AI Tutor and asks a specific question:
-if brand changes, which visible parts should move together, and why? The Tutor
-does not need to take over the keyboard. It checks the current canvas and
-source, responds in English, and asks the learner to predict the effect. The
-student answers that every rule reading var brand should update, while text and
-surface tokens should stay unchanged. This interaction matters: the AI is
-guiding an observable claim, not merely producing a definition.
+Student:
 
-## 02:06–02:31 — Change one token
+I want to change the page color. Inspect the source and make a quick control
+for the global brand token. I will choose the color.
 
-With that prediction recorded, we change only brand, from purple to deep teal,
-and run a safe preview. Watch the same value propagate to the primary button,
-the eyebrow label, the hero border, the token board, and the code emphasis. The
-HTML has not changed. The component selectors have not changed. One decision
-moved through every consumer because each rule points back to the same token.
-That is the cause-and-effect link the learner predicted.
+AI Tutor:
 
-## 02:31–02:53 — Ground the explanation
+I want to change the page color, so please make a quick control for the global
+brand token after you inspect the source. Checking that. Done, a color control
+for the root brand token is ready, so pick whichever color you want there.
 
-The Tutor can now ground the explanation in the visible result: the edited
-value, the affected target, the matching rule, and the current revision. If
-those facts do not line up, the product is designed to say that evidence is
-missing instead of inventing a confident explanation. The student still
-performs the edit. AI provides a question, a bounded inspection, and feedback;
-it does not silently complete the learning task.
+## 01:00–01:04 — Control transition
 
-## 02:53–03:21 — Build a complete palette
+Narrator:
 
-Next we build a complete mint palette. Brand soft, page surface, card surface,
-primary text, muted text, accent, and border tokens change in one compact
-section. Notice what stays stable: the HTML structure, layout, spacing, and
-component rules. This is why global variables scale beyond a single trick.
-They separate design decisions from component implementation, make themes
-easier to audit, and reduce the risk of leaving one hard-coded color behind.
+The Tutor verified the source and built a real color control. The student keeps
+the choice.
 
-## 03:21–03:47 — Preview and preserve
+## 01:04–01:25 — Turn 2: first prediction
 
-The editor distinguishes a transient preview from a committed version. We run
-the candidate first. If the CSS is invalid or unsafe, the last known-good
-rendering remains available. When the preview succeeds, we give it a meaningful
-name and save an immutable revision. The original purple page is not
-overwritten. That makes experimentation recoverable: a learner can try,
-inspect, fail safely, correct the code, and still return to a known state.
+Student:
 
-## 03:47–04:15 — Compare and replay
+Before I choose, what changes first?
 
-Finally, AI Tutor places the original and mint versions together. The
-comparison turns a visual impression into an explanation: which token changed,
-which consumers responded, and which properties remained constant. The same
-evidence model supports lessons on the box model, Flexbox, and positioning.
-Versioned Learning Proof can replay student steps, Tutor messages, tool results,
-fact receipts, and canvas saves on one timeline, while keeping machine evidence
-separate from human learning outcomes.
+AI Tutor:
 
-## 04:15–04:43 — Honest scope and closing
+Before I choose, predict the first visible change. The elements using the brand
+token, like buttons or other primary accents, should shift color first.
 
-This recording shows implemented product behavior. It does not claim that a
-learner study has already proved better outcomes; that research is still
-pending. Realtime Tutor also depends on an authenticated local Codex service,
-while deterministic lessons remain usable offline. The core idea is
-straightforward: let the student predict, let the page reveal the effect, let
-the Tutor ground the explanation, and then preserve enough evidence to revisit
-what actually happened. Change once, understand everywhere.
+## 01:25–01:51 — Turn 3: define the comparison
 
-## 04:43–05:00 — Closing card
+Student:
 
-No narration. The closing message remains visible for review.
+I predict every accent changes while layout stays fixed. What should I compare?
+
+AI Tutor:
+
+My prediction is every accent changes while layout stays fixed. What should I
+compare? Compare buttons, links, icons, borders, and highlights before and
+after, and check that positions, sizes, spacing, and wrapping don’t move.
+
+## 01:51–01:56 — Visible evidence
+
+Narrator:
+
+One click moves the same color through every consumer while layout stays fixed.
+
+## 01:56–02:19 — Turn 4: synchronized change
+
+Student:
+
+Mint is applied. What does the synchronized change demonstrate?
+
+AI Tutor:
+
+Mint is applied. Explain what that synchronized change demonstrates. It shows
+one root variable synchronizing color across multiple elements without changing
+layout.
+
+## 02:19–02:49 — Turn 5: shared consumers
+
+Student:
+
+Why did one choice update several components?
+
+AI Tutor:
+
+It suggests one shared token coordinates the accents, while layout is
+independent of that color. For page proof, which changed accent did you notice?
+Because components resolve var brand from root, changing that one value updates
+every consumer.
+
+## 02:49–03:19 — Turn 6: stable layout
+
+Student:
+
+Why did the layout stay fixed?
+
+AI Tutor:
+
+The edit changed only a color token; layout comes from widths, gaps, and
+positions which were untouched.
+
+## 03:19–03:38 — Turn 7: document scope
+
+Student:
+
+What does root contribute here?
+
+AI Tutor:
+
+What does root contribute here? Root defines brand once at document scope, so
+descendants reuse it for consistent theming.
+
+## 03:39–04:02 — Turn 8: local override
+
+Student:
+
+What happens if one card redeclares brand?
+
+AI Tutor:
+
+What happens if one card redeclares brand? That card and its descendants use
+the new brand value, while the rest keeps the root value, which is standard
+inheritance and local override.
+
+## 04:02–04:23 — Turn 9: semantic naming
+
+Student:
+
+Why is brand a durable token name?
+
+AI Tutor:
+
+Why is brand a durable token name? It names a stable design role, not a
+specific color, so themes can change values without rewriting components.
+
+## 04:23–04:45 — Turn 10: transfer
+
+Student:
+
+Give me a one-sentence transfer challenge using a local override.
+
+AI Tutor:
+
+Give me a one-sentence transfer challenge using a local override. Override
+brand on one card so only its accents change while the page stays mint.
+
+## 04:45–05:00 — Compare and close
+
+Narrator:
+
+Ten exchanges end in a saved revision and a side-by-side comparison.
+
+That is AI Tutor: predict, change, observe, explain, compare, and transfer. The
+AI creates the experiment. The learner owns the decision.

@@ -67,6 +67,31 @@ describe("P6 realtime contracts", () => {
     }
   });
 
+  it("accepts a source-verified global brand color controller", () => {
+    const call = parseTutorToolCall("create_css_controller", {
+      requestId: "brand-controller-1",
+      blockId: "imported-theme-1",
+      property: "--brand",
+      selector: ":root",
+      teachingAction,
+    });
+
+    expect(call.arguments).toMatchObject({
+      blockId: "imported-theme-1",
+      property: "--brand",
+      selector: ":root",
+    });
+    expect(() =>
+      parseTutorToolCall("create_css_controller", {
+        requestId: "brand-controller-2",
+        blockId: "imported-theme-1",
+        property: "--brand",
+        selector: ":root; body",
+        teachingAction,
+      }),
+    ).toThrow();
+  });
+
   it("publishes the exact dynamic tool allowlist", () => {
     expect(TUTOR_DYNAMIC_TOOLS.map((tool) => tool.name)).toEqual([
       "read_canvas_state",

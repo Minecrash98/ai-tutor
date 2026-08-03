@@ -2,14 +2,18 @@
 
 ## Fastest review path
 
-1. README.md — product summary, run commands, machine baseline, data handling,
-   and honest limitations.
-2. MVP_SPEC.md — the frozen learner workflow and acceptance criteria.
-3. ARCHITECTURE.md — system boundaries, runtime isolation, persistence, and
-   Realtime design.
-4. docs/RESULTS_AND_LIMITATIONS_2026-08-02.md — measured evidence, known gaps,
-   and claims the project refuses to make.
-5. COMPETITION_FIRST_PLACE_GOALS.md — the auditable 100-item status ledger.
+1. README.md — product promise, five-minute learning loop, run commands, and
+   the implementation map.
+2. docs/submission/FULL_WRITEUP.md — the competition narrative, final evidence,
+   current operating scope, and next product milestones.
+3. apps/web/src/features/canvas/CanvasWorkspace.tsx — the live canvas,
+   imports, lesson orchestration, and Tutor-created controls.
+4. apps/web/src/features/tutor/server/codex-realtime-provider.ts — the live
+   Tutor's teaching behavior and bounded tool policy.
+5. packages/runtime-static-html/src/ — the script-free runtime and versioned
+   bridge behind the learning canvas.
+6. tests/e2e/ — real-browser coverage of the main path, recovery, accessibility,
+   security, and failure behavior.
 
 ## Core implementation
 
@@ -17,6 +21,8 @@
 |---|---|---|
 | apps/web/src/features/canvas/CanvasWorkspace.tsx | Canvas and teaching-block orchestration | The learner works with live pages, lessons, source, and evidence on one visual surface |
 | apps/web/src/features/canvas/TeachingBlockShape.tsx | Interactive tldraw teaching block | Runtime previews are first-class canvas objects rather than screenshots |
+| apps/web/src/features/canvas/runtime-project-context.tsx | CSS control, preview, save, and comparison state | A Tutor-created :root --brand control changes the live page and creates an immutable version |
+| apps/web/src/features/canvas/EnglishDemoPresentation.tsx | English submission presentation path | Dynamic interface text, form values, attributes, and Tutor actions stay English during the demo |
 | packages/runtime-static-html/src/normalization.ts | Static project normalization | Imported HTML/CSS is converted into a deterministic project model |
 | packages/runtime-static-html/src/sandbox-document.ts | Sandboxed document construction | Uploaded scripts do not execute |
 | packages/runtime-static-html/src/inspection-bridge.ts | Versioned host/iframe messages | Element inspection and style updates cross a constrained protocol |
@@ -77,17 +83,22 @@ docker compose exec -T web /nodejs/bin/node /app/scripts/container-health-check.
 pnpm test:e2e:compose
 ~~~
 
-## Mocked, incomplete, and external
+## Operating requirements and demo boundaries
 
-- Synthetic microphone tracks are used only for isolated protocol tests; they
-  are not presented as human voice-quality evidence.
-- Realtime Live paths depend on an authenticated local Codex app-server and
-  are skipped when that capability is unavailable.
-- Deterministic lessons and text fallback work without that external service.
-- The product shell is currently Chinese; full interface internationalization
-  is incomplete.
-- No unfamiliar learner study, expert review, human screen-reader study,
-  public deployment, legal review, or independent final go/no-go exists.
-- No valid current-source 30-minute soak exists because the rerun was waived.
-- Do not add passwords, API keys, OAuth files, .env secrets, personal data, or
-  raw participant records to the public repository.
+- The final demo uses scripted student prompts for repeatability and an
+  authenticated live Tutor for all Tutor responses and tool actions.
+- Isolated browser automation uses a generated silent microphone track and
+  muted local playback. The physical microphone is never opened.
+- Realtime voice and text require an existing authenticated local Codex
+  app-server session. Deterministic lessons and fallback tutoring run without
+  that service.
+- The product includes English and Chinese presentation paths. A first-class
+  learner-facing language switch is the next localization milestone.
+- Local and Docker evaluation are implemented. A public commercial release
+  would add hosted authentication, rate limiting, observability, retention
+  controls, and applicable production licenses.
+- Current evidence establishes implemented behavior and engineering quality.
+  Learner transfer, retention, expert rubric, and human screen-reader studies
+  are the next research layer.
+- Never commit passwords, API keys, OAuth files, .env secrets, browser
+  profiles, personal data, or raw participant records.

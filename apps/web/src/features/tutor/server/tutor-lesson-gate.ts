@@ -11,14 +11,22 @@ const NON_ANSWERING_TOOLS = new Set<TutorToolName>([
   "read_teaching_assertion_evidence",
   "focus_block",
 ]);
+const LEARNING_SCAFFOLD_TOOLS = new Set<TutorToolName>([
+  "create_css_controller",
+]);
 
 const TAKEOVER_ACTIONS = new Set(["demonstration", "teacher-takeover"]);
+
+export function isTutorToolLessonIndependent(tool: TutorToolName): boolean {
+  return NON_ANSWERING_TOOLS.has(tool) || LEARNING_SCAFFOLD_TOOLS.has(tool);
+}
 
 export interface TutorLessonGateDecision {
   readonly allowed: boolean;
   readonly code:
     | "NO_ACTIVE_LESSON"
     | "READ_ONLY"
+    | "LEARNING_SCAFFOLD"
     | "GUIDED_TAKEOVER"
     | "WAIT_FOR_STUDENT";
   readonly message: string;
@@ -28,6 +36,20 @@ export function evaluateTutorToolLessonGate(
   tool: TutorToolName,
   lessonState: LearningLessonState | null,
 ): TutorLessonGateDecision {
+  if (NON_ANSWERING_TOOLS.has(tool)) {
+    return {
+      allowed: true,
+      code: "READ_ONLY",
+      message: "此操作不会替学生完成课程答案。",
+    };
+  }
+  if (LEARNING_SCAFFOLD_TOOLS.has(tool)) {
+    return {
+      allowed: true,
+      code: "LEARNING_SCAFFOLD",
+      message: "此操作只创建学习控件，具体数值仍由学生选择。",
+    };
+  }
   if (
     !lessonState ||
     lessonState.phase === "idle" ||
@@ -37,13 +59,6 @@ export function evaluateTutorToolLessonGate(
       allowed: true,
       code: "NO_ACTIVE_LESSON",
       message: "当前没有需要保护的独立作答步骤。",
-    };
-  }
-  if (NON_ANSWERING_TOOLS.has(tool)) {
-    return {
-      allowed: true,
-      code: "READ_ONLY",
-      message: "此操作不会替学生完成课程答案。",
     };
   }
   if (

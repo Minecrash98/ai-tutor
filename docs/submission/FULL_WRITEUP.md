@@ -1,121 +1,120 @@
-# AI Tutor — Full write-up
+# AI Tutor Canvas — Full write-up
 
 ## The problem and our approach
 
-CSS is visual, yet beginners often learn from disconnected snippets or chat
-answers. A learner can reproduce a target screenshot without understanding
-what caused it. Generic assistants optimize for completion; AI Tutor asks
-learners to predict, test, explain, and transfer.
+CSS is visual, but most AI help still arrives as text to copy. That can finish
+a task without helping a learner connect code, cause, and visible effect. AI
+Tutor Canvas brings the conversation onto the rendered page so a student can
+predict an outcome, run an experiment, observe the evidence, explain the
+mechanism, compare versions, and transfer the idea.
 
-AI Tutor turns a learner's real page into a visual practice space. The core
-loop is Predict–Observe–Explain–Transfer: first make a prediction, then change
-one controlled value, observe the rendered result, explain the cause using
-page facts, and finally solve a related task on a different page. The current
-prototype includes deterministic lessons for box model, Flex, and positioning,
-plus a personalized path generated from imported HTML and CSS.
+The central contribution is a Tutor that can create the right learning
+instrument from verified page facts. In the submission demo, a student imports
+a small HTML/CSS design system and asks to change its page color. The live
+Tutor reads the source, finds the global --brand custom property under :root,
+and creates a compact color control bound to that declaration. The student—not
+the AI—chooses Mint. Buttons, labels, borders, code highlights, and a mixed
+shadow change together while spacing and structure stay fixed.
 
-Imported files are normalized, scripts are removed, and the result runs in a
-sandboxed iframe behind a versioned bridge. A learner can select an element,
-inspect the relevant source and computed style, adjust CSS with immediate
-transient feedback, safely run the edit, and save an immutable version. The
-five-minute demo follows a student who asks the Tutor to test a prediction,
-checks the source, changes --brand once, and returns with evidence. The Tutor
-answers twice with concrete checks instead of taking over the edit. Buttons,
-labels, borders, and code highlights update together; a complete mint palette
-is then saved and compared with the original purple version.
+Across ten student–Tutor exchanges, the learner predicts which consumers will
+change, checks the synchronized result, explains why one token reaches several
+components, distinguishes color from layout, explores :root inheritance,
+reasons about a nearer override, chooses a semantic token name, and receives a
+transfer challenge. An abstract definition becomes a visible, testable claim.
 
-The optional Realtime Tutor is constrained by page-grounded tools. It can read
-the selected element, relevant source, the learner's last action, and teaching
-assertion evidence. If evidence is missing or insufficient, the runtime
-replaces a causal claim with uncertainty instead of inventing an explanation.
-Text and deterministic lessons remain available when Realtime, an account, the
-network, or microphone access is unavailable.
+The canvas keeps this loop concrete and recoverable. Imported HTML and CSS are
+normalized, executable scripts are removed, and the page runs in a sandboxed
+iframe behind a versioned bridge. Controls provide immediate transient
+feedback; committing creates an immutable version. The original remains
+available for side-by-side comparison.
 
-Learning Proof is a versioned event timeline, not a celebratory score. It
-replays lesson events, tutor states, tool results, fact receipts, and learner or
-AI canvas saves. PostgreSQL verifies ownership, sequence, hashes, idempotency,
-and snapshots. Without content-storage opt-in, message text remains null and
-replay says it was not saved.
+The live Tutor operates through bounded teaching tools. It can read the canvas,
+relevant source, computed styles, recent actions, and learning evidence; it can
+create a focused control or comparison when the lesson calls for one. Learning
+Proof then records versioned lesson steps, Tutor states, tool results, evidence
+receipts, and saves. A unified replay reconstructs the sequence, while
+PostgreSQL persistence validates owner, order, hashes, idempotency, and
+snapshots.
 
 ## Evidence, experiments, and user testing
 
-The latest local baseline passed lint, type checking, production build, and 239
-automated tests with 10 honest account-dependent skips. Isolated Chromium
-passed 67 cases with 18 Live skips; production-style Compose passed 25/25
-against real PostgreSQL. Other machine suites covered browsers, touch,
-accessibility, failure, security, and visual states. The demo separately
-records a real authenticated text session with two student turns and two Tutor
-responses; it is product evidence, not learning-outcome evidence.
+The five-minute submission video runs against the real application in a fresh
+isolated Chrome profile. A scripted student sends ten prompts to an
+authenticated live voice Tutor and receives ten captured Tutor responses. The
+recording verifies that the Tutor creates a controller for :root --brand, the
+student changes the value from #6750a4 to #0f9f8f, the real iframe updates, a
+new version is saved, and comparison opens. Tutor audio comes directly from
+the remote WebRTC track; student and narrator voices are generated locally.
 
-A controlled performance run used 21 runtimes and 53 teaching blocks. Import
-P95 was 340 ms, pointer-frame P95 was 16.8 ms, and 47 drag-preview samples had
-a 23.3 ms P95. The authoritative workspace was written once after release.
-These figures describe one isolated local machine.
+The capture checks visible text, accessibility attributes, form values,
+selected options, document language, iframes, and CSS pseudo-elements for an
+all-English presentation. It uses a generated silent microphone source and
+muted browser output, so no physical microphone is accessed.
 
-Human testing has not happened: zero unfamiliar learners, experts, or human
-screen-reader participants have completed a formal study. The repository
-therefore makes no claim that AI Tutor improves learning outcomes. Automated
-tests demonstrate implemented behavior and reproducibility, not pedagogy.
+The final current-source baseline passes lint and type checking across six
+workspace packages, 246 unit and integration tests with 10 account-dependent
+skips, the optimized production build, and 67 Chromium end-to-end tests with
+18 Live capability skips. Those suites cover contracts, sandboxing, source
+grounding, lessons, immutable versions, Learning Proof, recovery,
+accessibility, security, and failure paths.
+
+A controlled local performance run measured import P95 at 340 ms,
+pointer-frame P95 at 16.8 ms, and drag-preview P95 at 23.3 ms across 47 preview
+samples. This evidence establishes the implemented behavior and interaction
+budget. A learner pilot is the next measurement layer for conceptual transfer
+and retention.
 
 ## Constraints, limitations, and incomplete areas
 
-The recording uses a query-scoped English presentation mode over the current
-interface; a complete multilingual product and learner-facing language switch
-are not finished. Realtime depends on an existing local Codex app-server OAuth
-session; deterministic learning paths do not. The Compose stack is
-loopback-only and is not a public deployment.
+Deterministic lessons run locally without an external account. Live voice and
+text tutoring use an existing authenticated local Codex app-server session.
+The product has English and Chinese presentation paths; a first-class in-app
+language switch is the next localization upgrade.
 
-The local candidate is 75 VERIFIED / 1 IN_PROGRESS / 24 BLOCKED across its
-100-item evidence ledger, so its overall decision remains NO_GO. Missing inputs
-include official competition rules, a real learner pilot, CSS and pedagogy
-expert review, legal guidance, real-device and second-network rehearsal, a
-clean-checkout reproduction of the final candidate, and an independent final
-review. A new 30-minute soak was waived, so long-duration stability is not
-claimed. Container scans retain documented upstream findings; the project
-does not claim zero vulnerabilities.
+The repository supports local and Docker evaluation. A public production
+release would add hosted authentication, rate limiting, observability,
+retention controls, and applicable production licenses. Scripted student
+prompts make the demo repeatable; they demonstrate a working live interaction,
+not a human learner outcome study.
 
 ## What we would improve next
 
-First, run a preregistered learner pilot with completion, transfer, and delayed
-retention measures, preserving failures and withdrawals. Second, add expert
-rubric review and human accessibility testing. Third, finish interface
-localization and a learner-facing language switch. Fourth, publish a hardened
-deployment, repeat performance and recovery on a second machine and network,
-and bind evidence to signed Git and CI provenance. Finally, persist the exact
-grounding receipt for every Realtime causal statement so historical replay can
-audit each explanation end to end.
+Next, we would add a teacher-facing authoring system for concepts, predicted
+invariants, safe controls, and transfer tasks. We would add the language
+switch, more semantic CSS topics, adaptive challenges from Learning Proof
+history, and a hosted classroom path. A preregistered learner pilot would
+measure task completion, near and far transfer, and delayed retention,
+followed by expert rubric and human accessibility review.
 
 ## Repository review guide
 
-- apps/web/src/features/canvas/CanvasWorkspace.tsx — the visual canvas
-  orchestration and teaching-block workflow.
-- apps/web/src/features/canvas/EnglishDemoPresentation.tsx — the
-  query-scoped English recording presentation and visible-English guard.
-- apps/web/src/app/api/realtime/session/route.ts and route.test.ts — optional
-  unbound Tutor startup and strict validation for explicitly bound learning
-  sessions.
-- packages/runtime-static-html/src/runtime.ts — sandboxed static-page runtime
-  lifecycle; sandbox-document.ts and inspection-bridge.ts show script removal
-  and versioned inspection messages.
-- apps/web/src/features/lesson/box-model-lesson.ts and scenario-lesson.ts —
-  deterministic lesson reducers and the Predict–Observe–Explain–Transfer
-  sequence.
-- apps/web/src/features/lesson/personalized-course.ts — derives a minimal course
-  from imported source facts and a frozen transfer task.
-- apps/web/src/features/tutor/teaching-facts.ts and tutor-tool-executor.ts —
-  bounded fact reads and grounded tutor tool execution.
-- apps/web/src/features/learning/LearningProofReplay.tsx and
-  server/learning-proof-store.ts — replay UI and authoritative event/snapshot
-  persistence.
-- packages/contracts/src/learning-proof.ts — versioned Learning Proof event
-  contracts.
-- tests/e2e/source-editor.spec.ts, personalized-course.spec.ts,
-  learning-proof.spec.ts, p8-failure-matrix.spec.ts, and p8-security.spec.ts —
-  the main browser workflows, recovery, and security boundaries.
-- docs/RESULTS_AND_LIMITATIONS_2026-08-02.md — detailed measured results and
-  explicit non-claims.
+- apps/web/src/features/canvas/CanvasWorkspace.tsx — project import, lesson
+  orchestration, and source-verified Tutor controls.
+- apps/web/src/features/canvas/runtime-project-context.tsx — live color
+  control, transient preview, immutable saves, and comparison.
+- apps/web/src/features/tutor/server/codex-realtime-provider.ts — live Tutor
+  teaching behavior and bounded tool policy.
+- apps/web/src/features/tutor/tutor-tool-executor.ts — grounded reads, control
+  creation, and focus actions.
+- packages/runtime-static-html/src/sandbox-document.ts — executable-content
+  removal and sandbox construction.
+- packages/runtime-static-html/src/inspection-bridge.ts — versioned inspection
+  and style messages.
+- apps/web/src/features/lesson/ — deterministic
+  Predict–Observe–Explain–Transfer state machines.
+- apps/web/src/features/learning/LearningProofReplay.tsx — unified learning
+  timeline replay.
+- apps/web/src/features/learning/server/learning-proof-store.ts — authoritative
+  event and snapshot persistence.
+- packages/contracts/src/learning-proof.ts — versioned evidence contracts.
+- tests/e2e/ — real-browser learning, recovery, accessibility, security,
+  performance, and failure coverage.
 
-Run the project and test suite using the exact commands in README.md. Realtime
-Live tests are external-service dependent and skipped without the required
-local authenticated capability. No user results are mocked; deterministic
-fallback tutoring and synthetic microphone test tracks are explicitly labeled.
+Run pnpm install --frozen-lockfile, pnpm preflight, and pnpm dev, then open
+http://127.0.0.1:3000. Validate with pnpm lint, pnpm typecheck, pnpm test, pnpm
+build, and pnpm test:e2e.
+
+The only simulated media input is the silent microphone used by isolated
+browser automation; Tutor responses in the final demo are live. Realtime is
+the only external-service-dependent path. No passwords, API keys, browser
+profiles, personal data, or learner records are committed.

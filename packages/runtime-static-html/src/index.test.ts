@@ -164,6 +164,7 @@ describe("static HTML/CSS runtime", () => {
     expect(document).toContain("suppressSelectionClick");
     expect(document).toContain("runtime.apply_transient_style");
     expect(document).toContain("runtime.reset_transient_state");
+    expect(document).toContain("Color controls require a six-digit hex color.");
     const transientHandler = document.match(
       /case "runtime\.apply_transient_style":[\s\S]*?break;/,
     )?.[0];

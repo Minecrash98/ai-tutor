@@ -226,6 +226,19 @@ test("keeps a stale source draft as an explicit sibling branch", async ({
   const versionSelect = page.locator(
     ".style-workbench-layer .revision-controls > label select",
   );
+  await expect
+    .poll(
+      async () => {
+        if (await versionSelect.isVisible()) return true;
+        await frame.locator("#demo").click();
+        return versionSelect.isVisible();
+      },
+      {
+        timeout: 15_000,
+        intervals: [250, 500, 1_000],
+      },
+    )
+    .toBe(true);
   await expect(versionSelect.locator("option")).toHaveCount(4);
   await expect(versionSelect.locator("option").last()).toContainText(
     "分支自 V2",

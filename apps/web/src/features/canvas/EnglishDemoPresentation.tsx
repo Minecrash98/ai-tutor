@@ -22,6 +22,7 @@ const EXACT_TEXT = new Map<string, string>([
   ["AI 学习搭档", "AI Tutor"],
   ["想学什么", "Topic"],
   ["内容周围的空隙", "CSS variables"],
+  ["全局颜色变量", "Global color variables"],
   ["横向排列与间距", "Flexbox"],
   ["把元素放到指定位置", "Positioning"],
   ["可以开始", "Ready"],
@@ -40,6 +41,8 @@ const EXACT_TEXT = new Map<string, string>([
   ["开始语音讲解", "Start voice session"],
   ["立即停止", "Stop session"],
   ["结束", "Stop session"],
+  ["关闭麦克风", "Mute microphone"],
+  ["打开麦克风", "Unmute microphone"],
   ["正在连接文字问答…", "Connecting text chat…"],
   ["试着问：“怎么让卡片里面更宽松？”", "Ask a question about the imported page."],
   ["你", "Student"],
@@ -134,11 +137,29 @@ const EXACT_TEXT = new Map<string, string>([
   ["源码问题", "Source issues"],
   ["版本说明", "Version name"],
   ["实验", "Experiment"],
+  ["调节", "Color control"],
   ["隔离 HTML/CSS 运行结果", "Sandboxed HTML/CSS result"],
   ["旋转", "Rotate"],
   ["实验页面", "Experiment page"],
   ["已载入 index.html，可以从源码和实际页面生成一个最小实验。", "Imported index.html. Inspect the source and the live page."],
   ["已载入 2 个文件，可以开始点选和调整页面。", "Imported 2 files. Select, inspect, or edit the page."],
+  ["这次变化已保存，之前的样子也还在", "Change saved. The original remains available."],
+  ["这次变化已经保存过，没有重复建立版本", "This saved version already exists."],
+  ["AI 已添加 --brand 控制器", "AI added the brand color control."],
+  ["画布已经更新，你可以先看看。", "The canvas is updated—take a look."],
+  ["修改后 · 未保存预览", "After · Unsaved preview"],
+  ["修改前目标尺寸", "Before target size"],
+  ["修改后目标尺寸", "After target size"],
+  ["目标无法在此版本中同步", "The target is unavailable in this version."],
+  ["保存两次变化后，就可以在这里一起看。", "Save two changes to compare them here."],
+  ["这组修改记录已经找不到了。", "This comparison is no longer available."],
+  ["这里按文件比较完整 HTML/CSS 源码。", "This view compares the complete HTML/CSS source by file."],
+  ["这里只比较这次实验追加的样式，不是完整源码。", "This view compares only the styles added by this experiment."],
+  ["完整 HTML 和 CSS 源码差异", "Complete HTML and CSS source diff"],
+  ["实验样式差异（不是完整源码）", "Experiment style diff"],
+  ["前后页面高度不同，底部位置会各自到达边界。", "Page heights differ, so each side reaches its own lower boundary."],
+  ["前后查看比例", "Before and after reveal"],
+  ["修改前 · 未保存预览", "Before · Unsaved preview"],
 ]);
 
 const PARTIAL_TEXT: ReadonlyArray<readonly [string, string]> = [
@@ -149,6 +170,8 @@ const PARTIAL_TEXT: ReadonlyArray<readonly [string, string]> = [
   ["个内容", " content blocks"],
   ["个实验", " experiments"],
   ["导入 · ", "Import · "],
+  ["AI 已添加 ", "AI added "],
+  [" 控制器", " control"],
 ];
 
 const ATTRIBUTE_NAMES = ["aria-label", "title", "placeholder"] as const;
@@ -156,6 +179,12 @@ const CJK_PATTERN = /[\u3400-\u9fff\uf900-\ufaff]/u;
 
 function translateValue(value: string): string {
   const trimmed = value.trim();
+  if (/^AI 已聚焦 .+$/u.test(trimmed)) {
+    return value.replace(trimmed, "AI focused the requested content.");
+  }
+  if (/^已聚焦教学块 .+。?$/u.test(trimmed)) {
+    return value.replace(trimmed, "Focused the requested content.");
+  }
   const exact = EXACT_TEXT.get(trimmed);
   if (exact !== undefined) {
     return value.replace(trimmed, exact);
@@ -177,6 +206,14 @@ function translateElement(element: Element) {
     if (child.nodeType !== Node.TEXT_NODE || !child.textContent) continue;
     if (!CJK_PATTERN.test(child.textContent)) continue;
     child.textContent = translateValue(child.textContent);
+  }
+  if (
+    (element instanceof HTMLInputElement ||
+      element instanceof HTMLTextAreaElement) &&
+    CJK_PATTERN.test(element.value)
+  ) {
+    element.value = translateValue(element.value);
+    element.dispatchEvent(new Event("input", { bubbles: true }));
   }
 }
 
@@ -275,6 +312,8 @@ export function EnglishDemoPresentation() {
       html[data-ai-tutor-demo-en="true"][data-ai-tutor-demo-focus="tutor"] .realtime-tutor__transcript { min-height: 250px; max-height: 360px; }
       html[data-ai-tutor-demo-en="true"] .student-task-shell ol,
       html[data-ai-tutor-demo-en="true"] .student-task-shell > button { display: none !important; }
+      html[data-ai-tutor-demo-en="true"] .canvas-stage__editor--drop::after { content: "Safely importing HTML and CSS…" !important; }
+      html[data-ai-tutor-demo-en="true"] .source-editor__highlight::before { content: "Syntax-highlighted preview" !important; }
     `}</style>
   );
 }

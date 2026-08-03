@@ -1,0 +1,265 @@
+WEBVTT
+
+1
+00:00:00.578 --> 00:00:03.772
+Narrator: Most CSS lessons explain variables. AI Tutor turns them
+
+2
+00:00:03.772 --> 00:00:05.131
+Narrator: into a live experiment.
+
+3
+00:00:05.973 --> 00:00:08.142
+Narrator: A student imports real HTML and CSS. The page,
+
+4
+00:00:08.142 --> 00:00:10.425
+Narrator: source, and every saved version stay together.
+
+5
+00:00:10.983 --> 00:00:13.553
+Narrator: One root token drives buttons, borders, labels,
+
+6
+00:00:13.553 --> 00:00:14.932
+Narrator: highlights, and shadows.
+
+7
+00:00:16.475 --> 00:00:18.456
+Narrator: Now the student asks the Tutor to build the
+
+8
+00:00:18.456 --> 00:00:19.305
+Narrator: next useful tool.
+
+9
+00:00:21.041 --> 00:00:22.876
+Student: I want to change the page color. Inspect the
+
+10
+00:00:22.876 --> 00:00:24.813
+Student: source and make a quick control for the global
+
+11
+00:00:24.813 --> 00:00:26.393
+Student: brand token. I will choose the color.
+
+12
+00:00:28.006 --> 00:00:32.728
+AI Tutor: I want to change the page color, so please
+
+13
+00:00:32.728 --> 00:00:38.144
+AI Tutor: make a quick control for the global brand token
+
+14
+00:00:38.144 --> 00:00:44.255
+AI Tutor: after you inspect the source. Checking that. Done, a
+
+15
+00:00:44.255 --> 00:00:49.810
+AI Tutor: color control for the root brand token is ready,
+
+16
+00:00:49.810 --> 00:00:54.394
+AI Tutor: so pick whichever color you want there.
+
+17
+00:00:59.927 --> 00:01:01.863
+Narrator: The Tutor verified the source and built a real
+
+18
+00:01:01.863 --> 00:01:03.800
+Narrator: color control. The student keeps the choice.
+
+19
+00:01:04.197 --> 00:01:05.953
+Student: Before I choose, what changes first?
+
+20
+00:01:08.326 --> 00:01:12.356
+AI Tutor: Before I choose, predict the first visible change. The
+
+21
+00:01:12.356 --> 00:01:16.298
+AI Tutor: elements using the brand token, like buttons or other
+
+22
+00:01:16.298 --> 00:01:19.539
+AI Tutor: primary accents, should shift color first.
+
+23
+00:01:24.939 --> 00:01:27.568
+Student: I predict every accent changes while layout stays fixed.
+
+24
+00:01:27.568 --> 00:01:28.608
+Student: What should I compare?
+
+25
+00:01:29.636 --> 00:01:33.630
+AI Tutor: My prediction is every accent changes while layout stays
+
+26
+00:01:33.630 --> 00:01:37.957
+AI Tutor: fixed. What should I compare? Compare buttons, links, icons,
+
+27
+00:01:37.957 --> 00:01:41.951
+AI Tutor: borders, and highlights before and after, and check that
+
+28
+00:01:41.951 --> 00:01:45.696
+AI Tutor: positions, sizes, spacing, and wrapping don’t move.
+
+29
+00:01:51.182 --> 00:01:53.669
+Narrator: One click moves the same color through every consumer
+
+30
+00:01:53.669 --> 00:01:54.885
+Narrator: while layout stays fixed.
+
+31
+00:01:56.291 --> 00:01:58.977
+Student: Mint is applied. What does the synchronized change demonstrate?
+
+32
+00:02:00.422 --> 00:02:05.891
+AI Tutor: Mint is applied. Explain what that synchronized change demonstrates.
+
+33
+00:02:05.891 --> 00:02:10.813
+AI Tutor: It shows one root variable synchronizing color across multiple
+
+34
+00:02:10.813 --> 00:02:13.547
+AI Tutor: elements without changing layout.
+
+35
+00:02:18.956 --> 00:02:21.005
+Student: Why did one choice update several components?
+
+36
+00:02:23.095 --> 00:02:28.065
+AI Tutor: It suggests one shared token coordinates the accents, while
+
+37
+00:02:28.065 --> 00:02:32.353
+AI Tutor: layout is independent of that color. For page proof,
+
+38
+00:02:32.353 --> 00:02:37.713
+AI Tutor: which changed accent did you notice? Because components resolve
+
+39
+00:02:37.713 --> 00:02:40.831
+AI Tutor: var brand from root, changing that one
+
+40
+00:02:40.831 --> 00:02:43.365
+AI Tutor: value updates every consumer.
+
+41
+00:02:48.781 --> 00:02:50.202
+Student: Why did the layout stay fixed?
+
+42
+00:02:52.916 --> 00:03:02.554
+AI Tutor: The edit changed only a color token; layout comes
+
+43
+00:03:02.554 --> 00:03:13.603
+AI Tutor: from widths, gaps, and positions which were untouched.
+
+44
+00:03:19.017 --> 00:03:20.261
+Student: What does root contribute here?
+
+45
+00:03:23.151 --> 00:03:27.744
+AI Tutor: What does root contribute here? Root defines brand once
+
+46
+00:03:27.744 --> 00:03:31.263
+AI Tutor: at document scope, so descendants reuse it
+
+47
+00:03:31.263 --> 00:03:33.315
+AI Tutor: for consistent theming.
+
+48
+00:03:38.714 --> 00:03:40.638
+Student: What happens if one card redeclares brand?
+
+49
+00:03:42.854 --> 00:03:46.766
+AI Tutor: What happens if one card redeclares brand? That card
+
+50
+00:03:46.766 --> 00:03:50.500
+AI Tutor: and its descendants use the new brand value, while
+
+51
+00:03:50.500 --> 00:03:54.056
+AI Tutor: the rest keeps the root value, which is standard
+
+52
+00:03:54.056 --> 00:03:56.545
+AI Tutor: inheritance and local override.
+
+53
+00:04:01.961 --> 00:04:03.602
+Student: Why is brand a durable token name?
+
+54
+00:04:06.093 --> 00:04:09.390
+AI Tutor: Why is brand a durable token name? It names
+
+55
+00:04:09.390 --> 00:04:12.970
+AI Tutor: a stable design role, not a specific color, so
+
+56
+00:04:12.970 --> 00:04:17.492
+AI Tutor: themes can change values without rewriting components.
+
+57
+00:04:22.904 --> 00:04:24.940
+Student: Give me a one-sentence transfer challenge using
+
+58
+00:04:24.940 --> 00:04:25.685
+Student: a local override.
+
+59
+00:04:27.032 --> 00:04:31.940
+AI Tutor: Give me a one-sentence transfer challenge using a local
+
+60
+00:04:31.940 --> 00:04:36.116
+AI Tutor: override. Override brand on one card so only its
+
+61
+00:04:36.116 --> 00:04:39.771
+AI Tutor: accents change while the page stays mint.
+
+62
+00:04:45.375 --> 00:04:47.234
+Narrator: Ten exchanges end in a saved revision
+
+63
+00:04:47.234 --> 00:04:48.854
+Narrator: and a side-by-side comparison.
+
+64
+00:04:51.445 --> 00:04:54.931
+Narrator: That is AI Tutor: predict, change, observe, explain, compare,
+
+65
+00:04:54.931 --> 00:04:58.088
+Narrator: and transfer. The AI creates the experiment. The learner
+
+66
+00:04:58.088 --> 00:04:59.140
+Narrator: owns the decision.

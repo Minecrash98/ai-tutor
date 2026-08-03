@@ -237,6 +237,14 @@ function isAbortError(error: unknown): boolean {
   return error instanceof DOMException && error.name === "AbortError";
 }
 
+function realtimeSessionLanguage(): "zh" | "en" {
+  if (typeof window === "undefined") return "zh";
+  const query = new URLSearchParams(window.location.search);
+  return query.get("lang") === "en" && query.get("demo") === "css-vars"
+    ? "en"
+    : "zh";
+}
+
 export function useRealtimeTutor({
   topic,
   saveLearningRecord,
@@ -1540,6 +1548,7 @@ export function useRealtimeTutor({
             ? { learningSessionId: attemptLearningSessionId }
             : {}),
           topic,
+          language: realtimeSessionLanguage(),
           saveLearningRecord,
         }),
       });
@@ -1985,6 +1994,7 @@ export function useRealtimeTutor({
             : {}),
           topic,
           voice: "juniper",
+          language: realtimeSessionLanguage(),
           saveLearningRecord,
         }),
       });

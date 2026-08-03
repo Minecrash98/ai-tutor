@@ -82,6 +82,7 @@ import {
   type TutorToolExecutor,
 } from "../tutor/tutor-tool-executor";
 import {
+  globalCustomPropertySourceFact,
   newestStudentAction,
   relevantSourceFact,
   selectedElementFact,
@@ -303,6 +304,11 @@ const LESSON_DEMOS: Readonly<Record<TutorTopic, LessonDemo>> = {
       #demo{position:relative;width:420px;height:220px;padding:24px;border:3px dashed #87939d;background:#eaf1ff;border-radius:20px;color:#31517a}
       #demo p{margin:0}.position-badge{position:absolute;top:24px;right:24px;padding:10px 14px;background:#c9d6ff;border-radius:12px;color:#162219;font-weight:800}`,
   },
+  "css-variables": {
+    title: "Global color tokens",
+    html: '<!doctype html><html><body><main id="demo" class="theme-card"><span>GLOBAL TOKEN</span><h1>Change one color, update every consumer</h1><p>The border, button, label, and highlight all read <code>var(--brand)</code>.</p><button type="button">Try the brand color</button></main></body></html>',
+    css: ':root{--brand:#7c3aed;--surface:#f5f3ff;--ink:#211a35}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--surface);font-family:Arial,sans-serif;color:var(--ink)}#demo{width:430px;padding:34px;border:4px solid var(--brand);background:white;border-radius:24px;box-shadow:12px 12px 0 color-mix(in srgb,var(--brand) 30%,white)}#demo span{color:var(--brand);font-size:12px;font-weight:900;letter-spacing:.16em}#demo h1{margin:14px 0 12px;font-size:30px}#demo p{line-height:1.55}#demo code{color:var(--brand);font-weight:800}#demo button{margin-top:12px;padding:12px 18px;border:0;border-radius:999px;background:var(--brand);color:white;font-weight:800}',
+  },
 };
 
 const STUDENT_TASK_STAGES = [
@@ -343,6 +349,13 @@ const DEMO_MODE_STEPS: Readonly<
     explanationTitle: "相对定位保留原来的位置",
     explanation:
       "舞台仍占据原来的文档流位置，top 只让它从自己的原位置向下偏移。",
+  },
+  "css-variables": {
+    property: "--brand",
+    value: "#0f9f8f",
+    explanationTitle: "One token updates every consumer",
+    explanation:
+      "The border, button, label, highlight, and mixed shadow all reference var(--brand), so one saved token change updates them together.",
   },
 };
 
@@ -860,6 +873,27 @@ export function CanvasWorkspace() {
   const [isClearCanvasArmed, setIsClearCanvasArmed] = useState(false);
   const [activity, setActivity] = useState("正在加载本地画布…");
   const [lessonPanelsVisible, setLessonPanelsVisible] = useState(true);
+
+  useEffect(() => {
+    if (!editor) return;
+    const query = new URLSearchParams(window.location.search);
+    if (query.get("lang") !== "en" || query.get("demo") !== "css-vars") return;
+    const demoWindow = window as Window & {
+      __aiTutorFocusTeachingBlockForDemo?: (blockId: string) => boolean;
+    };
+    demoWindow.__aiTutorFocusTeachingBlockForDemo = (blockId) => {
+      const shape = getTeachingShapes(editor).find(
+        (candidate) => candidate.props.blockId === blockId,
+      );
+      if (!shape) return false;
+      editor.select(shape.id);
+      editor.zoomToSelection({ animation: { duration: 220 } });
+      return true;
+    };
+    return () => {
+      delete demoWindow.__aiTutorFocusTeachingBlockForDemo;
+    };
+  }, [editor]);
   const [taskRouteExpanded, setTaskRouteExpanded] = useState(true);
   const [hiddenTransferOutcome, setHiddenTransferOutcome] = useState<
     "passed" | "failed" | null
@@ -1931,13 +1965,15 @@ export function CanvasWorkspace() {
       } = {},
     ) => {
       if (!editor) throw new Error("教学画布尚未就绪。");
-      if (!runtimeProjectsRef.current.has(sourceBlockId)) {
-        throw new Error(`运行块不存在：${sourceBlockId}`);
-      }
+      const sourceRecord = runtimeProjectsRef.current.get(sourceBlockId);
+      if (!sourceRecord) throw new Error(`运行块不存在：${sourceBlockId}`);
       const sourceShape = getTeachingShapes(editor).find(
         (shape) => shape.props.blockId === sourceBlockId,
       );
       if (!sourceShape) throw new Error(`画布实体不存在：${sourceBlockId}`);
+      const verifiedSelector = options.selector
+        ? requireVerifiedProjectSelector(sourceRecord.project, options.selector)
+        : inferDefaultSelector(sourceRecord.project);
       const blockId = `${options.seedPrefix ?? "ai-controller"}-${crypto.randomUUID()}`;
       const shape = makeTeachingBlockShape(
         "css-controller",
@@ -1962,15 +1998,16 @@ export function CanvasWorkspace() {
                 ? "调一调项目间距"
                 : property === "top"
                   ? "上下移动看看"
-                  : `调节 ${property}`),
-          summary: "拖动滑块，页面和前后对比会马上跟着变化。",
+                  : property === "--brand"
+                    ? "Choose the brand color"
+                    : `调节 ${property}`),
+          summary:
+            property === "--brand"
+              ? "Pick a color or use a preset. Every var(--brand) consumer updates immediately."
+              : "拖动滑块，页面和前后对比会马上跟着变化。",
           sourceBlockId,
           cssProperty: property,
-          cssSelector:
-            options.selector ??
-            inferDefaultSelector(
-              runtimeProjectsRef.current.get(sourceBlockId)!.project,
-            ),
+          cssSelector: verifiedSelector,
         },
       });
       return shape.props?.blockId ?? blockId;
@@ -2041,7 +2078,7 @@ export function CanvasWorkspace() {
           inspectionAvailableBlockIds: [...visibleProjectIds].filter(
             (blockId) => inspectionSnapshotsRef.current.has(blockId),
           ),
-          supportedTopics: ["box-model", "flex", "positioning"],
+          supportedTopics: ["box-model", "flex", "positioning", "css-variables"],
         });
       },
       inspectSelectedElement(input) {
@@ -2080,6 +2117,15 @@ export function CanvasWorkspace() {
         }
         const snapshot = inspectionSnapshotsRef.current.get(input.blockId);
         if (!snapshot) {
+          const revision = currentRevision(record);
+          const globalBrandFact = globalCustomPropertySourceFact(
+            input.blockId,
+            revision,
+            "--brand",
+          );
+          if (globalBrandFact.evidenceStatus === "grounded") {
+            return serializeTutorFact(globalBrandFact);
+          }
           throw new Error(
             "请先在这个页面中选择一个元素，再读取相关源码。",
           );
@@ -2326,6 +2372,7 @@ export function CanvasWorkspace() {
         const blockId = createCssControllerBlock(
           input.blockId,
           input.property,
+          input.selector ? { selector: input.selector } : {},
         );
         setActivity(`AI 已添加 ${input.property} 控制器`);
         return blockId;

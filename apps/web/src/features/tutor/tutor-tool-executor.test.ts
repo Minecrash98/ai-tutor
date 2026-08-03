@@ -150,6 +150,26 @@ describe("P6 tutor tool executor", () => {
     });
   });
 
+  it("passes a verified global token selector to the color controller", async () => {
+    const canvas = operations();
+    const executor = createTutorToolExecutor(canvas);
+
+    const result = await executor.execute("create_css_controller", {
+      requestId: "brand-control-1",
+      blockId: "demo-1",
+      property: "--brand",
+      selector: ":root",
+      teachingAction,
+    });
+
+    expect(result.success).toBe(true);
+    expect(canvas.createController).toHaveBeenCalledWith({
+      blockId: "demo-1",
+      property: "--brand",
+      selector: ":root",
+    });
+  });
+
   it("returns entity validation failures without hiding them", async () => {
     const canvas = operations();
     canvas.applyCssChange = vi.fn(() => {

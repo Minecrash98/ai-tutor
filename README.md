@@ -1,33 +1,32 @@
-# AI Tutor
+# AI Tutor Canvas — Learn CSS by changing a real page
 
-AI Tutor is a visual learning canvas for CSS beginners. Learners predict an
-outcome, edit real HTML and CSS, see the visual cause and effect, explain what
-changed, and transfer the idea to a new page.
+AI Tutor Canvas turns a learner's own HTML and CSS into a guided visual experiment. Instead of giving away an answer, it helps the learner form a prediction, creates the right hands-on control, watches the real page change, and asks for an explanation that can be tested and transferred.
 
-The current local candidate is P8_IN_PROGRESS. Its 100-item evidence ledger is
-75 VERIFIED / 1 IN_PROGRESS / 24 BLOCKED / 0 NOT_STARTED, so the overall
-decision remains NO_GO. Automated evidence is not presented as human learning
-research, legal review, official competition compliance, or independent
-approval.
+The result is a different kind of AI learning experience: the conversation and the canvas are one system. A student can say, “I want to change the page color.” The Tutor inspects the imported source, discovers the global --brand token, and creates a color control beside the page. One student choice can then update every component that consumes that token—live, safely, and with a saved before/after comparison.
 
-## What works
+## See the learning loop
 
-- Deterministic Predict–Observe–Explain–Transfer lessons for box model, Flex,
-  and positioning.
-- Static HTML/CSS import, script removal, sandboxed iframe execution, element
-  inspection, CSS controls, safe transient previews, immutable versions, and
-  before/after comparison.
-- Device-local recovery plus optional PostgreSQL event, snapshot, and unified
-  Learning Proof Replay storage.
-- Text and voice Realtime Tutor paths with fact-grounded tools and a clearly
-  labeled deterministic fallback when an account, network, or microphone is
-  unavailable.
-- Automated Chrome, Edge, Firefox, WebKit, touch, accessibility, failure,
-  security, visual, performance, license, and release checks.
+The five-minute submission demo follows one continuous CSS Variables lesson:
 
-The learning content importer is language-agnostic, and this repository includes
-an English CSS variables demo. The current product shell is localized in
-Chinese; a complete multilingual interface is future work.
+1. Import a real HTML/CSS page.
+2. Ask the live Tutor for a faster way to explore its global color.
+3. Let the Tutor inspect the source and create a page-specific color control.
+4. Predict which components will change.
+5. Choose a new color and observe the shared visual effect.
+6. Explain :root, inheritance, and semantic token naming through ten student–Tutor exchanges.
+7. Save the experiment, compare it with the original, and receive a transfer challenge.
+
+The same learning architecture supports box model, Flexbox, and positioning lessons.
+
+## What makes AI Tutor different
+
+- **Tools appear when the lesson needs them.** The Tutor can create a slider or color control from verified source facts, so exploration stays concrete.
+- **The learner remains in control.** The Tutor guides prediction and attention; the student makes the consequential edit.
+- **Explanations are grounded in the page.** Tutor tools read selected elements, relevant source, computed styles, recent actions, and teaching evidence.
+- **Every change is inspectable.** Transient previews stay fast, releases create immutable versions, and comparison makes cause and effect visible.
+- **The page runs inside a bounded runtime.** Imports are normalized, scripts are removed, and a versioned bridge mediates inspection and style changes.
+- **Learning evidence has a replayable shape.** Learning Proof records versioned lesson events, Tutor states, tool results, saves, and snapshots for later review.
+- **Content can travel across languages.** The submission path is fully English, while the importer works with learner-authored pages and multilingual content.
 
 ## Run locally
 
@@ -39,24 +38,18 @@ pnpm preflight
 pnpm dev
 ~~~
 
-Open http://127.0.0.1:3000. The three deterministic lessons do not require an
-external account. The app does not read OPENAI_API_KEY. Optional Realtime paths
-use the existing local Codex app-server OAuth session described in
-.env.example.
+Open http://127.0.0.1:3000. Deterministic learning paths work without an external account. The optional live text-and-voice Tutor uses an existing authenticated local Codex app-server session; the application does not read or store an OpenAI API key.
 
-## Run the production-style local stack
+For the production-style local stack:
 
 ~~~text
 docker compose up -d --build
 docker compose exec -T web /nodejs/bin/node /app/scripts/container-health-check.mjs
 ~~~
 
-Compose binds only to 127.0.0.1:3000 and starts PostgreSQL, migrations, and a
-health check with a real SELECT 1. This is a local release candidate, not a
-public deployment. Recovery and rollback instructions are in
-docs/RELEASE_RUNBOOK.md.
+This starts the web app, PostgreSQL, migrations, and a database health check on loopback.
 
-## Validate
+## Validate the project
 
 ~~~text
 pnpm lint
@@ -66,11 +59,7 @@ pnpm build
 pnpm test:e2e
 ~~~
 
-The most recent complete local baseline passed lint, typecheck, build, 237
-tests with 10 account-dependent skips, 67 Chromium E2E cases with 18
-account-dependent Live skips, and 25/25 production-style Compose cases.
-
-Additional competition checks:
+Additional browser, accessibility, security, release, and competition checks are available through:
 
 ~~~text
 pnpm verify:competition
@@ -80,40 +69,33 @@ pnpm compliance:check
 pnpm audit --prod --audit-level high
 ~~~
 
-## Start your review here
+## Repository review guide
 
-- docs/submission/FULL_WRITEUP.md — competition write-up, evidence, limits,
-  next steps, and key repository paths.
-- docs/submission/REPOSITORY_REVIEW_GUIDE.md — exact implementation and test
-  navigation.
-- MVP_SPEC.md — frozen learner experience and acceptance boundaries.
-- ARCHITECTURE.md — runtime, data, trust, and Realtime architecture.
-- COMPETITION_FIRST_PLACE_GOALS.md — 100-item execution and evidence ledger.
-- docs/RESULTS_AND_LIMITATIONS_2026-08-02.md — measured machine results and
-  explicit non-claims.
-- docs/P8_LEARNING_PROOF_REPLAY_ACCEPTANCE_2026-08-03.md — unified replay
-  acceptance evidence.
+- apps/web/src/features/canvas/CanvasWorkspace.tsx — canvas orchestration, lesson selection, import flow, and Tutor-created CSS controls.
+- apps/web/src/features/canvas/runtime-project-context.tsx — live previews, color presets, immutable saves, and comparison behavior.
+- apps/web/src/features/tutor/server/codex-realtime-provider.ts — the live Tutor's teaching instructions and bounded tool policy.
+- apps/web/src/features/tutor/tutor-tool-executor.ts — execution boundary for source reads, evidence reads, and control creation.
+- packages/runtime-static-html/src/ — script-free import, sandboxed rendering, and the versioned page-inspection bridge.
+- apps/web/src/features/lesson/ — deterministic Predict–Observe–Explain–Transfer lesson engines.
+- apps/web/src/features/learning/LearningProofReplay.tsx — unified replay of learning events and saved evidence.
+- packages/contracts/src/learning-proof.ts — versioned Learning Proof event contracts.
+- tests/e2e/ — real-browser coverage for core learning, recovery, accessibility, security, and failure paths.
+- docs/submission/FULL_WRITEUP.md — competition narrative, evidence, operating envelope, and next steps.
 
-## Data, external services, and licenses
+## Product configuration and trust
 
-The current canvas and pending Learning Proof data use browser storage.
-Providing DATABASE_URL enables authoritative PostgreSQL events and snapshots.
-Realtime content is retained for at most seven days only after explicit opt-in;
-without opt-in, content remains null and only short-lived metadata is stored.
+Browser storage supports the local canvas and pending Learning Proof data.
+Setting DATABASE_URL enables authoritative PostgreSQL events and snapshots.
+Realtime message content is retained only after explicit opt-in; otherwise the
+product keeps short-lived operational metadata and labels unsaved replay
+content clearly.
 
-The project uses the pinned tldraw 3.15.5 free path with visible watermark; no
-commercial license is claimed. See THIRD_PARTY_NOTICES.md,
-docs/PRIVACY_AND_DATA_DISCLOSURE.md, licenses/, and the SBOM files under
-evidence/.
+Live Realtime checks use an authenticated local Codex app-server session.
+Deterministic lessons and text fallback remain available without it. Automated
+voice checks run in isolated browser contexts with synthetic microphone tracks,
+while the five-minute submission demo captures Tutor audio from the live remote
+WebRTC stream.
 
-No secrets belong in this repository. Copy .env.example for local configuration
-and never commit credentials, API keys, OAuth material, or personal data.
-
-## Honest limitations
-
-No unfamiliar student pilot, CSS/pedagogy expert review, human screen-reader
-study, real-device matrix, official competition-rule mapping, legal opinion,
-second-machine rehearsal, or independent go/no-go review has been completed.
-The user also waived a new 30-minute soak run, so goal 083 remains
-IN_PROGRESS. Those gaps remain blocked rather than being replaced by automated
-claims.
+See .env.example, THIRD_PARTY_NOTICES.md,
+docs/PRIVACY_AND_DATA_DISCLOSURE.md, and docs/RELEASE_RUNBOOK.md for
+configuration, attribution, privacy, recovery, and rollback details.

@@ -2,62 +2,64 @@
 
 ## Title
 
-AI Tutor: Learn CSS Global Color Variables in 5 Minutes
+AI Tutor Canvas: Change One CSS Variable, Understand the Whole Page
 
 ## Description
 
-AI Tutor is a visual learning canvas for CSS beginners. This real browser demo
-imports an English HTML/CSS exercise, reveals the global color tokens in
-`:root`, shows a real two-turn student–AI Tutor text exchange, changes one
-shared brand value, expands it into a mint theme, safely previews the result,
-saves an immutable version, and compares both outcomes.
+AI Tutor Canvas turns a learner's own HTML and CSS into a guided visual
+experiment.
 
-The product is designed around Predict–Observe–Explain–Transfer rather than
-answer generation alone. Tutor claims can be grounded in page facts, and
-lesson, tutor, tool, and canvas events can be replayed as Learning Proof.
+In this five-minute product demo, a student imports a real page and asks the
+live Tutor for a faster way to explore its global color. The Tutor inspects the
+source, verifies the :root --brand token, and creates a real color control.
+The student predicts the effect, chooses Mint, watches buttons, labels,
+borders, highlights, and shadows change together, then works through ten
+student–Tutor exchanges on inheritance, local overrides, semantic naming, and
+transfer.
+
+The lesson stays on one canvas: source, live page, Tutor conversation,
+student-controlled edit, immutable version, and before/after comparison.
 
 Repository: https://github.com/Minecrash98/ai-tutor
 
-Honest scope: this video shows implemented product behavior. It is not human
-learning-outcome evidence. The recording uses the product's query-scoped
-English presentation mode; full multilingual localization is not finished.
-Optional Realtime features depend on an authenticated local Codex app-server;
-deterministic lessons do not.
+Recording note: the student prompts are scripted for a repeatable demo and
+spoken with a local English voice. Tutor responses and the Tutor-created
+control come from the authenticated live product session. The separate
+narrator voice marks only the opening, two transitions, and the close.
 
 ## Chapters
 
-00:00 Prove what a CSS variable does
-00:20 Import a real HTML/CSS exercise
-00:45 Name semantic color tokens
-01:08 Read scope, inheritance, and fallbacks
-01:38 Real student–AI Tutor interaction
-02:06 Change only --brand
-02:31 Ground the explanation in visible facts
-02:53 Build a complete mint theme
-03:21 Preview safely and save a version
-03:47 Compare original and edited results
-04:15 Learning Proof, limitations, and next steps
+- 00:00 Turn a CSS explanation into an experiment
+- 00:06 Import real HTML and CSS
+- 00:21 Ask the Tutor to build a color control
+- 01:00 The Tutor-created --brand control
+- 01:04 Predict what should change
+- 01:51 Choose Mint and observe the evidence
+- 02:19 Explain shared variables and stable layout
+- 03:19 Explore :root and local overrides
+- 04:02 Name a durable design token
+- 04:23 Take the transfer challenge
+- 04:45 Save, compare, and close
+
+## Upload assets
+
+Primary video:
+
+output/playwright/css-global-color-variables-youtube-demo-en-v3-2026-08-03.mp4
+
+SubRip captions:
+
+docs/submission/captions/ai-tutor-css-variables-en-v3.srt
+
+WebVTT captions:
+
+docs/submission/captions/ai-tutor-css-variables-en-v3.vtt
+
+Thumbnail:
+
+docs/submission/assets/ai-tutor-cover.png
 
 ## Visibility
 
-Use Unlisted unless the entrant explicitly wants the demo discoverable.
-Embedding must remain enabled. Verify playback in a signed-out or private
-window before pasting the URL into the submission form.
-
-## Upload file
-
-Primary upload:
-
-output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.mp4
-
-Alternate WebM:
-
-output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.webm
-
-Captions:
-
-docs/submission/captions/ai-tutor-css-variables-en-v2.srt
-
-## Thumbnail
-
-docs/submission/assets/ai-tutor-cover.png
+Use Unlisted for review or Public for discovery. Keep embedding enabled and
+verify the final link while signed out before adding it to the submission form.

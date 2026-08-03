@@ -159,6 +159,23 @@ class FakeCodexClient {
     });
   }
 
+  emitReadCanvasToolCall(index = 1) {
+    this.requestListener?.({
+      method: "item/tool/call",
+      id: 176 + index,
+      params: {
+        threadId: "thread-1",
+        turnId: "turn-1",
+        callId: "read-call-" + index,
+        namespace: null,
+        tool: "read_canvas_state",
+        arguments: {
+          requestId: "read-request-" + index,
+        },
+      },
+    });
+  }
+
   emitRealtimeError(message: string) {
     this.notificationListener?.({
       method: "thread/realtime/error",
@@ -195,7 +212,7 @@ describe("Codex realtime provider", () => {
     const current = getRealtimeProvider();
 
     expect(current).not.toBe(stale);
-    expect(globals.__aiTutorRealtimeProviderVersion).toBe(24);
+    expect(globals.__aiTutorRealtimeProviderVersion).toBe(29);
     expect(retire).toHaveBeenCalledOnce();
     delete globals.__aiTutorRealtimeProvider;
     delete globals.__aiTutorRealtimeProviderVersion;
@@ -255,6 +272,60 @@ describe("Codex realtime provider", () => {
             allowed: false,
             decisionCode: "WAIT_FOR_STUDENT",
           }),
+        }),
+      ]),
+    );
+    await provider.stopSession(session.sessionId);
+  });
+
+  it("publishes read-only evidence tools even when lesson-state lookup is unavailable", async () => {
+    const fake = new FakeCodexClient();
+    const sessionLog = new FakeSessionLog();
+    const learningSessionId = "f3ca6ac4-7954-4bb7-94c8-d6fa648b53f8";
+    const lessonResolver = vi.fn(async () => {
+      throw new Error("lesson store unavailable");
+    });
+    const activeSessionResolver = vi.fn(async () => {
+      throw new Error("active lesson lookup unavailable");
+    });
+    const provider = new CodexRealtimeProvider(
+      fake as unknown as CodexAppServerClient,
+      sessionLog,
+      lessonResolver,
+      activeSessionResolver,
+    );
+    const session = await provider.startSession(
+      {
+        mode: "text",
+        topic: "css-variables",
+        saveLearningRecord: false,
+        learningSessionId,
+      },
+      { learningOwnerId: "owner-hash" },
+    );
+    const events: RealtimePublicEvent[] = [];
+    provider.subscribe(session.sessionId, (event) => events.push(event));
+
+    fake.emitReadCanvasToolCall();
+    await vi.waitFor(() =>
+      expect(events.some((event) => event.type === "tool_call")).toBe(true),
+    );
+
+    expect(lessonResolver).not.toHaveBeenCalled();
+    expect(activeSessionResolver).not.toHaveBeenCalled();
+    expect(fake.results).toHaveLength(0);
+    expect(sessionLog.records).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          event: "tool.lesson_gate_checked",
+          payload: expect.objectContaining({
+            allowed: true,
+            decisionCode: "READ_ONLY",
+          }),
+        }),
+        expect.objectContaining({
+          event: "tool.call",
+          payload: expect.objectContaining({ tool: "read_canvas_state" }),
         }),
       ]),
     );

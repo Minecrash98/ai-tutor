@@ -4,6 +4,7 @@ export const tutorTopicSchema = z.enum([
   "box-model",
   "flex",
   "positioning",
+  "css-variables",
 ]);
 
 export type TutorTopic = z.infer<typeof tutorTopicSchema>;
@@ -25,6 +26,7 @@ export const tutorCssPropertySchema = z.enum([
   "right",
   "bottom",
   "left",
+  "--brand",
 ]);
 
 export type TutorCssProperty = z.infer<typeof tutorCssPropertySchema>;
@@ -116,6 +118,13 @@ export const tutorToolArgumentSchemas = {
     requestId: requestIdSchema,
     blockId: blockIdSchema,
     property: tutorCssPropertySchema,
+    selector: z
+      .string()
+      .trim()
+      .min(1)
+      .max(512)
+      .refine((value) => !/[{};@\r\n]/.test(value), "Unsupported selector")
+      .optional(),
     teachingAction: teachingActionSchema,
   }),
   create_comparison: z.object({
@@ -361,13 +370,21 @@ export const TUTOR_DYNAMIC_TOOLS: readonly DynamicToolDefinition[] = [
   {
     type: "function",
     name: "create_css_controller",
-    description: "Create a controller block linked to a runnable block and CSS property.",
+    description:
+      "Create a controller block linked to a runnable block and CSS property. For --brand, read relevant source first and pass the exact selector where the token is declared, such as :root.",
     inputSchema: {
       type: "object",
       properties: {
         requestId: requestIdField,
         blockId: stringField,
         property: { type: "string", enum: tutorCssPropertySchema.options },
+        selector: {
+          type: "string",
+          minLength: 1,
+          maxLength: 512,
+          description:
+            "Optional verified selector for the declaration. Required for a custom property such as --brand; copy it from read_relevant_source and never guess it.",
+        },
         teachingAction: teachingActionField,
       },
       required: ["requestId", "blockId", "property", "teachingAction"],
@@ -406,6 +423,7 @@ const realtimeSessionCommonFields = {
   clientSessionId: z.string().uuid().optional(),
   learningSessionId: z.string().uuid().optional(),
   topic: tutorTopicSchema.default("box-model"),
+  language: z.enum(["zh", "en"]).optional(),
   saveLearningRecord: z.boolean().default(false),
 };
 

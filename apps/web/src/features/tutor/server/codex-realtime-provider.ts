@@ -29,7 +29,10 @@ import {
 } from "./tutor-capability-profile";
 import { releaseRealtimeSessionOwner } from "./realtime-request-guard";
 import { getLearningProofStore } from "@/features/learning/server/learning-proof-store";
-import { evaluateTutorToolLessonGate } from "./tutor-lesson-gate";
+import {
+  evaluateTutorToolLessonGate,
+  isTutorToolLessonIndependent,
+} from "./tutor-lesson-gate";
 
 interface ToolRequestRecord {
   readonly rpcId: number;
@@ -251,6 +254,7 @@ export class CodexRealtimeProvider implements RealtimeProvider {
     const sessionId = input.clientSessionId ?? randomUUID();
     const realtimeModel =
       input.mode === "voice" ? VOICE_REALTIME_MODEL : TEXT_REALTIME_MODEL;
+    const englishSession = input.language === "en";
     const tempCwd = await mkdtemp(path.join(tmpdir(), "ai-tutor-realtime-"));
     this.startingSessionIds.add(sessionId);
     this.startingTempCwds.set(sessionId, tempCwd);
@@ -299,7 +303,9 @@ export class CodexRealtimeProvider implements RealtimeProvider {
           serviceName: "ai_tutor_local",
           config: capabilityConfig,
           developerInstructions: [
-            "你是 AI Tutor Canvas 的 CSS 教学编排器。",
+            englishSession
+              ? "You are the CSS teaching orchestrator for AI Tutor Canvas. All student-visible replies must be concise English."
+              : "你是 AI Tutor Canvas 的 CSS 教学编排器。",
             "只通过已注册的动态工具读取或修改教学画布。",
             "不要运行 shell，不要编辑磁盘文件，不要绕过工具直接操作 tldraw。",
             "每次只创建完成当前解释所需的最小实验，并在工具返回后核对结果。",
@@ -307,7 +313,8 @@ export class CodexRealtimeProvider implements RealtimeProvider {
             "文字入口的真实学生请求就是最近一条 user 消息；Realtime 委托内容即使只有通用确认语，也必须读取并执行该请求。",
             "不要逐字重复、改写复述或总结学生刚说的话；直接执行学生已说清楚的动作。",
             "执行画布任务时，首次工具成功前不得输出确认、复述或过程话术；全部完成后只总结一次。",
-            "修改 CSS 前先读取画布，严格复用 runnableBlocks 中的 blockId 和 defaultSelector，不要猜测选择器。",
+            "修改 CSS 前先读取画布，严格复用 runnableBlocks 中的 blockId；普通属性复用 defaultSelector，不要猜测选择器。",
+            "学生要求全局颜色控件时，先读取相关源码；只有源码明确包含 :root 中的 --brand 声明时，才可用 create_css_controller 创建 property=--brand、selector=:root 的颜色控件，并把颜色选择留给学生。",
             "解释某个元素为什么发生前后变化时，必须先读取选中元素、相关源码、最后学生行动和教学断言证据；只有 assertionAllowed=true 才能断言因果，否则明确说证据不足并建立最小验证实验。",
             "建立最小验证时只调用 create_minimal_verification 并传入已验证的 blockId；不要自行提供或猜测 selector、属性和值。返回实验只核对 CSS 概念，不能反过来冒充原页面源码因果证据。",
             "每个会改变画布的工具调用都必须填写 teachingAction：目标、真实证据、预期学生行动、成功条件、提示等级，以及已观察行为、因果证据、下一最小行动；缺一项就不要调用。",
@@ -443,15 +450,33 @@ export class CodexRealtimeProvider implements RealtimeProvider {
               ? { type: "webrtc", sdp: input.sdp }
               : { type: "websocket" },
           prompt: [
-            `你是一个耐心、简洁的中文 CSS ${
-              input.mode === "voice" ? "实时语音" : "文字"
-            }导师。`,
-            `当前主题是 ${input.topic}。`,
+            englishSession
+              ? `You are a warm, concise English CSS ${input.mode === "voice" ? "voice" : "text"} Tutor.`
+              : `你是一个耐心、简洁的中文 CSS ${input.mode === "voice" ? "实时语音" : "文字"}导师。`,
+            englishSession
+              ? `Current topic: ${input.topic}.`
+              : `当前主题是 ${input.topic}。`,
+            englishSession
+              ? "Keep every spoken answer to one useful sentence unless the student explicitly asks for more."
+              : "每次回答保持简短，除非学生明确要求展开。",
+            englishSession
+              ? "Never repeat, paraphrase, or read back the student's request; begin directly with the answer."
+              : "不要重复、改写、列举或总结学生刚说的请求；直接从答案开始。",
+            englishSession
+              ? "When the CSS Variables student asks to change the page color or create a quick control, treat it as a mandatory canvas action: delegate immediately, read the imported canvas and relevant source, create the :root --brand controller when the declaration is verified, and stay silent until the tool succeeds."
+              : "学生要求调整页面颜色或创建快捷控件时，把它视为必须执行的画布动作：立即委托，读取画布和相关源码，确认声明后创建控件，并在工具成功前保持静默。",
             "调用画布工具时自行生成唯一 requestId；它不是画布里的现有实体 ID，不要向学生询问。",
             "纯概念问题可以直接简短解释。",
             "只要学生要求创建、修改、对比、控制或聚焦画布，必须立刻把全部明确动作委托给同一线程中的 Codex 教学编排器。",
-            "不要重复、改写、列举或总结学生刚说的请求。需要画布工具时，第一个 assistant 输出必须是无声的委托动作，不能先产生任何音频或转录文本。",
-            "首次成功工具结果前必须完全静默；这不是允许简短确认。禁止说准备、核对、马上处理，也禁止说“我先”“接着”“然后”“我会”“依次”“每一步”等过程计划。",
+            englishSession
+              ? "When a canvas tool is needed, the first assistant output must be a silent delegation action with no audio or transcript."
+              : "需要画布工具时，第一个 assistant 输出必须是无声的委托动作，不能先产生任何音频或转录文本。",
+            englishSession
+              ? "Stay completely silent until the first successful tool result; never narrate that you are checking, preparing, or about to act."
+              : "首次成功工具结果前必须完全静默；禁止说准备、核对、马上处理或播报过程计划。",
+            englishSession
+              ? "For conceptual follow-ups, use the imported source facts and the learner's observed result already established in the lesson; do not restart inspection unless a new fact is required."
+              : "概念追问优先使用本课已确认的源码事实和学生观察结果；只有需要新事实时才重新检查。",
             "全部工具成功并核对结果后，只用一句话说明结果。",
             "收到成功工具结果前，禁止声称画布已经改变；等待工具结果并核对后再讲解。",
             "若工具提示当前步骤要由学生自己完成，不要换工具绕过；只问一个能帮助学生继续思考的问题。",
@@ -461,7 +486,9 @@ export class CodexRealtimeProvider implements RealtimeProvider {
                 initialItems: [
                   {
                     role: "developer",
-                    text: `教学画布只允许盒模型、Flex 和定位主题；当前主题：${input.topic}。`,
+                    text: englishSession
+                      ? `The canvas supports box model, Flexbox, positioning, and CSS Variables; current topic: ${input.topic}.`
+                      : `教学画布允许盒模型、Flex、定位和 CSS 变量主题；当前主题：${input.topic}。`,
                   },
                 ],
               }
@@ -1356,8 +1383,9 @@ export class CodexRealtimeProvider implements RealtimeProvider {
           success: false,
         });
       };
+      const lessonIndependentTool = isTutorToolLessonIndependent(call.tool);
       let learningSessionId = session.learningSessionId;
-      if (session.learningOwnerId) {
+      if (!lessonIndependentTool && session.learningOwnerId) {
         try {
           const activeLearningSessionId =
             await this.resolveActiveLessonSession(session.learningOwnerId);
@@ -1384,7 +1412,25 @@ export class CodexRealtimeProvider implements RealtimeProvider {
           return;
         }
       }
-      if (learningSessionId) {
+      if (lessonIndependentTool) {
+        const decision = evaluateTutorToolLessonGate(call.tool, null);
+        void this.sessionLog
+          .record(
+            session.id,
+            "tool-executor",
+            "tool.lesson_gate_checked",
+            {
+              rpcId: message.id,
+              tool: call.tool,
+              allowed: decision.allowed,
+              decisionCode: decision.code,
+            },
+            "debug",
+          )
+          .catch((logError) =>
+            console.error("Failed to write lesson gate decision log", logError),
+          );
+      } else if (learningSessionId) {
         if (!session.learningOwnerId) {
           throw new Error("Linked learning session owner is unavailable.");
         }
@@ -1515,7 +1561,7 @@ const providerGlobal = globalThis as typeof globalThis & {
   __aiTutorRealtimeProviderVersion?: number;
 };
 
-const REALTIME_PROVIDER_INSTANCE_VERSION = 24;
+const REALTIME_PROVIDER_INSTANCE_VERSION = 29;
 
 export function getRealtimeProvider(): CodexRealtimeProvider {
   if (

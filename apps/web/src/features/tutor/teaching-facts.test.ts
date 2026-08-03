@@ -2,6 +2,7 @@ import type { InspectionResult } from "@ai-tutor/runtime-core";
 import { describe, expect, it } from "vitest";
 
 import {
+  globalCustomPropertySourceFact,
   newestStudentAction,
   privacySafeSelectedElementFact,
   privacySafeStudentActionFromLearningEvent,
@@ -82,6 +83,54 @@ function snapshot(): RuntimeInspectionSnapshot {
 }
 
 describe("teaching fact boundaries", () => {
+  it("returns a bounded :root custom-property source fact without requiring element inspection", () => {
+    const fact = globalCustomPropertySourceFact(
+      "block-1",
+      {
+        id: "revision-2",
+        blockId: "block-1",
+        parentRevisionId: "revision-1",
+        authorType: "user",
+        contentHash: "hash",
+        changeSummary: "initial import",
+        createdAt: "2026-08-02T08:00:00.000Z",
+        files: {
+          "index.html": {
+            path: "index.html",
+            mimeType: "text/html",
+            content: "<main>Page</main>",
+          },
+          "theme.css": {
+            path: "theme.css",
+            mimeType: "text/css",
+            content:
+              ":root {\n  --brand: #6750a4;\n  --surface: #ffffff;\n}\n.button { color: var(--brand); }",
+          },
+          "private.js": {
+            path: "private.js",
+            mimeType: "text/javascript",
+            content: "never-return-this",
+          },
+        },
+      },
+      "--brand",
+    );
+
+    expect(fact).toMatchObject({
+      factType: "global-custom-property-source",
+      blockId: "block-1",
+      revisionId: "revision-2",
+      selector: ":root",
+      property: "--brand",
+      sourceTrust: "untrusted-student-content",
+      evidenceStatus: "grounded",
+    });
+    expect(fact.snippets).toHaveLength(1);
+    expect(fact.snippets[0]).toMatchObject({ filePath: "theme.css" });
+    expect(fact.snippets[0]?.content).toContain("--brand: #6750a4");
+    expect(JSON.stringify(fact)).not.toContain("never-return-this");
+  });
+
   it("returns stable selected-element measurements and matched rule provenance", () => {
     const fact = selectedElementFact(snapshot());
 

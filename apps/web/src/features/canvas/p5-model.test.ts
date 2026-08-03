@@ -77,6 +77,21 @@ describe("P5 immutable CSS experiments", () => {
     ).toThrow("unsupported CSS");
   });
 
+  it("accepts a bounded global brand hex color and rejects other color syntax", () => {
+    expect(
+      buildExperimentCss(
+        { domPath: ":root" },
+        [{ property: "--brand", value: "#0f9f8f" }],
+      ),
+    ).toContain("--brand: #0f9f8f !important");
+    expect(() =>
+      buildExperimentCss(
+        { domPath: ":root" },
+        [{ property: "--brand", value: "rgb(15, 159, 143)" }],
+      ),
+    ).toThrow("unsupported CSS");
+  });
+
   it("creates a child revision without mutating its parent", async () => {
     const record = fixtureRecord();
     const parent = record.revisions[0]!;

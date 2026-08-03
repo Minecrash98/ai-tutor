@@ -1,7 +1,7 @@
 # AI Tutor P8 结果与限制
 
 证据日期：2026-08-02；本地收口：2026-08-03
-结论：本地机器候选已收口到 `75 VERIFIED / 1 IN_PROGRESS / 24 BLOCKED / 0 NOT_STARTED`；整体仍为 `NO_GO`。官方比赛、真人、专家、法律、Git 来源、异机现场和独立审查证据仍缺失。购买永久排除。
+结论：本地机器候选已收口到 `75 VERIFIED / 1 IN_PROGRESS / 24 BLOCKED / 0 NOT_STARTED`；整体仍为 `NO_GO`。官方比赛、真人、专家、法律、最终候选清洁 checkout 复现、异机现场和独立审查证据仍缺失。购买永久排除。
 
 ## 1. 最终本地候选绑定
 
@@ -22,7 +22,7 @@
 
 - `pnpm lint`：通过。
 - `pnpm typecheck`：通过。
-- `pnpm test`：237 项通过，10 项按账户/Live 条件诚实跳过。
+- `pnpm test`：239 项通过，10 项按账户/Live 条件诚实跳过。
 - `pnpm build`：通过，Next.js 16.2.12 生产构建完成。
 - `pnpm test:e2e`：67 项通过，18 项账户相关 Live 场景诚实跳过；0 失败。
 - 最终无缓存镜像上的 `pnpm test:e2e:compose`：25/25 通过，真实 PostgreSQL 权威回放、三主题、统一 Tutor/事实/画布时间线、转移题和故障恢复均覆盖。
@@ -95,7 +95,7 @@
   YouTube 与比赛表单最终提交尚未完成。
 - 30 分钟浸泡：没有合格的当前源码记录，且按用户要求不再重跑。
 - 购买：未发生，也不会执行。
-- 视频 Demo：已在全新隔离浏览器中录制全英文 CSS 全局颜色变量候选，离线英文旁白通过 Microsoft Zira 生成，物理麦克风调用 0；最终 WebM 为 300.008 秒、1280×720、VP8 + Opus。文件与 SHA-256 见 `docs/submission/DELIVERY_CHECKLIST.md`。这是本地候选，尚未上传或冒充官方最终提交。
+- 视频 Demo：已在全新隔离浏览器中录制全英文 CSS 全局颜色变量 v2 候选，画面包含真实认证文字 Tutor 的两次学生提问和两次 Tutor 回复。旁白通过本地 Piper `en_US-lessac-high` 生成；浏览器使用假媒体和 `--mute-audio`，物理麦克风调用 0。主 MP4 为 300.000 秒、1280×720、25 fps、H.264 High + AAC-LC；备选 WebM 为 300.008 秒、VP8 + Opus。文件与 SHA-256 见 `docs/submission/DELIVERY_CHECKLIST.md`。这是本地候选，尚未上传或冒充官方最终提交。
 
 ## 8. 当前裁决
 

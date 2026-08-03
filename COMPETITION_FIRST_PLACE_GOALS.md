@@ -372,7 +372,7 @@
 | 096 | BLOCKED | 诚实结果报告模板、去标识规则和确定性统计脚本已完成；真实参与者为 0，无法形成真人性能/学习结果，机器数据不会冒充。 |
 | 097 | BLOCKED | 赛前工作已授权，但仍缺陌生演示者和真实投影/热点/耳麦。 |
 | 098 | BLOCKED | 赛前工作已授权，但仍缺第二台机器、第二网络和真实切换条件。 |
-| 099 | BLOCKED | 主备候选脚本、离线 fallback、证据索引和禁语清单已形成；另已生成 300.008 秒全英文 CSS 变量候选、英文旁白、SRT/VTT、封面和 943 词 write-up，见 `docs/submission/DELIVERY_CHECKLIST.md`。公开 GitHub 已验证；YouTube URL、官方完整规则、法律确认、真人研究、现场演练和独立终检仍缺失，因此不改为 VERIFIED。 |
+| 099 | BLOCKED | 主备候选脚本、离线 fallback、证据索引和禁语清单已形成；另已生成 300.000 秒全英文 CSS 变量 v2 主 MP4（另有 WebM）、本地 Piper 英文旁白、SRT/VTT、封面和不超过 1,000 词的 write-up。画面包含真实认证文字 Tutor 的 2 次学生提问与 2 次 Tutor 回复；全新隔离浏览器使用假媒体和 `--mute-audio`，物理麦克风调用 0，五个检查点可见 CJK 为 0。见 `docs/submission/DELIVERY_CHECKLIST.md`。公开 GitHub 已验证；YouTube URL、官方完整规则、法律确认、真人研究、现场演练和独立终检仍缺失，因此不改为 VERIFIED。 |
 | 100 | BLOCKED | 100 项台账与机器证据已收口，但仍需独立审查者；下方 10 项硬门禁尚未全部通过，不能自行宣布第一名就绪。 |
 
 ## 当前 go/no-go 复核

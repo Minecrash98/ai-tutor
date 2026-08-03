@@ -2,16 +2,19 @@
 
 状态：`ENGLISH_CANDIDATE_READY / PUBLICATION_PENDING`
 更新：2026-08-03
-边界：用户已授权制作英文投稿候选并明确要求最终视频包含英文旁白。现已生成本地视频、旁白、字幕、封面和投稿文本；未购买任何内容。公共 GitHub、YouTube 上传和最终表单回执仍必须以真实外部 URL 和页面状态为准，不能用本地文件代替。
+边界：用户已授权制作英文投稿候选并明确要求最终视频包含英文旁白和学生—AI Tutor 互动。现已生成本地视频、旁白、字幕、封面和投稿文本；未购买任何内容。公共 GitHub 已验证，YouTube 上传和最终表单回执仍必须以真实外部 URL 和页面状态为准，不能用本地文件代替。
 
 ## 0. 2026-08-03 execution result
 
-- Final local video: `output/playwright/css-global-color-variables-youtube-demo-2026-08-03.webm`
-- Duration and streams: 300.008 seconds, 1280×720, VP8 video and English Opus mono narration.
-- Capture boundary: a fresh isolated Playwright browser; physical microphone calls remained 0.
-- Captions: `docs/submission/captions/ai-tutor-css-variables-en.srt` and `.vtt`.
+- Primary local video: `output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.mp4`
+- Primary streams: exactly 300.000 seconds, 1280×720 at 25 fps, H.264 High video and AAC-LC English mono narration; an alternate VP8/Opus WebM is also retained.
+- Capture boundary: a fresh isolated Playwright browser with fake media and `--mute-audio`; physical microphone calls remained 0.
+- Interaction: a real authenticated text Tutor session is visible with two student turns and two Tutor responses; it is not a mocked transcript.
+- Presentation: visible interface text is English at all five recorded checkpoints through a query-scoped presentation mode; complete product localization is not claimed.
+- Narration: 801-word, approximately 170 WPM local Piper `en_US-lessac-high` voice, normalized to -16.3 LUFS integrated and -1.4 dBFS true peak.
+- Captions: `docs/submission/captions/ai-tutor-css-variables-en-v2.srt` and `.vtt`.
 - Cover: `docs/submission/assets/ai-tutor-cover.png`, 1600×900 and below 2 MB.
-- Submission fields and 943-word write-up: `docs/submission/`.
+- Submission fields and verified 964-word write-up: `docs/submission/`.
 - Integrity details: `docs/submission/DELIVERY_CHECKLIST.md`.
 - This is an upload-ready local candidate, not a verified public YouTube URL or completed competition submission.
 
@@ -19,8 +22,8 @@
 
 `官方规则原文 → 约束卡 → 评分项/证据映射 → 主张冻结 → 定时脚本/无声分镜 → 三套彩排 → 正式录制 → 剪辑/字幕/事实 QA → 上传彩排 → 双人终检 → 负责人最终提交`
 
-当前本地候选和统一 Learning Proof Replay 可作为未来脚本评审素材，但在官方规则、
-正式 Git 来源和人工门禁到位前，不把它命名为最终提交版本，也不开始视频生产。
+当前 v2 是可上传的本地视频候选，公开 GitHub 也已建立。未取得真实 YouTube URL、
+官方完整规则和必要人工门禁前，不把本地文件冒充已完成的比赛提交。
 
 ## 1. 开始执行前必须拿到的输入
 
@@ -42,7 +45,7 @@
 2. **逐项映射评分表**：每个评分项只链接一种可核查证据；机器、真人、专家、法律与假设分列。
 3. **建立提交清单**：表单答案、项目简介、技术说明、隐私/AI 披露、仓库或运行包、视频、字幕、封面、许可证材料、证据索引。
 4. **生成主包与离线备包**：主包展示完整产品；备包保证无网络、无 Codex 登录、拒麦时仍能跑确定性三课。
-5. **清洁环境复现**：从正式 Git checkout（当前缺失）安装、构建、启动、健康检查并完成核心浏览器路径；记录失败样本。
+5. **清洁环境复现**：从公开 `main` 的正式 Git checkout 安装、构建、启动、健康检查并完成核心浏览器路径；记录失败样本。
 6. **声明审查**：逐句对照 `docs/CLAIM_MATRIX.md` 和 `docs/CLAIM_BOUNDARIES.md`，删除“掌握、提高学习效果、全部合规、低于 2.5 秒”等无对应证据的外推。
 7. **人工门禁**：法律/许可、专家、真人数据、读屏/设备、三次盲演和独立 go/no-go 必须由对应真人签字，机器不得代签。
 8. **上传彩排**：使用草稿或测试入口核对文件名、大小、转码、字幕、链接权限和时区；不按下最终提交。
@@ -122,4 +125,7 @@ submission/<competition>/<candidate-id>/
 5. 无声分镜和镜头表。
 6. 主路径/离线备份/失败恢复三套彩排记录。
 
-Current execution stopped after producing and verifying the English local candidate. The only missing submission fields are real public GitHub and YouTube URLs plus any external human, legal, official-rule, and final-receipt evidence described above.
+Current execution produced and verified the English interactive local candidate.
+The GitHub URL is public and verified. The remaining link field is a real
+public or unlisted YouTube URL; external human, legal, official-rule, device,
+network, and final-receipt evidence remains explicitly incomplete.

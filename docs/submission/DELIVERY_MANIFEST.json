@@ -2,23 +2,46 @@
   "generatedAt": "2026-08-03",
   "language": "en",
   "video": {
-    "path": "output/playwright/css-global-color-variables-youtube-demo-2026-08-03.webm",
-    "bytes": 19522089,
-    "sha256": "ffa4b354a05a1901df73513bdf879edbb7014a9aef85a1061fbfcb7468356ecd",
-    "durationSeconds": 300.008,
+    "path": "output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.mp4",
+    "bytes": 14992855,
+    "sha256": "76e26d5875aaf5f6d71a590f1cfd637d5956eae20cddd764b7a869691bbe448b",
+    "durationSeconds": 300,
     "width": 1280,
     "height": 720,
+    "framesPerSecond": 25,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "audioSampleRate": 48000,
+    "audioChannels": 1,
+    "audioIntegratedLufs": -16.3,
+    "audioTruePeakDbfs": -1.4
+  },
+  "alternateVideo": {
+    "path": "output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.webm",
+    "bytes": 21478459,
+    "sha256": "9224e9403eb4ecb4685320999ca317c0567216de4f6e22095a14d5750fa63929",
+    "durationSeconds": 300.008,
     "videoCodec": "vp8",
-    "audioCodec": "opus",
-    "audioLanguage": "eng",
-    "physicalMicrophoneCalls": 0
+    "audioCodec": "opus"
+  },
+  "capture": {
+    "browserProfile": "fresh isolated",
+    "browserAudioMuted": true,
+    "fakeMediaDevice": true,
+    "physicalMicrophoneCalls": 0,
+    "visibleCjkMatches": 0,
+    "studentTurns": 2,
+    "assistantTurns": 2,
+    "interactionKind": "real authenticated text Tutor session"
   },
   "narration": {
-    "path": "output/playwright/css-global-color-variables-narration-en-master-2026-08-03.wav",
-    "bytes": 13219250,
-    "sha256": "59ccb5588862046cb82f100cb5e4e13370677d9ec809e817b1097466504ad3b4",
-    "durationSeconds": 299.755,
-    "voice": "Microsoft Zira Desktop"
+    "path": "output/playwright/css-global-color-variables-narration-en-v2-local-normalized-2026-08-03.wav",
+    "bytes": 108563504,
+    "sha256": "188e721ef186993a412cedb4044db0efed64a93ca77006bddb20a8b0ba139a23",
+    "durationSeconds": 282.717,
+    "words": 801,
+    "voice": "Piper en_US-lessac-high",
+    "generation": "local"
   },
   "cover": {
     "path": "docs/submission/assets/ai-tutor-cover.png",
@@ -30,13 +53,21 @@
   },
   "writeup": {
     "path": "docs/submission/FULL_WRITEUP.md",
-    "bytes": 6745,
-    "sha256": "c1e84d493d43234a32a1830ee728d3fe57b9d6c9f8822f0b0fdfaeb3ff7e40d1",
-    "words": 943
+    "bytes": 6927,
+    "sha256": "39668e639f78cd14386777ab2149f6e06849bd979f179bef1bd7c0e14ff34bcd",
+    "words": 964
   },
   "captions": {
-    "srt": "docs/submission/captions/ai-tutor-css-variables-en.srt",
-    "vtt": "docs/submission/captions/ai-tutor-css-variables-en.vtt"
+    "srt": {
+      "path": "docs/submission/captions/ai-tutor-css-variables-en-v2.srt",
+      "bytes": 8936,
+      "sha256": "8571a77d6e2ce183c97d1d5c3c9f8aa95bb4e02cdcdd2afac67f9bafd6a41dfe"
+    },
+    "vtt": {
+      "path": "docs/submission/captions/ai-tutor-css-variables-en-v2.vtt",
+      "bytes": 8946,
+      "sha256": "4acabe275e11aa69061ae243712e9af3291b9e74ae8cda49bb7f789f01999699"
+    }
   },
   "externalUrls": {
     "github": "https://github.com/Minecrash98/ai-tutor",

@@ -2,12 +2,10 @@
 
 ## The problem and our approach
 
-CSS is unusually visual, yet beginners are often taught through disconnected
-snippets, videos, or chat answers. A learner may copy padding, Flex, or
-positioning code and get the right screenshot without understanding which rule
-caused the result. Generic AI assistants can answer quickly, but they usually
-optimize for finishing the page, not for predicting, testing, explaining, and
-transferring a concept.
+CSS is visual, yet beginners often learn from disconnected snippets or chat
+answers. A learner can reproduce a target screenshot without understanding
+what caused it. Generic assistants optimize for completion; AI Tutor asks
+learners to predict, test, explain, and transfer.
 
 AI Tutor turns a learner's real page into a visual practice space. The core
 loop is Predict–Observe–Explain–Transfer: first make a prediction, then change
@@ -20,9 +18,11 @@ Imported files are normalized, scripts are removed, and the result runs in a
 sandboxed iframe behind a versioned bridge. A learner can select an element,
 inspect the relevant source and computed style, adjust CSS with immediate
 transient feedback, safely run the edit, and save an immutable version. The
-five-minute demo uses global color variables: changing --brand once updates
-buttons, labels, borders, and code highlights, then a complete mint palette is
-saved and compared with the original purple version.
+five-minute demo follows a student who asks the Tutor to test a prediction,
+checks the source, changes --brand once, and returns with evidence. The Tutor
+answers twice with concrete checks instead of taking over the edit. Buttons,
+labels, borders, and code highlights update together; a complete mint palette
+is then saved and compared with the original purple version.
 
 The optional Realtime Tutor is constrained by page-grounded tools. It can read
 the selected element, relevant source, the learner's last action, and teaching
@@ -31,29 +31,26 @@ replaces a causal claim with uncertainty instead of inventing an explanation.
 Text and deterministic lessons remain available when Realtime, an account, the
 network, or microphone access is unavailable.
 
-Learning Proof is treated as an event system rather than a celebratory score.
-Lesson events, tutor states and final messages, tool results, fact receipts,
-and learner or AI canvas saves share a versioned timeline. The replay UI can
-step through that history while PostgreSQL verifies owner, sequence, hashes,
-idempotency, and deterministic snapshots. If a learner does not opt in to
-content storage, message text remains null; the replay says that content was
-not saved.
+Learning Proof is a versioned event timeline, not a celebratory score. It
+replays lesson events, tutor states, tool results, fact receipts, and learner or
+AI canvas saves. PostgreSQL verifies ownership, sequence, hashes, idempotency,
+and snapshots. Without content-storage opt-in, message text remains null and
+replay says it was not saved.
 
 ## Evidence, experiments, and user testing
 
-The latest complete local baseline passed lint, type checking, and production
-build; 237 automated tests passed with 10 honest account-dependent skips. The
-isolated Chromium suite passed 67 cases with 18 account-dependent Live skips,
-and a no-cache production-style Compose candidate passed 25/25 cases against
-real PostgreSQL. Additional machine runs passed a 12-case browser matrix, 5/5
-touch cases, 3/3 automated accessibility checks, 9/9 failure cases, 3/3
-security cases, and 7/7 visual comparisons.
+The latest local baseline passed lint, type checking, production build, and 239
+automated tests with 10 honest account-dependent skips. Isolated Chromium
+passed 67 cases with 18 Live skips; production-style Compose passed 25/25
+against real PostgreSQL. Other machine suites covered browsers, touch,
+accessibility, failure, security, and visual states. The demo separately
+records a real authenticated text session with two student turns and two Tutor
+responses; it is product evidence, not learning-outcome evidence.
 
 A controlled performance run used 21 runtimes and 53 teaching blocks. Import
-P95 was 340 ms; pointer-frame P95 was 16.8 ms; 47 real drag-preview samples had
-a 23.3 ms P95; and the authoritative workspace was written once after release,
-not on every pointer frame. These figures describe one isolated local machine,
-not every competition device.
+P95 was 340 ms, pointer-frame P95 was 16.8 ms, and 47 drag-preview samples had
+a 23.3 ms P95. The authoritative workspace was written once after release.
+These figures describe one isolated local machine.
 
 Human testing has not happened: zero unfamiliar learners, experts, or human
 screen-reader participants have completed a formal study. The repository
@@ -62,19 +59,20 @@ tests demonstrate implemented behavior and reproducibility, not pedagogy.
 
 ## Constraints, limitations, and incomplete areas
 
-The current product shell is Chinese, while imported lesson content can be in
-English and the submission assets are English. A complete multilingual
-interface is not finished. Realtime depends on an existing local Codex
-app-server OAuth session; the deterministic learning paths do not. The Compose
-stack is loopback-only and is not a public deployment.
+The recording uses a query-scoped English presentation mode over the current
+interface; a complete multilingual product and learner-facing language switch
+are not finished. Realtime depends on an existing local Codex app-server OAuth
+session; deterministic learning paths do not. The Compose stack is
+loopback-only and is not a public deployment.
 
 The local candidate is 75 VERIFIED / 1 IN_PROGRESS / 24 BLOCKED across its
 100-item evidence ledger, so its overall decision remains NO_GO. Missing inputs
 include official competition rules, a real learner pilot, CSS and pedagogy
-expert review, legal guidance, real-device and second-network rehearsal, Git
-provenance, and an independent final review. A new 30-minute soak was waived,
-so long-duration stability is not claimed. Container scans also retain
-documented upstream findings; the project does not claim zero vulnerabilities.
+expert review, legal guidance, real-device and second-network rehearsal, a
+clean-checkout reproduction of the final candidate, and an independent final
+review. A new 30-minute soak was waived, so long-duration stability is not
+claimed. Container scans retain documented upstream findings; the project
+does not claim zero vulnerabilities.
 
 ## What we would improve next
 
@@ -91,6 +89,11 @@ audit each explanation end to end.
 
 - apps/web/src/features/canvas/CanvasWorkspace.tsx — the visual canvas
   orchestration and teaching-block workflow.
+- apps/web/src/features/canvas/EnglishDemoPresentation.tsx — the
+  query-scoped English recording presentation and visible-English guard.
+- apps/web/src/app/api/realtime/session/route.ts and route.test.ts — optional
+  unbound Tutor startup and strict validation for explicitly bound learning
+  sessions.
 - packages/runtime-static-html/src/runtime.ts — sandboxed static-page runtime
   lifecycle; sandbox-document.ts and inspection-bridge.ts show script removal
   and versioned inspection messages.

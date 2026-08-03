@@ -21,6 +21,33 @@ import {
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+type LearningProofLookup = Pick<
+  ReturnType<typeof getLearningProofStore>,
+  "findLatestActiveSessionId" | "getCurrentLessonState"
+>;
+
+export async function resolveRealtimeLearningSessionId(
+  ownerId: string,
+  requestedSessionId: string | null,
+  createStore: () => LearningProofLookup = getLearningProofStore,
+): Promise<string | null> {
+  if (requestedSessionId) {
+    await createStore().getCurrentLessonState(ownerId, requestedSessionId);
+    return requestedSessionId;
+  }
+  try {
+    return await createStore().findLatestActiveSessionId(ownerId);
+  } catch (error) {
+    if (
+      !(error instanceof LearningProofStoreError) ||
+      error.code !== "LEARNING_DATABASE_UNAVAILABLE"
+    ) {
+      throw error;
+    }
+    return null;
+  }
+}
+
 export async function POST(request: Request) {
   let owner: RealtimeOwnerContext | null = null;
   let releaseReservation: () => void = () => undefined;
@@ -46,18 +73,10 @@ export async function POST(request: Request) {
       if (owner.setCookie) response.headers.append("Set-Cookie", owner.setCookie);
       return response;
     }
-    const learningProofStore = getLearningProofStore();
-    let learningSessionId = parsed.data.learningSessionId ?? null;
-    if (learningSessionId) {
-      await learningProofStore.getCurrentLessonState(
-        owner.ownerId,
-        learningSessionId,
-      );
-    } else {
-      learningSessionId = await learningProofStore.findLatestActiveSessionId(
-        owner.ownerId,
-      );
-    }
+    const learningSessionId = await resolveRealtimeLearningSessionId(
+      owner.ownerId,
+      parsed.data.learningSessionId ?? null,
+    );
     const sessionInput = learningSessionId
       ? { ...parsed.data, learningSessionId }
       : parsed.data;

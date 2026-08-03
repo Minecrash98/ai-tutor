@@ -1,0 +1,413 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.344
+Most CSS tutorials tell you what a custom property is.
+
+2
+00:00:03.424 --> 00:00:05.676
+AI Tutor makes you prove what it does.
+
+3
+00:00:05.756 --> 00:00:08.470
+In the next five minutes, a student will import a
+
+4
+00:00:08.470 --> 00:00:11.591
+real page, ask the Tutor a question, make a prediction,
+
+5
+00:00:11.591 --> 00:00:14.033
+change one global color token, and compare
+
+6
+00:00:14.033 --> 00:00:15.729
+the result with the original.
+
+7
+00:00:15.809 --> 00:00:18.846
+Everything you see is running in the real product, inside
+
+8
+00:00:18.846 --> 00:00:20.174
+a fresh browser session.
+
+9
+00:00:20.354 --> 00:00:23.231
+We begin with two ordinary files: index
+
+10
+00:00:23.231 --> 00:00:25.149
+dot HTML and theme dot CSS.
+
+11
+00:00:25.229 --> 00:00:29.485
+AI Tutor normalizes the upload, removes executable scripts, and renders
+
+12
+00:00:29.485 --> 00:00:31.475
+the page inside a sandboxed frame.
+
+13
+00:00:31.555 --> 00:00:34.316
+The exercise is deliberately small, but it is not a
+
+14
+00:00:34.316 --> 00:00:35.631
+screenshot or a mockup.
+
+15
+00:00:35.711 --> 00:00:40.390
+The button, cards, borders, labels, and code highlights are all
+
+16
+00:00:40.390 --> 00:00:41.690
+live HTML and CSS.
+
+17
+00:00:41.770 --> 00:00:43.698
+The interface and lesson are presented in
+
+18
+00:00:43.698 --> 00:00:45.020
+English for this recording.
+
+19
+00:00:45.200 --> 00:00:47.181
+The purple theme is controlled by custom
+
+20
+00:00:47.181 --> 00:00:48.811
+properties in the root selector.
+
+21
+00:00:48.891 --> 00:00:52.728
+Names such as brand, surface, text, accent, and line describe
+
+22
+00:00:52.728 --> 00:00:55.753
+design roles instead of individual components.
+
+23
+00:00:55.833 --> 00:00:59.467
+That is the first useful pattern: choose semantic token names.
+
+24
+00:00:59.547 --> 00:01:02.314
+A token called brand can serve a button, an eyebrow
+
+25
+00:01:02.314 --> 00:01:04.423
+label, a border, and a code highlight.
+
+26
+00:01:04.503 --> 00:01:07.035
+A name such as purple button would lock the variable
+
+27
+00:01:07.035 --> 00:01:08.566
+to one color and one component.
+
+28
+00:01:08.746 --> 00:01:10.720
+Now we open the actual source.
+
+29
+00:01:10.800 --> 00:01:13.041
+Root gives these tokens page-wide scope.
+
+30
+00:01:13.121 --> 00:01:17.175
+Custom properties participate in the cascade, and descendants inherit them
+
+31
+00:01:17.175 --> 00:01:18.984
+unless a closer declaration wins.
+
+32
+00:01:19.064 --> 00:01:22.008
+Components consume a token with the var function, while an
+
+33
+00:01:22.008 --> 00:01:24.532
+optional second argument can provide a fallback.
+
+34
+00:01:24.612 --> 00:01:27.552
+The code highlight also uses color mix, deriving a softer
+
+35
+00:01:27.552 --> 00:01:31.044
+tint from brand instead of introducing another unrelated literal.
+
+36
+00:01:31.124 --> 00:01:34.978
+So the page already exposes a small design system: centralized
+
+37
+00:01:34.978 --> 00:01:38.322
+decisions at the top, reusable component rules below.
+
+38
+00:01:38.502 --> 00:01:41.689
+Before editing, the student opens the AI Tutor and asks
+
+39
+00:01:41.689 --> 00:01:45.569
+a specific question: if brand changes, which visible parts should
+
+40
+00:01:45.569 --> 00:01:46.954
+move together, and why?
+
+41
+00:01:47.034 --> 00:01:49.275
+The Tutor does not need to take over the keyboard.
+
+42
+00:01:49.355 --> 00:01:52.627
+It checks the current canvas and source, responds in English,
+
+43
+00:01:52.627 --> 00:01:54.893
+and asks the learner to predict the effect.
+
+44
+00:01:54.973 --> 00:01:58.140
+The student answers that every rule reading var brand should
+
+45
+00:01:58.140 --> 00:02:01.370
+update, while text and surface tokens should stay unchanged.
+
+46
+00:02:01.450 --> 00:02:04.966
+This interaction matters: the AI is guiding an observable claim,
+
+47
+00:02:04.966 --> 00:02:06.883
+not merely producing a definition.
+
+48
+00:02:07.063 --> 00:02:10.684
+With that prediction recorded, we change only brand, from purple
+
+49
+00:02:10.684 --> 00:02:12.659
+to deep teal, and run a safe preview.
+
+50
+00:02:12.739 --> 00:02:15.913
+Watch the same value propagate to the primary button, the
+
+51
+00:02:15.913 --> 00:02:18.227
+eyebrow label, the hero border, the token
+
+52
+00:02:18.227 --> 00:02:19.880
+board, and the code emphasis.
+
+53
+00:02:19.960 --> 00:02:21.678
+The HTML has not changed.
+
+54
+00:02:21.758 --> 00:02:23.929
+The component selectors have not changed.
+
+55
+00:02:24.009 --> 00:02:27.266
+One decision moved through every consumer because each rule points
+
+56
+00:02:27.266 --> 00:02:28.351
+back to the same token.
+
+57
+00:02:28.431 --> 00:02:31.020
+That is the cause-and-effect link the learner predicted.
+
+58
+00:02:31.200 --> 00:02:34.133
+The Tutor can now ground the explanation in the visible
+
+59
+00:02:34.133 --> 00:02:37.704
+result: the edited value, the affected target, the matching rule,
+
+60
+00:02:37.704 --> 00:02:39.106
+and the current revision.
+
+61
+00:02:39.186 --> 00:02:41.375
+If those facts do not line up, the product is
+
+62
+00:02:41.375 --> 00:02:43.442
+designed to say that evidence is missing
+
+63
+00:02:43.442 --> 00:02:45.874
+instead of inventing a confident explanation.
+
+64
+00:02:45.954 --> 00:02:47.719
+The student still performs the edit.
+
+65
+00:02:47.799 --> 00:02:51.337
+AI provides a question, a bounded inspection, and feedback; it
+
+66
+00:02:51.337 --> 00:02:53.940
+does not silently complete the learning task.
+
+67
+00:02:54.120 --> 00:02:56.152
+Next we build a complete mint palette.
+
+68
+00:02:56.232 --> 00:03:00.746
+Brand soft, page surface, card surface, primary text, muted text,
+
+69
+00:03:00.746 --> 00:03:04.614
+accent, and border tokens change in one compact section.
+
+70
+00:03:04.694 --> 00:03:07.556
+Notice what stays stable: the HTML structure,
+
+71
+00:03:07.556 --> 00:03:09.977
+layout, spacing, and component rules.
+
+72
+00:03:10.057 --> 00:03:13.076
+This is why global variables scale beyond a single trick.
+
+73
+00:03:13.156 --> 00:03:17.616
+They separate design decisions from component implementation, make themes easier
+
+74
+00:03:17.616 --> 00:03:19.249
+to audit, and reduce the risk of
+
+75
+00:03:19.249 --> 00:03:21.259
+leaving one hard-coded color behind.
+
+76
+00:03:21.439 --> 00:03:25.096
+The editor distinguishes a transient preview from a committed version.
+
+77
+00:03:25.176 --> 00:03:26.779
+We run the candidate first.
+
+78
+00:03:26.859 --> 00:03:28.696
+If the CSS is invalid or unsafe,
+
+79
+00:03:28.696 --> 00:03:31.735
+the last known-good rendering remains available.
+
+80
+00:03:31.815 --> 00:03:34.690
+When the preview succeeds, we give it a meaningful name
+
+81
+00:03:34.690 --> 00:03:36.378
+and save an immutable revision.
+
+82
+00:03:36.458 --> 00:03:38.896
+The original purple page is not overwritten.
+
+83
+00:03:38.976 --> 00:03:43.222
+That makes experimentation recoverable: a learner can try, inspect, fail
+
+84
+00:03:43.222 --> 00:03:45.648
+safely, correct the code, and still return
+
+85
+00:03:45.648 --> 00:03:46.592
+to a known state.
+
+86
+00:03:46.772 --> 00:03:50.580
+Finally, AI Tutor places the original and mint versions together.
+
+87
+00:03:50.660 --> 00:03:54.229
+The comparison turns a visual impression into an explanation: which
+
+88
+00:03:54.229 --> 00:03:58.659
+token changed, which consumers responded, and which properties remained constant.
+
+89
+00:03:58.739 --> 00:04:01.066
+The same evidence model supports lessons on
+
+90
+00:04:01.066 --> 00:04:03.267
+the box model, Flexbox, and positioning.
+
+91
+00:04:03.347 --> 00:04:07.381
+Versioned Learning Proof can replay student steps, Tutor messages, tool
+
+92
+00:04:07.381 --> 00:04:10.895
+results, fact receipts, and canvas saves on one timeline, while
+
+93
+00:04:10.895 --> 00:04:14.539
+keeping machine evidence separate from human learning outcomes.
+
+94
+00:04:14.719 --> 00:04:17.656
+This recording shows implemented product behavior.
+
+95
+00:04:17.736 --> 00:04:20.148
+It does not claim that a learner study has already
+
+96
+00:04:20.148 --> 00:04:22.972
+proved better outcomes; that research is still pending.
+
+97
+00:04:23.052 --> 00:04:26.958
+Realtime Tutor also depends on an authenticated local Codex service,
+
+98
+00:04:26.958 --> 00:04:29.937
+while deterministic lessons remain usable offline.
+
+99
+00:04:30.017 --> 00:04:33.322
+The core idea is straightforward: let the student predict, let
+
+100
+00:04:33.322 --> 00:04:36.004
+the page reveal the effect, let the Tutor ground the
+
+101
+00:04:36.004 --> 00:04:38.685
+explanation, and then preserve enough evidence to
+
+102
+00:04:38.685 --> 00:04:40.431
+revisit what actually happened.
+
+103
+00:04:40.511 --> 00:04:42.717
+Change once, understand everywhere.

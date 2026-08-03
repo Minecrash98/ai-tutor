@@ -8,7 +8,7 @@
 - Project name: AI Tutor
 - Short summary: docs/submission/LAUNCHPAD_SUBMISSION_FIELDS.md
 - Full write-up: docs/submission/FULL_WRITEUP.md
-- Verified write-up length: 943 words
+- Verified write-up length: 964 words
 - Repository review guide: docs/submission/REPOSITORY_REVIEW_GUIDE.md
 - YouTube title, description, and chapters:
   docs/submission/YOUTUBE_DEMO_PACKAGE.md
@@ -16,34 +16,43 @@
 ### Video
 
 - File:
-  output/playwright/css-global-color-variables-youtube-demo-2026-08-03.webm
+  output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.mp4
 - SHA-256:
-  ffa4b354a05a1901df73513bdf879edbb7014a9aef85a1061fbfcb7468356ecd
-- Size: 19,522,089 bytes
-- Duration: 300.008 seconds
-- Video: VP8, 1280×720, 25 fps
-- Audio: Opus, 48 kHz, mono, English
-- Audio level: mean -22.7 dB, peak -4.1 dB
-- Capture: fresh isolated Playwright browser
+  76e26d5875aaf5f6d71a590f1cfd637d5956eae20cddd764b7a869691bbe448b
+- Size: 14,992,855 bytes
+- Duration: 300.000 seconds
+- Video: H.264 High, 1280×720, 25 fps, YouTube-ready MP4
+- Audio: AAC-LC, 48 kHz, mono, English
+- Audio level: -16.3 LUFS integrated, -1.4 dBFS true peak
+- Alternate WebM:
+  output/playwright/css-global-color-variables-youtube-demo-en-v2-2026-08-03.webm
+- Alternate SHA-256:
+  9224e9403eb4ecb4685320999ca317c0567216de4f6e22095a14d5750fa63929
+- Capture: fresh isolated Chrome profile with `--mute-audio` and fake media
 - Physical microphone calls: 0
-- Visual QA: start, full-flow, and ending contact sheets inspected; the real
-  import, source edit, purple-to-mint preview, save, comparison, and closing
-  card are all present.
+- Student–Tutor interaction: real authenticated text session, 2 student turns,
+  2 AI Tutor responses, all visible in the recording
+- English presentation guard: 0 visible CJK matches at import, source,
+  student–Tutor interaction, saved revision, and comparison checkpoints
+- Visual QA: title, full-flow contact sheet, Tutor interaction, comparison,
+  and ending frames inspected; the real import, source edit, purple-to-mint
+  preview, save, comparison, and closing card are present.
 
 ### Narration and captions
 
 - Narration master:
-  output/playwright/css-global-color-variables-narration-en-master-2026-08-03.wav
-- Narration duration: 299.755 seconds
+  output/playwright/css-global-color-variables-narration-en-v2-local-normalized-2026-08-03.wav
+- Narration duration: 282.717 seconds, followed by a deliberate closing hold
 - Narration SHA-256:
-  59ccb5588862046cb82f100cb5e4e13370677d9ec809e817b1097466504ad3b4
-- Voice: Microsoft Zira Desktop, generated offline with no audio playback
+  188e721ef186993a412cedb4044db0efed64a93ca77006bddb20a8b0ba139a23
+- Voice: Piper `en_US-lessac-high`, generated entirely locally
+- Script length: 801 words; approximately 170 words per minute
 - Script: docs/submission/NARRATION_SCRIPT.md
-- SSML source: docs/submission/narration.ssml
 - YouTube captions:
-  docs/submission/captions/ai-tutor-css-variables-en.srt
+  docs/submission/captions/ai-tutor-css-variables-en-v2.srt
 - WebVTT captions:
-  docs/submission/captions/ai-tutor-css-variables-en.vtt
+  docs/submission/captions/ai-tutor-css-variables-en-v2.vtt
+- Caption QA: 103 cues, final cue ends at 00:04:42.717, 0 CJK matches
 
 ### Cover image
 
@@ -58,21 +67,20 @@
 
 ## Verified repository claims
 
-- Last complete baseline: lint and typecheck passed; 237 tests passed with 10
+- Last complete baseline: lint and typecheck passed; 239 tests passed with 10
   account-dependent skips; build passed; 67 Chromium E2E cases passed with 18
   account-dependent Live skips; production-style Compose passed 25/25.
 - The local evidence ledger remains 75 VERIFIED / 1 IN_PROGRESS / 24 BLOCKED /
   0 NOT_STARTED and overall NO_GO.
 - Human learner results remain zero and are not replaced by machine evidence.
-- The current shell is localized in Chinese; full interface localization is
-  not claimed.
+- The video uses a query-scoped English presentation mode; full product
+  localization is not claimed.
 - Realtime depends on an authenticated local Codex app-server; deterministic
   lessons do not.
 
 ## External publication status
 
-- GitHub: https://github.com/Minecrash98/ai-tutor — verified public, main branch
-  published at commit `727dad77ac2c39911834b73e31e53ca650bcdfc6`.
+- GitHub: https://github.com/Minecrash98/ai-tutor — verified public main page.
 - YouTube: PENDING_YOUTUBE_URL
 
 The video has not yet been uploaded to a verified public or unlisted YouTube

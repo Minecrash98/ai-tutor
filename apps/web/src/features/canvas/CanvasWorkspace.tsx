@@ -132,6 +132,7 @@ import {
   type SavedElementTarget,
 } from "./p5-model";
 import { isRectNearViewport } from "./visibility";
+import { EnglishDemoPresentation } from "./EnglishDemoPresentation";
 
 const RealtimeTutorPanel = dynamic(
   () =>
@@ -3566,6 +3567,7 @@ export function CanvasWorkspace() {
 
   return (
     <main className="canvas-app">
+      <EnglishDemoPresentation />
       <header className="canvas-app__header">
         <div className="canvas-brand">
           <span aria-hidden="true">CSS</span>

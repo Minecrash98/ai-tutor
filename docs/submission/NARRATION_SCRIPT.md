@@ -1,71 +1,111 @@
-# English narration script
+# English narration script — Demo v2
 
-## 00:00–00:18
+Voice: local Piper `en_US-lessac-high`; 801 words; approximately 170 words
+per minute. The final card remains on screen without narration from 04:43 to
+05:00.
 
-CSS is visual, but learning it often feels disconnected. A learner changes a
-line, sees a different page, and still does not know why. AI Tutor turns that
-gap into a guided experiment: predict, observe, explain, and transfer.
+## 00:00–00:20 — The learning claim
 
-## 00:18–00:38
+Most CSS tutorials tell you what a custom property is. AI Tutor makes you prove
+what it does. In the next five minutes, a student will import a real page, ask
+the Tutor a question, make a prediction, change one global color token, and
+compare the result with the original. Everything you see is running in the real
+product, inside a fresh browser session.
 
-We begin with a real, self-contained HTML and CSS exercise. It is imported
-into the visual canvas, normalized, and rendered inside a sandbox. Uploaded
-scripts do not execute. The lesson itself is in English even though the
-current prototype shell is localized in Chinese.
+## 00:20–00:45 — Import a real exercise
 
-## 00:38–01:16
+We begin with two ordinary files: index dot HTML and theme dot CSS. AI Tutor
+normalizes the upload, removes executable scripts, and renders the page inside
+a sandboxed frame. The exercise is deliberately small, but it is not a
+screenshot or a mockup. The button, cards, borders, labels, and code highlights
+are all live HTML and CSS. The interface and lesson are presented in English
+for this recording.
 
-This page uses global CSS color variables. The purple brand color is declared
-once in the root selector, then reused by the label, button, borders, and code
-highlights. The surface, text, accent, and border colors follow the same
-pattern. A learner can inspect the page as a system instead of hunting through
-unrelated declarations.
+## 00:45–01:08 — Semantic tokens
 
-## 01:16–02:02
+The purple theme is controlled by custom properties in the root selector.
+Names such as brand, surface, text, accent, and line describe design roles
+instead of individual components. That is the first useful pattern: choose
+semantic token names. A token called brand can serve a button, an eyebrow
+label, a border, and a code highlight. A name such as purple button would lock
+the variable to one color and one component.
 
-Now we open the source. The HTML structure remains unchanged, because the
-learning goal is theme control, not markup editing. In theme dot CSS, the
-important values are grouped at the top. Components below read those values
-through the var function. This makes the causal relationship visible before
-we edit anything.
+## 01:08–01:38 — Scope, inheritance, and fallbacks
 
-## 02:02–02:40
+Now we open the actual source. Root gives these tokens page-wide scope. Custom
+properties participate in the cascade, and descendants inherit them unless a
+closer declaration wins. Components consume a token with the var function,
+while an optional second argument can provide a fallback. The code highlight
+also uses color mix, deriving a softer tint from brand instead of introducing
+another unrelated literal. So the page already exposes a small design system:
+centralized decisions at the top, reusable component rules below.
 
-First, we change only the brand token from purple to deep teal. The editor
-selects the exact value, applies the change, and runs a safe preview. One edit
-updates every component that references the token. This is the key idea:
-global variables reduce repetition and make design decisions explicit.
+## 01:38–02:06 — Real student–AI Tutor interaction
 
-## 02:40–03:25
+Before editing, the student opens the AI Tutor and asks a specific question:
+if brand changes, which visible parts should move together, and why? The Tutor
+does not need to take over the keyboard. It checks the current canvas and
+source, responds in English, and asks the learner to predict the effect. The
+student answers that every rule reading var brand should update, while text and
+surface tokens should stay unchanged. This interaction matters: the AI is
+guiding an observable claim, not merely producing a definition.
 
-Next, we extend the change into a complete mint theme. Surface, card, text,
-muted text, accent, and border tokens are updated while component rules stay
-untouched. The preview shows the whole page changing coherently. AI Tutor is
-not generating a final answer behind the learner's back; it exposes the source,
-the action, and the visible result.
+## 02:06–02:31 — Change one token
 
-## 03:25–03:58
+With that prediction recorded, we change only brand, from purple to deep teal,
+and run a safe preview. Watch the same value propagate to the primary button,
+the eyebrow label, the hero border, the token board, and the code emphasis. The
+HTML has not changed. The component selectors have not changed. One decision
+moved through every consumer because each rule points back to the same token.
+That is the cause-and-effect link the learner predicted.
 
-After the preview succeeds, we give the change a meaningful name and save it
-as a new immutable version. A failed or unsafe edit would not replace the last
-known good result. That separation between transient preview and committed
-version supports experimentation without losing the learner's work.
+## 02:31–02:53 — Ground the explanation
 
-## 03:58–04:25
+The Tutor can now ground the explanation in the visible result: the edited
+value, the affected target, the matching rule, and the current revision. If
+those facts do not line up, the product is designed to say that evidence is
+missing instead of inventing a confident explanation. The student still
+performs the edit. AI provides a question, a bounded inspection, and feedback;
+it does not silently complete the learning task.
 
-The canvas now keeps both the original purple version and the mint version.
-Comparison is more than presentation polish: it helps the learner explain
-which token changed, where it was reused, and why multiple components moved
-together. The same approach supports box model, Flex, positioning, and
-personalized lessons derived from imported pages.
+## 02:53–03:21 — Build a complete palette
 
-## 04:25–05:00
+Next we build a complete mint palette. Brand soft, page surface, card surface,
+primary text, muted text, accent, and border tokens change in one compact
+section. Notice what stays stable: the HTML structure, layout, spacing, and
+component rules. This is why global variables scale beyond a single trick.
+They separate design decisions from component implementation, make themes
+easier to audit, and reduce the risk of leaving one hard-coded color behind.
 
-Behind the lesson, versioned Learning Proof can replay course events, tutor
-messages, tool results, fact receipts, and canvas saves on one timeline.
-Machine tests cover the workflow, recovery, security, visual states, and
-authoritative PostgreSQL replay. Human learning research is still pending, so
-we do not claim proven outcomes. Next, we would run a preregistered learner
-pilot, complete interface localization, and validate on more devices and
-networks. AI Tutor's goal is simple: help learners see the cause, explain the
-effect, and carry the idea to the next page.
+## 03:21–03:47 — Preview and preserve
+
+The editor distinguishes a transient preview from a committed version. We run
+the candidate first. If the CSS is invalid or unsafe, the last known-good
+rendering remains available. When the preview succeeds, we give it a meaningful
+name and save an immutable revision. The original purple page is not
+overwritten. That makes experimentation recoverable: a learner can try,
+inspect, fail safely, correct the code, and still return to a known state.
+
+## 03:47–04:15 — Compare and replay
+
+Finally, AI Tutor places the original and mint versions together. The
+comparison turns a visual impression into an explanation: which token changed,
+which consumers responded, and which properties remained constant. The same
+evidence model supports lessons on the box model, Flexbox, and positioning.
+Versioned Learning Proof can replay student steps, Tutor messages, tool results,
+fact receipts, and canvas saves on one timeline, while keeping machine evidence
+separate from human learning outcomes.
+
+## 04:15–04:43 — Honest scope and closing
+
+This recording shows implemented product behavior. It does not claim that a
+learner study has already proved better outcomes; that research is still
+pending. Realtime Tutor also depends on an authenticated local Codex service,
+while deterministic lessons remain usable offline. The core idea is
+straightforward: let the student predict, let the page reveal the effect, let
+the Tutor ground the explanation, and then preserve enough evidence to revisit
+what actually happened. Change once, understand everywhere.
+
+## 04:43–05:00 — Closing card
+
+No narration. The closing message remains visible for review.

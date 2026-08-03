@@ -79,7 +79,7 @@ test("starts text tutoring without touching microphone APIs and really stops", a
 
   await tutor.getByRole("button", { name: "立即停止" }).click();
   await expect(tutor.getByLabel("文字询问 CSS 问题")).toBeDisabled();
-  expect(stopped).toBe(true);
+  await expect.poll(() => stopped).toBe(true);
 });
 
 test("stops an unbound Tutor session when a lesson starts, then binds the restart", async ({

@@ -585,9 +585,9 @@ test("warns a second tab and does not overwrite the newer tab on pagehide", asyn
   await Promise.all([page.goto("/"), secondTab.goto("/")]);
   await startBoxDemo(page);
 
-  await expect(secondTab.locator(".canvas-status")).toContainText(
-    "另一个标签页刚更新了画布",
-  );
+  const secondTabStatus = secondTab.locator(".canvas-status");
+  await expect(secondTabStatus).toContainText("另一个标签页");
+  await expect(secondTabStatus).toContainText("当前页面不会覆盖它");
   const latestBeforeClose = await page.evaluate(
     ({ key }) => localStorage.getItem(key),
     { key: SNAPSHOT_KEY },
